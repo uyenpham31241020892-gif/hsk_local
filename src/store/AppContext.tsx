@@ -10,6 +10,11 @@ import {
   recordMistake,
   resolveMistake
 } from '../utils/srs';
+import { 
+  getSavedCloudAccount, 
+  syncTwoWay, 
+  pushProgressToCloud 
+} from '../utils/cloudSync';
 
 // ─── State ───────────────────────────────────────────────────────────────────
 interface AppState {
@@ -40,12 +45,16 @@ type Action =
   | { type: 'MARK_PACK_COMPLETED'; packId: string }
   | { type: 'RECORD_SESSION'; packId: string; mode: string; correct: number; total: number; durationMs: number }
   | { type: 'RECORD_MOCK_EXAM'; record: MockExamRecord }
+  | { type: 'REPLACE_PROGRESS'; progress: UserProgress }
   | { type: 'SET_EXERCISING'; isExercising: boolean }
   | { type: 'MARK_DIRTY' }
   | { type: 'SAVED' };
 
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
+    case 'REPLACE_PROGRESS':
+      return { ...state, progress: action.progress, isDirty: false };
+
     case 'SET_EXERCISING':
       return { ...state, isExercising: action.isExercising };
 
@@ -203,15 +212,53 @@ const AppContext = createContext<AppContextValue | null>(null);
 export function AppProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  // Auto-save when dirty
+  // Auto-save locally and push to cloud when dirty
   useEffect(() => {
     if (!state.isDirty) return;
     const timer = setTimeout(() => {
       saveProgress(state.progress);
       dispatch({ type: 'SAVED' });
-    }, 500);
+      // Non-blocking auto-push to cloud
+      pushProgressToCloud(state.progress).catch(() => null);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [state.isDirty, state.progress]);
+
+  // Auto-sync two-way with cloud across all devices
+  useEffect(() => {
+    let isCancelled = false;
+
+    const performSync = async () => {
+      try {
+        const acc = getSavedCloudAccount();
+        if (!acc) return;
+        const res = await syncTwoWay(state.progress, acc);
+        if (!isCancelled && res.success && res.mergedProgress) {
+          dispatch({ type: 'REPLACE_PROGRESS', progress: res.mergedProgress });
+        }
+      } catch (e) {
+        console.warn('Auto cloud sync failed', e);
+      }
+    };
+
+    // 1. Initial sync on app start
+    performSync();
+
+    // 2. Sync on tab / window focus
+    const handleFocus = () => {
+      performSync();
+    };
+    window.addEventListener('focus', handleFocus);
+
+    // 3. Periodic sync every 60 seconds
+    const interval = setInterval(performSync, 60000);
+
+    return () => {
+      isCancelled = true;
+      window.removeEventListener('focus', handleFocus);
+      clearInterval(interval);
+    };
+  }, []);
 
   const navigate = useCallback((view: AppView, packId?: string) => {
     dispatch({ type: 'SET_VIEW', view, packId });
