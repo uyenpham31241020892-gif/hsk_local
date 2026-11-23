@@ -1,7 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../store/AppContext';
 import { grammarTopics, type GrammarTopicEntry } from '../../data/grammar_topics_data';
-import { speak } from '../../utils/exercises';
+import { allVocab } from '../../data';
+import { speak, buildGrammarExercises } from '../../utils/exercises';
+import { ExerciseRunner } from '../exercises/ExerciseRunner';
+import type { Exercise } from '../../types';
 import { 
   ArrowLeft, 
   Search, 
@@ -12,7 +15,9 @@ import {
   ExternalLink,
   ChevronRight,
   X,
-  Volume2
+  Volume2,
+  Zap,
+  RotateCcw
 } from 'lucide-react';
 
 export function GrammarView() {
@@ -21,6 +26,22 @@ export function GrammarView() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedTopic, setSelectedTopic] = useState<GrammarTopicEntry | null>(null);
+
+  // Trạng thái luyện tập bài tập ngữ pháp
+  const [isPracticing, setIsPracticing] = useState(false);
+  const [grammarExercises, setGrammarExercises] = useState<Exercise[]>([]);
+  const [practiceResult, setPracticeResult] = useState<{ correct: number; total: number } | null>(null);
+
+  const handleStartGrammarPractice = (topic: GrammarTopicEntry) => {
+    const exList = buildGrammarExercises(topic, allVocab);
+    if (!exList || exList.length === 0) {
+      alert('Chuyên đề này hiện đang hoàn thiện bộ câu hỏi mẫu.');
+      return;
+    }
+    setGrammarExercises(exList);
+    setIsPracticing(true);
+    setPracticeResult(null);
+  };
 
   const filteredTopics = useMemo(() => {
     return grammarTopics.filter((topic) => {
@@ -46,6 +67,23 @@ export function GrammarView() {
     grammarTopics.forEach(t => { if (t.category) set.add(t.category); });
     return Array.from(set);
   }, []);
+
+  // Khi đang làm bài tập luyện tập ngữ pháp
+  if (isPracticing && grammarExercises.length > 0) {
+    return (
+      <ExerciseRunner
+        exercises={grammarExercises}
+        speechRate={0.85}
+        showPinyinFirst={true}
+        blindMode={false}
+        onFinish={(r) => {
+          setPracticeResult(r);
+          setIsPracticing(false);
+        }}
+        onExit={() => setIsPracticing(false)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] pb-24">
@@ -342,13 +380,61 @@ export function GrammarView() {
               )}
             </div>
 
-            {/* Modal Footer */}
-            <div className="p-4 border-t border-[#e5e1d8] bg-[#FAF9F6] flex justify-end">
+            {/* Modal Footer with Practice CTA */}
+            <div className="p-4 border-t border-[#e5e1d8] bg-[#FAF9F6] flex flex-col sm:flex-row items-center justify-between gap-2.5">
               <button
                 onClick={() => setSelectedTopic(null)}
-                className="px-5 py-2.5 rounded-xl bg-[#4a7c59] text-white font-semibold text-xs hover:bg-[#3d6b4a] transition-colors shadow-xs"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-xl border border-[#e5e1d8] text-[#6b7280] font-medium text-xs hover:bg-white transition-colors text-center"
               >
                 Đóng lại
+              </button>
+              
+              <button
+                onClick={() => handleStartGrammarPractice(selectedTopic)}
+                className="w-full sm:flex-1 py-2.5 px-4 rounded-xl bg-[#4a7c59] text-white font-bold text-xs hover:bg-[#3d6b4a] transition-all shadow-xs flex items-center justify-center gap-1.5"
+              >
+                <Zap size={15} />
+                <span>Làm bài tập luyện tập chuyên đề này ({selectedTopic.examples?.length ? Math.min(selectedTopic.examples.length, 5) : 5} câu)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Practice Result Popup */}
+      {practiceResult && (
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white rounded-3xl border border-[#e5e1d8] p-6 max-w-sm w-full text-center shadow-xl space-y-4 animate-scale-up">
+            <p className="text-4xl">{practiceResult.correct === practiceResult.total ? '🎉' : '💪'}</p>
+            <div>
+              <h3 className="text-lg font-bold text-[#1a1a1a]">Hoàn thành bài luyện ngữ pháp!</h3>
+              <p className="text-xs text-[#6b7280] mt-0.5">{selectedTopic?.title || 'Chuyên đề ngữ pháp'}</p>
+            </div>
+            
+            <div className="bg-[#FAF9F6] border border-[#e5e1d8] rounded-2xl p-4">
+              <p className="text-3xl font-black text-[#4a7c59]">
+                {practiceResult.total > 0 ? Math.round((practiceResult.correct / practiceResult.total) * 100) : 0}%
+              </p>
+              <p className="text-xs text-[#6b7280] mt-1">
+                {practiceResult.correct} / {practiceResult.total} câu trả lời đúng
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              {selectedTopic && (
+                <button
+                  onClick={() => handleStartGrammarPractice(selectedTopic)}
+                  className="w-full py-2.5 rounded-xl bg-[#4a7c59] text-white font-bold text-xs hover:bg-[#3d6b4a] transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <RotateCcw size={14} />
+                  <span>Luyện tập lại chuyên đề này</span>
+                </button>
+              )}
+              <button
+                onClick={() => setPracticeResult(null)}
+                className="w-full py-2.5 rounded-xl border border-[#e5e1d8] text-[#6b7280] font-semibold text-xs hover:bg-[#FAF9F6] transition-colors"
+              >
+                Về danh sách chuyên đề
               </button>
             </div>
           </div>

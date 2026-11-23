@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../store/AppContext';
 import { allPacks, allVocab, vocabById } from '../../data';
-import { buildLessonByMode, speak, type LessonPracticeMode } from '../../utils/exercises';
+import { buildLessonByMode, speak, buildGrammarExercises, type LessonPracticeMode } from '../../utils/exercises';
 import { ExerciseRunner } from '../exercises/ExerciseRunner';
 import { 
   X, 
@@ -18,15 +18,23 @@ import {
   PenLine,
   Languages
 } from 'lucide-react';
-import type { VocabEntry } from '../../types';
+import type { VocabEntry, GrammarPoint, Exercise } from '../../types';
 
 export function LessonView() {
   const { state, navigate, dispatch } = useApp();
   const packId = state.currentPackId;
   const pack = allPacks.find(p => p.id === packId);
 
-  const [activeTab, setActiveTab] = useState<'preview' | 'grammar' | 'practice'>('preview');
+  const [activeTab, setActiveTab] = useState<'preview' | 'grammar' | 'practice'>(() => {
+    const init = (window as any).__initialLessonTab;
+    if (init === 'grammar' || init === 'practice') {
+      (window as any).__initialLessonTab = null;
+      return init;
+    }
+    return 'preview';
+  });
   const [selectedMode, setSelectedMode] = useState<LessonPracticeMode | null>(null);
+  const [customExercises, setCustomExercises] = useState<Exercise[] | null>(null);
   const [started, setStarted] = useState(false);
   const [finished, setFinished] = useState(false);
   const [results, setResults] = useState<{ correct: number; total: number } | null>(null);
@@ -38,9 +46,34 @@ export function LessonView() {
   }, [pack]);
 
   const exercises = useMemo(() => {
+    if (customExercises && customExercises.length > 0) return customExercises;
     if (!started || !selectedMode || !vocabList.length) return [];
     return buildLessonByMode(selectedMode, vocabList, allVocab);
-  }, [started, selectedMode, vocabList]);
+  }, [customExercises, started, selectedMode, vocabList]);
+
+  const handleStartSingleGrammarPractice = (gp: GrammarPoint) => {
+    const ex = buildGrammarExercises(gp, allVocab);
+    if (!ex || ex.length === 0) {
+      alert('Chuyên đề ngữ pháp này đang được cập nhật câu hỏi.');
+      return;
+    }
+    setCustomExercises(ex);
+    setSelectedMode('cloze');
+    setStarted(true);
+    setFinished(false);
+    setResults(null);
+  };
+
+  const handleStartAllGrammarPractice = () => {
+    if (!pack || !pack.grammarPoints || pack.grammarPoints.length === 0) return;
+    const allEx = pack.grammarPoints.flatMap(gp => buildGrammarExercises(gp, allVocab));
+    if (allEx.length === 0) return;
+    setCustomExercises(allEx.slice(0, 10));
+    setSelectedMode('cloze');
+    setStarted(true);
+    setFinished(false);
+    setResults(null);
+  };
 
   if (!pack) {
     return (
@@ -108,6 +141,7 @@ export function LessonView() {
         onExit={() => {
           setStarted(false);
           setSelectedMode(null);
+          setCustomExercises(null);
         }}
       />
     );
@@ -120,7 +154,9 @@ export function LessonView() {
       <div className="min-h-screen bg-[#FAF9F6] flex items-center justify-center p-4">
         <div className="bg-white rounded-3xl border border-[#e5e1d8] p-8 max-w-sm w-full text-center shadow-sm">
           <p className="text-5xl mb-4">{pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪'}</p>
-          <h2 className="text-xl font-semibold text-[#1a1a1a] mb-1">Hoàn thành bài luyện!</h2>
+          <h2 className="text-xl font-semibold text-[#1a1a1a] mb-1">
+            {customExercises ? 'Hoàn thành bài tập ngữ pháp!' : 'Hoàn thành bài luyện tập!'}
+          </h2>
           <p className="text-[#6b7280] text-sm mb-6">{pack.titleVi}</p>
           <div className="bg-[#FAF9F6] rounded-2xl p-4 mb-6">
             <p className="text-3xl font-bold text-[#4a7c59]">{pct}%</p>
@@ -128,10 +164,10 @@ export function LessonView() {
           </div>
           <div className="flex flex-col gap-2">
             <button
-              onClick={() => { setStarted(false); setFinished(false); setResults(null); }}
+              onClick={() => { setStarted(false); setFinished(false); setResults(null); setCustomExercises(null); }}
               className="w-full py-3 rounded-xl bg-[#4a7c59] text-white font-medium hover:bg-[#3d6b4a] transition-colors"
             >
-              Chọn dạng bài khác
+              {customExercises ? 'Trở về bài học ngữ pháp' : 'Chọn dạng bài khác'}
             </button>
             <button
               onClick={() => navigate('home')}
@@ -490,19 +526,38 @@ export function LessonView() {
                         </div>
                       </div>
                     )}
+
+                    {/* Nút bấm luyện tập bài tập chuyên đề ngữ pháp này */}
+                    <div className="pt-3 border-t border-[#f0eee9] flex justify-end">
+                      <button
+                        onClick={() => handleStartSingleGrammarPractice(gp)}
+                        className="px-4 py-2.5 rounded-xl bg-[#4a7c59] text-white hover:bg-[#3d6b4a] transition-all text-xs font-bold flex items-center gap-1.5 shadow-xs"
+                      >
+                        <Zap size={14} />
+                        <span>Làm bài tập riêng cho chuyên đề này ({gp.examples?.length ? Math.min(gp.examples.length, 5) : 5} câu)</span>
+                      </button>
+                    </div>
                   </div>
                 ))
               )}
             </div>
 
             {/* CTA chuyển sang luyện tập */}
-            <button
-              onClick={() => setActiveTab('practice')}
-              className="w-full py-4 rounded-2xl bg-[#4a7c59] text-white font-semibold text-base hover:bg-[#3d6b4a] transition-all shadow-sm flex items-center justify-center gap-2"
-            >
-              <Zap size={18} />
-              <span>Đã nắm chắc ngữ pháp → Vào luyện bài tập ngay!</span>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-2 pt-2">
+              <button
+                onClick={handleStartAllGrammarPractice}
+                className="flex-1 py-4 px-4 rounded-2xl bg-[#4a7c59] text-white font-bold text-sm hover:bg-[#3d6b4a] transition-all shadow-sm flex items-center justify-center gap-2"
+              >
+                <Zap size={18} />
+                <span>Luyện toàn bộ bài tập ngữ pháp bài này</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('practice')}
+                className="py-4 px-5 rounded-2xl border border-[#4a7c59] text-[#4a7c59] font-bold text-sm hover:bg-[#e8f0eb] transition-all flex items-center justify-center gap-1.5"
+              >
+                <span>Sang luyện từ vựng</span>
+              </button>
+            </div>
           </div>
         )}
 

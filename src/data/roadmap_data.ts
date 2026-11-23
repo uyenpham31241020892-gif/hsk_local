@@ -1,0 +1,818 @@
+// Lộ trình học bài bản 6 tháng (24 tuần) từ HSK 1 đến HSK 4
+// Chu kỳ khoa học: Học từ mới (1, 2) -> Ngữ pháp trọng điểm & Ôn tập (3) -> Kiểm tra định kỳ (4) -> Tốt nghiệp từng cấp độ
+
+export type RoadmapStage = 'hsk1' | 'hsk2' | 'hsk3' | 'hsk4';
+export type RoadmapLessonType = 'vocab' | 'grammar_review' | 'checkpoint' | 'graduation_mock';
+
+export interface RoadmapLesson {
+  id: string;
+  lessonNumber: number;
+  stage: RoadmapStage;
+  month: number;
+  week: number;
+  title: string;
+  titleVi: string;
+  type: RoadmapLessonType;
+  description: string;
+  targetCountText: string;
+  packId?: string;
+  grammarTopicIds?: string[];
+  checkpointExamId?: string | null;
+  orderIndex: number;
+}
+
+export const sixMonthRoadmap: RoadmapLesson[] = [
+  {
+    "id": "lesson_01",
+    "lessonNumber": 1,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 1,
+    "title": "Bài 1: Chào hỏi & Đại từ nhân xưng",
+    "titleVi": "Chào hỏi & Đại từ nhân xưng (我, 你, 他, 好...)",
+    "type": "vocab",
+    "description": "Làm quen với các đại từ cơ bản và câu chào hỏi thường nhật trong tiếng Hán.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack1",
+    "orderIndex": 0
+  },
+  {
+    "id": "lesson_02",
+    "lessonNumber": 2,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 1,
+    "title": "Bài 2: Số đếm & Thứ tự cơ bản",
+    "titleVi": "Số đếm & Thứ tự (一, 二, 三, 四, 五...)",
+    "type": "vocab",
+    "description": "Học cách đếm số từ 1 đến 10 và các quy tắc số thứ tự cơ bản.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack2",
+    "orderIndex": 1
+  },
+  {
+    "id": "lesson_03",
+    "lessonNumber": 3,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 1,
+    "title": "Bài 3: Trật tự câu S+V+O & Phủ định 不",
+    "titleVi": "Ngữ pháp: Quy tắc trật tự câu S+V+O & Phủ định 不 + Ôn từ Tuần 1",
+    "type": "grammar_review",
+    "description": "Hiểu bản chất cách ghép câu tiếng Trung: Ai làm gì? Cùng cách dùng phó từ phủ định 不.",
+    "targetCountText": "2 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack1",
+    "grammarTopicIds": [
+      "gram_hsk1_31",
+      "gram_hsk1_02"
+    ],
+    "orderIndex": 2
+  },
+  {
+    "id": "lesson_04",
+    "lessonNumber": 4,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 1,
+    "title": "Bài 4: Kiểm tra định kỳ Tuần 1",
+    "titleVi": "Kiểm tra định kỳ Tuần 1 (Đánh giá từ vựng & ngữ pháp khởi động)",
+    "type": "checkpoint",
+    "description": "Bài kiểm tra 15 câu tổng hợp kiểm tra phản xạ nhận chữ, điền từ và xếp câu.",
+    "targetCountText": "15 câu hỏi trắc nghiệm & xếp câu",
+    "checkpointExamId": "milestone_periodic_1",
+    "orderIndex": 3
+  },
+  {
+    "id": "lesson_05",
+    "lessonNumber": 5,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 2,
+    "title": "Bài 5: Gia đình & Các mối quan hệ",
+    "titleVi": "Gia đình & Xưng hô (爸爸, 妈妈, 哥哥, 朋友...)",
+    "type": "vocab",
+    "description": "Từ vựng các thành viên trong gia đình và bạn bè thân thiết.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack3",
+    "orderIndex": 4
+  },
+  {
+    "id": "lesson_06",
+    "lessonNumber": 6,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 2,
+    "title": "Bài 6: Thời gian, Ngày tháng & Giờ giấc",
+    "titleVi": "Thời gian & Ngày tháng (今天, 明天, 几点...)",
+    "type": "vocab",
+    "description": "Cách hỏi và nói giờ, ngày tháng năm trong giao tiếp thường nhật.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack4",
+    "orderIndex": 5
+  },
+  {
+    "id": "lesson_07",
+    "lessonNumber": 7,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 2,
+    "title": "Bài 7: Sở hữu với 的 & Cách nói ngày tháng",
+    "titleVi": "Ngữ pháp: Sở hữu với 的 & Quy tắc nói ngày tháng năm + Ôn từ Tuần 2",
+    "type": "grammar_review",
+    "description": "Nắm vững trợ từ kết cấu 的 và trật tự từ lớn đến nhỏ (Năm -> Tháng -> Ngày).",
+    "targetCountText": "2 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack3",
+    "grammarTopicIds": [
+      "gram_hsk1_14",
+      "gram_hsk1_09"
+    ],
+    "orderIndex": 6
+  },
+  {
+    "id": "lesson_08",
+    "lessonNumber": 8,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 2,
+    "title": "Bài 8: Kiểm tra định kỳ Tuần 2",
+    "titleVi": "Kiểm tra định kỳ Tuần 2 (Chủ đề gia đình & thời gian)",
+    "type": "checkpoint",
+    "description": "Bài kiểm tra 15 câu đánh giá độ thuần thục về xưng hô và cấu trúc thời gian.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_2",
+    "orderIndex": 7
+  },
+  {
+    "id": "lesson_09",
+    "lessonNumber": 9,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 3,
+    "title": "Bài 9: Địa điểm, Nơi chốn & Trường học",
+    "titleVi": "Địa điểm & Trường lớp (学校, 教室, 医院, 商店...)",
+    "type": "vocab",
+    "description": "Từ vựng các địa điểm công cộng và môi trường học tập.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack5",
+    "orderIndex": 8
+  },
+  {
+    "id": "lesson_10",
+    "lessonNumber": 10,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 3,
+    "title": "Bài 10: Ẩm thực & Đồ uống hằng ngày",
+    "titleVi": "Ẩm thực & Thức uống (米饭, 水, 茶, 吃, 喝...)",
+    "type": "vocab",
+    "description": "Các món ăn, thức uống quen thuộc và động từ ăn uống.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack6",
+    "orderIndex": 9
+  },
+  {
+    "id": "lesson_11",
+    "lessonNumber": 11,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 3,
+    "title": "Bài 11: Tồn tại 在 & Có/Không có 有/没",
+    "titleVi": "Ngữ pháp: Giới từ 在, Động từ 有 & Phủ định với 没 + Ôn từ Tuần 3",
+    "type": "grammar_review",
+    "description": "Quy tắc nói ai ở đâu làm gì và phân biệt rạch ròi 不 vs 没 (tuyệt đối không nói 不有).",
+    "targetCountText": "3 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack5",
+    "grammarTopicIds": [
+      "gram_hsk1_17",
+      "gram_hsk1_01",
+      "gram_hsk1_19"
+    ],
+    "orderIndex": 10
+  },
+  {
+    "id": "lesson_12",
+    "lessonNumber": 12,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 3,
+    "title": "Bài 12: Kiểm tra định kỳ Tuần 3",
+    "titleVi": "Kiểm tra định kỳ Tuần 3 (Địa điểm & Hoạt động ăn uống)",
+    "type": "checkpoint",
+    "description": "Đánh giá kỹ năng dùng giới từ 在 và câu chữ 有/没有.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_3",
+    "orderIndex": 11
+  },
+  {
+    "id": "lesson_13",
+    "lessonNumber": 13,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 4,
+    "title": "Bài 13: Phương tiện giao thông & Đi lại",
+    "titleVi": "Phương tiện giao thông (飞机, 火车, 出租车, 汽车...)",
+    "type": "vocab",
+    "description": "Từ vựng các loại xe cộ và cách diễn đạt đi lại trong thành phố.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack7",
+    "orderIndex": 12
+  },
+  {
+    "id": "lesson_14",
+    "lessonNumber": 14,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 4,
+    "title": "Bài 14: Mua sắm & Tiền bạc",
+    "titleVi": "Mua sắm & Tiền bạc (钱, 块, 买, 多少, 贵...)",
+    "type": "vocab",
+    "description": "Cách hỏi giá tiền, trả tiền và các đơn vị tiền tệ Trung Quốc.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack8",
+    "orderIndex": 13
+  },
+  {
+    "id": "lesson_15",
+    "lessonNumber": 15,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 4,
+    "title": "Bài 15: Động từ 去 & Kỹ năng 会/能",
+    "titleVi": "Ngữ pháp: Đi đâu làm gì với 去 & Kỹ năng biết làm gì với 会 + Ôn từ Tuần 4",
+    "type": "grammar_review",
+    "description": "Cấu trúc câu liên động 去 + Nơi chốn + Hành động và động từ năng nguyện 会.",
+    "targetCountText": "3 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack7",
+    "grammarTopicIds": [
+      "gram_hsk1_21",
+      "gram_hsk1_24",
+      "gram_hsk1_25"
+    ],
+    "orderIndex": 14
+  },
+  {
+    "id": "lesson_16",
+    "lessonNumber": 16,
+    "stage": "hsk1",
+    "month": 1,
+    "week": 4,
+    "title": "Bài 16: Kiểm tra định kỳ Tháng 1",
+    "titleVi": "Kiểm tra định kỳ Tháng 1 (Tổng kết 120 từ vựng & 10 điểm ngữ pháp đầu tiên)",
+    "type": "checkpoint",
+    "description": "Bài kiểm tra 20 câu tổng hợp toàn bộ kiến thức 4 tuần đầu tiên.",
+    "targetCountText": "20 câu kiểm tra chất lượng cao",
+    "checkpointExamId": "milestone_periodic_4",
+    "orderIndex": 15
+  },
+  {
+    "id": "lesson_17",
+    "lessonNumber": 17,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 5,
+    "title": "Bài 17: Công việc & Nghề nghiệp",
+    "titleVi": "Nghề nghiệp & Công việc (工作, 医生, 老师, 学生...)",
+    "type": "vocab",
+    "description": "Từ vựng các công việc thường gặp trong đời sống.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack9",
+    "orderIndex": 16
+  },
+  {
+    "id": "lesson_18",
+    "lessonNumber": 18,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 5,
+    "title": "Bài 18: Cảm xúc & Tính từ miêu tả",
+    "titleVi": "Cảm xúc & Tính chất (高兴, 漂亮, 冷, 热, 大, 小...)",
+    "type": "vocab",
+    "description": "Học các tính từ cơ bản để miêu tả người, sự vật và thời tiết.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack10",
+    "orderIndex": 17
+  },
+  {
+    "id": "lesson_19",
+    "lessonNumber": 19,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 5,
+    "title": "Bài 19: Câu chữ 很 & Câu hỏi 吗/呢",
+    "titleVi": "Ngữ pháp: Câu vị ngữ tính từ với 很 & Câu hỏi 吗/呢 + Ôn từ Tuần 5",
+    "type": "grammar_review",
+    "description": "Tiếng Trung không dùng 是 trước tính từ: nói \"他很高\", không nói \"他是高\".",
+    "targetCountText": "3 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack9",
+    "grammarTopicIds": [
+      "gram_hsk1_34",
+      "gram_hsk1_38",
+      "gram_hsk1_15"
+    ],
+    "orderIndex": 18
+  },
+  {
+    "id": "lesson_20",
+    "lessonNumber": 20,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 5,
+    "title": "Bài 20: Kiểm tra định kỳ Tuần 5",
+    "titleVi": "Kiểm tra định kỳ Tuần 5 (Tính từ & Mẫu câu hỏi)",
+    "type": "checkpoint",
+    "description": "Kiểm tra phản xạ phân biệt câu vị ngữ tính từ và trợ từ ngữ khí.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_5",
+    "orderIndex": 19
+  },
+  {
+    "id": "lesson_21",
+    "lessonNumber": 21,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 6,
+    "title": "Bài 21: Đồ dùng cá nhân & Thiết bị",
+    "titleVi": "Đồ vật & Đồ dùng (桌子, 椅子, 电视, 电脑, 衣服...)",
+    "type": "vocab",
+    "description": "Từ vựng các vật dụng xung quanh phòng ốc và bàn học.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack11",
+    "orderIndex": 20
+  },
+  {
+    "id": "lesson_22",
+    "lessonNumber": 22,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 6,
+    "title": "Bài 22: Hoạt động sinh hoạt hằng ngày",
+    "titleVi": "Hoạt động thường nhật (睡觉, 起床, 说话, 读, 写...)",
+    "type": "vocab",
+    "description": "Các động từ hành động từ sáng thức dậy đến tối đi ngủ.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack12",
+    "orderIndex": 21
+  },
+  {
+    "id": "lesson_23",
+    "lessonNumber": 23,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 6,
+    "title": "Bài 23: Cảm thán 太...了 & Phó từ 都/也",
+    "titleVi": "Ngữ pháp: Cảm thán 太...了 & Phó từ phạm vi 都/也 + Ôn từ Tuần 6",
+    "type": "grammar_review",
+    "description": "Học cách bộc lộ cảm xúc khen ngợi hoặc phàn nàn với 太...了.",
+    "targetCountText": "3 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack11",
+    "grammarTopicIds": [
+      "gram_hsk1_33",
+      "gram_hsk1_03",
+      "gram_hsk1_04"
+    ],
+    "orderIndex": 22
+  },
+  {
+    "id": "lesson_24",
+    "lessonNumber": 24,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 6,
+    "title": "Bài 24: Kiểm tra định kỳ Tuần 6",
+    "titleVi": "Kiểm tra định kỳ Tuần 6 (Đồ vật & Cảm thán 太...了)",
+    "type": "checkpoint",
+    "description": "Đánh giá kỹ năng dùng lượng từ và phó từ.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_6",
+    "orderIndex": 23
+  },
+  {
+    "id": "lesson_25",
+    "lessonNumber": 25,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 7,
+    "title": "Bài 25: Thể thao & Giải trí cuối tuần",
+    "titleVi": "Thể thao & Vui chơi (打篮球, 踢足球, 听音乐, 看电影...)",
+    "type": "vocab",
+    "description": "Các sở thích và hoạt động thể thao nâng cao sức khỏe.",
+    "targetCountText": "15 từ mới",
+    "packId": "hsk1_pack13",
+    "orderIndex": 24
+  },
+  {
+    "id": "lesson_26",
+    "lessonNumber": 26,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 7,
+    "title": "Bài 26: Động từ 叫, 姓 & Cách hỏi 怎么",
+    "titleVi": "Ngữ pháp: Giới thiệu tên họ với 叫/姓 & Cách làm gì với 怎么 + Ôn từ Tuần 7",
+    "type": "grammar_review",
+    "description": "Thành thạo nghệ thuật tự giới thiệu bản thân và cách hỏi phương thức hành động.",
+    "targetCountText": "3 cấu trúc + Ôn 30 từ",
+    "packId": "hsk1_pack13",
+    "grammarTopicIds": [
+      "gram_hsk1_20",
+      "gram_hsk1_22",
+      "gram_hsk1_28"
+    ],
+    "orderIndex": 25
+  },
+  {
+    "id": "lesson_27",
+    "lessonNumber": 27,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 7,
+    "title": "Bài 27: Kiểm tra định kỳ Tuần 7",
+    "titleVi": "Kiểm tra định kỳ Tuần 7 (Tổng duyệt trước kỳ thi tốt nghiệp)",
+    "type": "checkpoint",
+    "description": "Rà soát toàn bộ các bẫy thường gặp của cấp độ HSK 1.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_7",
+    "orderIndex": 26
+  },
+  {
+    "id": "lesson_28",
+    "lessonNumber": 28,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 8,
+    "title": "Bài 28: Tổng ôn 497 Từ vựng & 40 Ngữ pháp HSK 1",
+    "titleVi": "Tổng ôn toàn diện 497 Từ vựng & 40 Chuyên đề Ngữ pháp Migii HSK 1",
+    "type": "grammar_review",
+    "description": "Luyện tập tổng hợp các cấu trúc cốt lõi, chuẩn bị tinh thần cho bài thi tốt nghiệp.",
+    "targetCountText": "Tổng ôn 40 cấu trúc & 500 từ",
+    "packId": "hsk1_pack1",
+    "grammarTopicIds": [
+      "gram_hsk1_31",
+      "gram_hsk1_01",
+      "gram_hsk1_14",
+      "gram_hsk1_40"
+    ],
+    "orderIndex": 27
+  },
+  {
+    "id": "lesson_29",
+    "lessonNumber": 29,
+    "stage": "hsk1",
+    "month": 2,
+    "week": 8,
+    "title": "Bài 29: 🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 1",
+    "titleVi": "🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 1 (Chuẩn cấu trúc đề thi chính thức 40 câu)",
+    "type": "graduation_mock",
+    "description": "Bài thi mô phỏng 100% chuẩn quốc tế CTI: 20 câu Nghe hiểu + 20 câu Đọc hiểu. Đạt từ 120/200 điểm để tốt nghiệp HSK 1!",
+    "targetCountText": "40 câu thi chính thức (120/200đ)",
+    "checkpointExamId": "mock_hsk1_official",
+    "orderIndex": 28
+  },
+  {
+    "id": "lesson_30",
+    "lessonNumber": 30,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 9,
+    "title": "Bài 30: HSK 2 - Chào hỏi, Xã giao & Giao tiếp",
+    "titleVi": "HSK 2 - Giao tiếp xã giao (您, 懂, 错, 事情, 告诉...)",
+    "type": "vocab",
+    "description": "Bắt đầu cấp độ HSK 2 với ngôn ngữ lịch sự, kính ngữ 您 và động từ giao tiếp.",
+    "targetCountText": "15 từ HSK 2 mới",
+    "packId": "hsk2_pack1",
+    "orderIndex": 29
+  },
+  {
+    "id": "lesson_31",
+    "lessonNumber": 31,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 9,
+    "title": "Bài 31: HSK 2 - Ngữ pháp Trợ từ 吧 & Động thái 正在...呢",
+    "titleVi": "Ngữ pháp HSK 2: Gợi ý/Đề nghị với 吧 & Đang làm gì với 正在...呢 + Ôn từ Tuần 9",
+    "type": "grammar_review",
+    "description": "Cách rủ rê đi đâu (\"我们走吧\") và diễn tả hành động đang diễn ra.",
+    "targetCountText": "2 cấu trúc + Ôn 30 từ HSK 2",
+    "packId": "hsk2_pack1",
+    "grammarTopicIds": [
+      "gram_hsk1_16",
+      "gram_14"
+    ],
+    "orderIndex": 30
+  },
+  {
+    "id": "lesson_32",
+    "lessonNumber": 32,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 9,
+    "title": "Bài 32: Kiểm tra định kỳ Tuần 9",
+    "titleVi": "Kiểm tra định kỳ Tuần 9 (HSK 2 Nhập môn)",
+    "type": "checkpoint",
+    "description": "Đánh giá khả năng bắt nhịp với từ vựng và câu HSK 2.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_8",
+    "orderIndex": 31
+  },
+  {
+    "id": "lesson_33",
+    "lessonNumber": 33,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 10,
+    "title": "Bài 33: HSK 2 - Công việc, Công ty & Văn phòng",
+    "titleVi": "HSK 2 - Công sở & Doanh nghiệp (公司, 上班, 帮助, 准备...)",
+    "type": "vocab",
+    "description": "Từ vựng thiết thực trong môi trường văn phòng và doanh nghiệp.",
+    "targetCountText": "15 từ HSK 2 mới",
+    "packId": "hsk2_pack2",
+    "orderIndex": 32
+  },
+  {
+    "id": "lesson_34",
+    "lessonNumber": 34,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 10,
+    "title": "Bài 34: HSK 2 - Câu so sánh chữ 比 & Mức độ 最/更",
+    "titleVi": "Ngữ pháp HSK 2: Câu so sánh hơn với 比 & So sánh nhất với 最 + Ôn từ Tuần 10",
+    "type": "grammar_review",
+    "description": "Nắm vững cấu trúc so sánh kinh điển: A 比 B + Tính từ (今天比昨天冷).",
+    "targetCountText": "2 cấu trúc + Ôn 30 từ",
+    "packId": "hsk2_pack2",
+    "grammarTopicIds": [
+      "gram_16",
+      "gram_17"
+    ],
+    "orderIndex": 33
+  },
+  {
+    "id": "lesson_35",
+    "lessonNumber": 35,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 10,
+    "title": "Bài 35: Kiểm tra định kỳ Tuần 10",
+    "titleVi": "Kiểm tra định kỳ Tuần 10 (Câu so sánh 比 & Mức độ 最)",
+    "type": "checkpoint",
+    "description": "Đánh giá kỹ năng đặt câu và dịch câu so sánh hơn trong tiếng Trung.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_9",
+    "orderIndex": 34
+  },
+  {
+    "id": "lesson_36",
+    "lessonNumber": 36,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 11,
+    "title": "Bài 36: HSK 2 - Du lịch, Di chuyển & Khách sạn",
+    "titleVi": "HSK 2 - Du lịch & Phương hướng (旅游, 机场, 火车站, 左边, 右边...)",
+    "type": "vocab",
+    "description": "Từ vựng phương hướng, sân bay, ga tàu và kinh nghiệm du lịch.",
+    "targetCountText": "15 từ HSK 2 mới",
+    "packId": "hsk2_pack3",
+    "orderIndex": 35
+  },
+  {
+    "id": "lesson_37",
+    "lessonNumber": 37,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 11,
+    "title": "Bài 37: HSK 2 - Trợ từ kinh nghiệm 过 & Trạng thái 着",
+    "titleVi": "Ngữ pháp HSK 2: Từng làm gì với 过 & Đang duy trì trạng thái với 着 + Ôn từ Tuần 11",
+    "type": "grammar_review",
+    "description": "Phân biệt đã từng làm (我去过北京) và trạng thái tiếp diễn (门开着呢).",
+    "targetCountText": "2 cấu trúc + Ôn 30 từ",
+    "packId": "hsk2_pack3",
+    "grammarTopicIds": [
+      "gram_13",
+      "gram_12"
+    ],
+    "orderIndex": 36
+  },
+  {
+    "id": "lesson_38",
+    "lessonNumber": 38,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 11,
+    "title": "Bài 38: Kiểm tra định kỳ Tuần 11",
+    "titleVi": "Kiểm tra định kỳ Tuần 11 (Kinh nghiệm 过 & Phương hướng)",
+    "type": "checkpoint",
+    "description": "Đánh giá kỹ năng dùng trợ từ động thái.",
+    "targetCountText": "15 câu kiểm tra",
+    "checkpointExamId": "milestone_periodic_10",
+    "orderIndex": 37
+  },
+  {
+    "id": "lesson_39",
+    "lessonNumber": 39,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 12,
+    "title": "Bài 39: HSK 2 - Liên từ phức 虽然...但是... & 因为...所以...",
+    "titleVi": "Ngữ pháp HSK 2: Cặp liên từ Tuy...Nhưng... & Vì...Nên... + Tổng ôn HSK 2",
+    "type": "grammar_review",
+    "description": "Biết cách ghép câu phức biểu thị nguyên nhân - kết quả và chuyển ý đối lập.",
+    "targetCountText": "2 cấu trúc câu phức + Tổng ôn 150 từ",
+    "packId": "hsk2_pack4",
+    "grammarTopicIds": [
+      "gram_20",
+      "gram_21"
+    ],
+    "orderIndex": 38
+  },
+  {
+    "id": "lesson_40",
+    "lessonNumber": 40,
+    "stage": "hsk2",
+    "month": 3,
+    "week": 12,
+    "title": "Bài 40: 🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 2",
+    "titleVi": "🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 2 (Đề thi mô phỏng chuẩn 60 câu CTI)",
+    "type": "graduation_mock",
+    "description": "Kỳ thi tốt nghiệp giai đoạn HSK 2: 35 câu Nghe + 25 câu Đọc hiểu. Đạt từ 120/200 điểm để tiến lên HSK 3!",
+    "targetCountText": "60 câu thi HSK 2 chính thức (120/200đ)",
+    "checkpointExamId": "mock_hsk2_official",
+    "orderIndex": 39
+  },
+  {
+    "id": "lesson_41",
+    "lessonNumber": 41,
+    "stage": "hsk3",
+    "month": 4,
+    "week": 13,
+    "title": "Bài 41: HSK 3 - Giao tiếp xã hội & Ứng xử",
+    "titleVi": "HSK 3 - Giao tiếp xã hội & Ứng xử",
+    "type": "vocab",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Giao tiếp xã hội & Ứng xử.",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack1",
+    "grammarTopicIds": [
+      "gram_23",
+      "gram_24"
+    ],
+    "orderIndex": 40
+  },
+  {
+    "id": "lesson_42",
+    "lessonNumber": 42,
+    "stage": "hsk3",
+    "month": 4,
+    "week": 14,
+    "title": "Bài 42: HSK 3 - Môi trường, Thời tiết & Tự nhiên",
+    "titleVi": "HSK 3 - Môi trường, Thời tiết & Tự nhiên",
+    "type": "grammar_review",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Môi trường, Thời tiết & Tự nhiên.",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack2",
+    "grammarTopicIds": [
+      "gram_25",
+      "gram_26"
+    ],
+    "orderIndex": 41
+  },
+  {
+    "id": "lesson_43",
+    "lessonNumber": 43,
+    "stage": "hsk3",
+    "month": 4,
+    "week": 15,
+    "title": "Bài 43: HSK 3 - Cảm xúc phức hợp & Tính cách",
+    "titleVi": "HSK 3 - Cảm xúc phức hợp & Tính cách",
+    "type": "vocab",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Cảm xúc phức hợp & Tính cách.",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack3",
+    "grammarTopicIds": [
+      "gram_27",
+      "gram_28"
+    ],
+    "orderIndex": 42
+  },
+  {
+    "id": "lesson_44",
+    "lessonNumber": 44,
+    "stage": "hsk3",
+    "month": 5,
+    "week": 17,
+    "title": "Bài 44: HSK 3 - Câu chữ 把 kinh điển (Xử lý đối tượng)",
+    "titleVi": "HSK 3 - Câu chữ 把 kinh điển (Xử lý đối tượng)",
+    "type": "grammar_review",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Câu chữ 把 kinh điển (Xử lý đối tượng).",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack4",
+    "grammarTopicIds": [
+      "gram_29",
+      "gram_30"
+    ],
+    "orderIndex": 43
+  },
+  {
+    "id": "lesson_45",
+    "lessonNumber": 45,
+    "stage": "hsk3",
+    "month": 5,
+    "week": 18,
+    "title": "Bài 45: HSK 3 - Câu chữ 被 (Bị động)",
+    "titleVi": "HSK 3 - Câu chữ 被 (Bị động)",
+    "type": "vocab",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Câu chữ 被 (Bị động).",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack5",
+    "grammarTopicIds": [
+      "gram_31",
+      "gram_32"
+    ],
+    "orderIndex": 44
+  },
+  {
+    "id": "lesson_46",
+    "lessonNumber": 46,
+    "stage": "hsk3",
+    "month": 5,
+    "week": 19,
+    "title": "Bài 46: HSK 3 - Bổ ngữ xu hướng kép & Bổ ngữ khả năng",
+    "titleVi": "HSK 3 - Bổ ngữ xu hướng kép & Bổ ngữ khả năng",
+    "type": "grammar_review",
+    "description": "Chuyên đề từ vựng & cấu trúc ngữ pháp HSK 3: Bổ ngữ xu hướng kép & Bổ ngữ khả năng.",
+    "targetCountText": "20 từ vựng hoặc 2 cấu trúc câu phức",
+    "packId": "hsk3_pack6",
+    "grammarTopicIds": [
+      "gram_33",
+      "gram_34"
+    ],
+    "orderIndex": 45
+  },
+  {
+    "id": "lesson_47",
+    "lessonNumber": 47,
+    "stage": "hsk3",
+    "month": 5,
+    "week": 20,
+    "title": "Bài 47: 🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 3",
+    "titleVi": "🏆 ĐẠI THI THỬ TỐT NGHIỆP HSK 3 (Đề thi mô phỏng chuẩn 80 câu CTI)",
+    "type": "graduation_mock",
+    "description": "Kỳ thi tốt nghiệp giai đoạn HSK 3: Nghe hiểu, Đọc hiểu đoạn văn dài & Hoàn thành câu viết.",
+    "targetCountText": "80 câu thi HSK 3 chính thức (180/300đ)",
+    "checkpointExamId": "mock_hsk3_official",
+    "orderIndex": 46
+  },
+  {
+    "id": "lesson_48",
+    "lessonNumber": 48,
+    "stage": "hsk4",
+    "month": 6,
+    "week": 21,
+    "title": "Bài 48: Chiến thuật Đọc hiểu đoạn văn dài HSK 4",
+    "titleVi": "Chiến thuật Đọc hiểu đoạn văn dài HSK 4",
+    "type": "vocab",
+    "description": "Luyện kỹ năng bắt từ khóa và tóm tắt đoạn văn nghị luận.",
+    "targetCountText": "Chuyên đề nâng cao",
+    "checkpointExamId": null,
+    "orderIndex": 47
+  },
+  {
+    "id": "lesson_49",
+    "lessonNumber": 49,
+    "stage": "hsk4",
+    "month": 6,
+    "week": 22,
+    "title": "Bài 49: Bẫy Ngữ pháp & Viết lại câu HSK 4",
+    "titleVi": "Bẫy Ngữ pháp & Viết lại câu HSK 4",
+    "type": "grammar_review",
+    "description": "Phân tích các bẫy liên từ, phó từ và trật tự câu nâng cao.",
+    "targetCountText": "Chuyên đề nâng cao",
+    "checkpointExamId": null,
+    "orderIndex": 48
+  },
+  {
+    "id": "lesson_50",
+    "lessonNumber": 50,
+    "stage": "hsk4",
+    "month": 6,
+    "week": 23,
+    "title": "Bài 50: Luyện đề thi thật THPTQG & HSK 4 (CTI)",
+    "titleVi": "Luyện đề thi thật THPTQG & HSK 4 (CTI)",
+    "type": "checkpoint",
+    "description": "Thực chiến bấm giờ giải đề thi tuyển sinh & chứng chỉ quốc tế.",
+    "targetCountText": "Chuyên đề nâng cao",
+    "checkpointExamId": null,
+    "orderIndex": 49
+  },
+  {
+    "id": "lesson_51",
+    "lessonNumber": 51,
+    "stage": "hsk4",
+    "month": 6,
+    "week": 24,
+    "title": "Bài 51: 🎓 ĐẠI THI TỐT NGHIỆP TOÀN BỘ LỘ TRÌNH 6 THÁNG HSK 4",
+    "titleVi": "🎓 ĐẠI THI TỐT NGHIỆP TOÀN BỘ LỘ TRÌNH 6 THÁNG HSK 4",
+    "type": "graduation_mock",
+    "description": "Đạt đỉnh cao phản xạ: 1200+ từ vựng cốt lõi, 252 cấu trúc ngữ pháp!",
+    "targetCountText": "Luyện đề thực chiến tốt nghiệp",
+    "checkpointExamId": "mock_hsk4_final",
+    "orderIndex": 50
+  }
+];

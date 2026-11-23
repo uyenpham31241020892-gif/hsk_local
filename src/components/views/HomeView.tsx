@@ -1,10 +1,12 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../../store/AppContext';
 import { allPacks } from '../../data';
+import { sixMonthRoadmap, type RoadmapLesson } from '../../data/roadmap_data';
 import { getStats } from '../../utils/srs';
 import { 
   BookOpen, Zap, TrendingUp, Settings, Award, 
-  CheckCircle, ChevronRight, Sliders, Check, CheckSquare, Cloud
+  CheckCircle, ChevronRight, Sliders, Check, CheckSquare, Cloud,
+  Compass, Calendar, Target, Flag, Play, Sparkles, Languages
 } from 'lucide-react';
 import { CloudSyncModal } from '../auth/CloudSyncModal';
 import { getSavedCloudAccount } from '../../utils/cloudSync';
@@ -13,6 +15,8 @@ export function HomeView() {
   const { state, navigate } = useApp();
   const { settings } = state.progress;
   const stats = getStats(state.progress);
+  const [viewMode, setViewMode] = useState<'roadmap' | 'packs'>('roadmap');
+  const [roadmapMonthFilter, setRoadmapMonthFilter] = useState<number | 'all'>('all');
   const [packStatusFilter, setPackStatusFilter] = useState<'all' | 'learning' | 'completed' | 'unlearned'>('all');
   const [displayCount, setDisplayCount] = useState(25);
   const [showCloudSync, setShowCloudSync] = useState(false);
@@ -66,6 +70,37 @@ export function HomeView() {
       return true;
     });
   }, [packStatsList, packStatusFilter]);
+
+  // Bộ lọc theo tháng cho Lộ trình 6 tháng
+  const filteredRoadmap = useMemo(() => {
+    return sixMonthRoadmap.filter(item => {
+      if (roadmapMonthFilter === 'all') return true;
+      if (roadmapMonthFilter === 45) return item.month === 4 || item.month === 5;
+      return item.month === roadmapMonthFilter;
+    });
+  }, [roadmapMonthFilter]);
+
+  const completedRoadmapCount = useMemo(() => {
+    return sixMonthRoadmap.filter(item => {
+      if (item.packId && state.progress.completedPacks?.includes(item.packId)) return true;
+      if (item.checkpointExamId && passedMilestones.has(item.checkpointExamId)) return true;
+      return false;
+    }).length;
+  }, [state.progress.completedPacks, passedMilestones]);
+
+  const roadmapPercent = Math.round((completedRoadmapCount / sixMonthRoadmap.length) * 100);
+
+  const handleRoadmapLessonClick = (lesson: RoadmapLesson) => {
+    if (lesson.type === 'checkpoint' || lesson.type === 'graduation_mock') {
+      navigate('checkpoint');
+    } else if (lesson.type === 'grammar_review') {
+      (window as any).__initialLessonTab = 'grammar';
+      navigate('lesson', lesson.packId || 'hsk1_pack1');
+    } else {
+      (window as any).__initialLessonTab = 'preview';
+      navigate('lesson', lesson.packId || 'hsk1_pack1');
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#FAF9F6] pb-24">
@@ -188,8 +223,184 @@ export function HomeView() {
           </span>
         </div>
 
-        {/* PACKS SECTION */}
-        <div id="packs-section" className="space-y-4 pt-1">
+        {/* VIEW MODE SWITCHER TABS: LỘ TRÌNH 6 THÁNG VS TOÀN BỘ BÀI HỌC */}
+        <div className="grid grid-cols-2 p-1.5 bg-[#e5e1d8]/60 rounded-2xl gap-1">
+          <button
+            onClick={() => setViewMode('roadmap')}
+            className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+              viewMode === 'roadmap'
+                ? 'bg-white text-[#1a1a1a] shadow-xs'
+                : 'text-[#6b7280] hover:text-[#1a1a1a]'
+            }`}
+          >
+            <Compass size={17} className={viewMode === 'roadmap' ? 'text-[#4a7c59]' : ''} />
+            <span>🗺️ Lộ Trình 6 Tháng HSK 1-4</span>
+          </button>
+
+          <button
+            onClick={() => setViewMode('packs')}
+            className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+              viewMode === 'packs'
+                ? 'bg-white text-[#1a1a1a] shadow-xs'
+                : 'text-[#6b7280] hover:text-[#1a1a1a]'
+            }`}
+          >
+            <BookOpen size={17} className={viewMode === 'packs' ? 'text-[#4a7c59]' : ''} />
+            <span>📚 Toàn Bộ Bài Học ({allPacks.length})</span>
+          </button>
+        </div>
+
+        {viewMode === 'roadmap' ? (
+          <div className="space-y-4 pt-1">
+            {/* Roadmap Progress Banner */}
+            <div className="bg-white border border-[#e5e1d8] rounded-3xl p-5 shadow-xs space-y-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-bold text-sm text-[#1a1a1a]">Tiến độ lộ trình 6 tháng (HSK 1 - HSK 4)</h3>
+                    <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
+                      {completedRoadmapCount} / {sixMonthRoadmap.length} bài xong
+                    </span>
+                  </div>
+                  <p className="text-xs text-[#6b7280] mt-0.5">
+                    Chu kỳ khoa học: <strong>2 Bài Từ Vựng ➔ 1 Bài Ngữ Pháp & Ôn Tập ➔ 1 Bài Kiểm Tra Định Kỳ ➔ Thi Tốt Nghiệp</strong>
+                  </p>
+                </div>
+                <span className="text-lg font-black text-[#4a7c59] bg-[#e8f0eb] px-3.5 py-1 rounded-2xl shadow-2xs">
+                  {roadmapPercent}%
+                </span>
+              </div>
+
+              <div className="h-2.5 bg-[#FAF9F6] border border-[#e5e1d8] rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-[#4a7c59] rounded-full transition-all duration-700" 
+                  style={{ width: `${roadmapPercent}%` }} 
+                />
+              </div>
+            </div>
+
+            {/* Month Filter Tabs */}
+            <div className="flex gap-1.5 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+              {[
+                { id: 'all', label: `Tất cả (${sixMonthRoadmap.length} bài)` },
+                { id: 1, label: 'Tháng 1: HSK 1 Cơ bản (Bài 1-16)' },
+                { id: 2, label: 'Tháng 2: HSK 1 Tốt nghiệp (Bài 17-32)' },
+                { id: 3, label: 'Tháng 3: HSK 2 Đời sống (Bài 33-42)' },
+                { id: 45, label: 'Tháng 4-5: HSK 3 Bứt phá (Bài 43-47)' },
+                { id: 6, label: 'Tháng 6: HSK 4 Đề thi (Bài 48-51)' },
+              ].map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setRoadmapMonthFilter(tab.id as any)}
+                  className={`px-3 py-1.5 rounded-xl whitespace-nowrap transition-all ${
+                    roadmapMonthFilter === tab.id
+                      ? 'bg-[#4a7c59] text-white shadow-2xs font-bold'
+                      : 'bg-white border border-[#e5e1d8] text-[#6b7280] hover:bg-[#FAF9F6]'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Roadmap Lessons List */}
+            <div className="space-y-3">
+              {filteredRoadmap.map((lesson) => {
+                const isPackDone = lesson.packId && state.progress.completedPacks?.includes(lesson.packId);
+                const isExamDone = lesson.checkpointExamId && passedMilestones.has(lesson.checkpointExamId);
+                const isCompleted = isPackDone || isExamDone;
+
+                const typeCls = 
+                  lesson.type === 'vocab' ? 'bg-emerald-100 text-emerald-800' :
+                  lesson.type === 'grammar_review' ? 'bg-indigo-100 text-indigo-800' :
+                  lesson.type === 'checkpoint' ? 'bg-amber-100 text-amber-800' :
+                  'bg-rose-100 text-rose-800';
+
+                const typeLabel = 
+                  lesson.type === 'vocab' ? '📖 Học từ mới' :
+                  lesson.type === 'grammar_review' ? '📐 Ngữ pháp + Ôn từ' :
+                  lesson.type === 'checkpoint' ? '📝 Kiểm tra định kỳ' :
+                  '🏆 Đại thi tốt nghiệp';
+
+                return (
+                  <div
+                    key={lesson.id}
+                    onClick={() => handleRoadmapLessonClick(lesson)}
+                    className={`rounded-3xl border p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 cursor-pointer transition-all shadow-xs group ${
+                      isCompleted 
+                        ? 'border-emerald-300 bg-emerald-50/20 hover:border-emerald-500' 
+                        : 'border-[#e5e1d8] bg-white hover:border-[#4a7c59]'
+                    }`}
+                  >
+                    <div className="flex items-start sm:items-center gap-3.5 flex-1 min-w-0">
+                      {/* Step Circle */}
+                      <div className={`w-12 h-12 rounded-2xl flex flex-col items-center justify-center shrink-0 font-bold transition-all ${
+                        isCompleted
+                          ? 'bg-emerald-600 text-white shadow-xs'
+                          : lesson.type === 'graduation_mock'
+                          ? 'bg-amber-500 text-white shadow-xs'
+                          : 'bg-[#e8f0eb] text-[#4a7c59]'
+                      }`}>
+                        {isCompleted ? (
+                          <Check size={22} />
+                        ) : (
+                          <>
+                            <span className="text-[10px] uppercase font-mono leading-none">Bài</span>
+                            <span className="text-base font-black leading-tight">{lesson.lessonNumber}</span>
+                          </>
+                        )}
+                      </div>
+
+                      <div className="flex-1 min-w-0 space-y-1">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${typeCls}`}>
+                            {typeLabel}
+                          </span>
+                          <span className="text-[10px] font-bold text-[#6b7280] bg-[#FAF9F6] border border-[#e5e1d8] px-2 py-0.5 rounded-md">
+                            Tuần {lesson.week} · Tháng {lesson.month} · {lesson.stage.toUpperCase()}
+                          </span>
+                          <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
+                            🎯 {lesson.targetCountText}
+                          </span>
+                        </div>
+
+                        <h4 className="font-bold text-sm sm:text-base text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
+                          {lesson.titleVi}
+                        </h4>
+
+                        <p className="text-xs text-[#6b7280] line-clamp-2 leading-relaxed">
+                          {lesson.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex sm:flex-col items-center sm:items-end justify-between shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-[#f0eee9]">
+                      <span className={`text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition-colors ${
+                        isCompleted
+                          ? 'bg-emerald-100 text-emerald-800'
+                          : 'bg-[#4a7c59] text-white shadow-xs group-hover:bg-[#3d6b4a]'
+                      }`}>
+                        {isCompleted ? (
+                          <>
+                            <CheckCircle size={14} />
+                            <span>Đã hoàn thành</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Vào học bài</span>
+                            <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                          </>
+                        )}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          /* PACKS SECTION */
+          <div id="packs-section" className="space-y-4 pt-1">
           {/* Active Settings Filter Badge */}
           <div className="flex items-center justify-between text-xs bg-[#e8f0eb]/70 border border-[#4a7c59]/20 p-2.5 px-3.5 rounded-2xl">
             <span className="text-[#4a7c59] font-medium flex items-center gap-1.5">
@@ -449,6 +660,7 @@ export function HomeView() {
             )}
           </div>
         </div>
+      )}
       </div>
 
       <CloudSyncModal isOpen={showCloudSync} onClose={() => setShowCloudSync(false)} />

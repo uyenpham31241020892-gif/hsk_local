@@ -26,9 +26,12 @@ export function getRandomSentence(vocab: VocabEntry): ExampleSentence | null {
   return allSentences[idx];
 }
 
-/** Generate distractor options (wrong answers) */
+/** Generate distractor options (wrong answers) strictly respecting the question's HSK level */
 export function getDistractors(vocab: VocabEntry[], correct: VocabEntry, field: 'meaning' | 'simplified' | 'pinyin', count = 3): string[] {
-  const pool = vocab.filter(v => v.id !== correct.id);
+  const correctLevel = correct.hsk2Level || correct.hsk3Level || 1;
+  // STRICT: Tuyệt đối không chọn từ vựng cấp cao hơn cấp độ của câu hỏi (tránh lấy từ HSK 2 cho đề HSK 1)
+  const sameLevelPool = vocab.filter(v => v.id !== correct.id && ((v.hsk2Level || v.hsk3Level || 1) <= correctLevel));
+  const pool = sameLevelPool.length >= count ? sameLevelPool : vocab.filter(v => v.id !== correct.id);
   return pickRandom(pool, count).map(v => v[field] ?? '');
 }
 
@@ -69,7 +72,12 @@ function buildFlashcard(vocab: VocabEntry): Exercise {
 }
 
 function buildCharRecognition(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
-  const options = makeOptions(vocab.meaning, getDistractors(allVocab, vocab, 'meaning'));
+  const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
+  const levelFilteredVocab = allVocab.filter(v => (v.hsk2Level || v.hsk3Level || 1) <= userLevel);
+  const options = makeOptions(
+    vocab.meaning, 
+    getDistractors(levelFilteredVocab.length >= 4 ? levelFilteredVocab : allVocab, vocab, 'meaning')
+  );
   return {
     type: 'char_recognition',
     vocabId: vocab.id,
@@ -570,4 +578,156 @@ export function diffChars(typed: string, correct: string): Array<{ char: string;
     char: ch,
     correct: typed[i] === ch,
   }));
+}
+
+// Bảng từ gây nhiễu ngữ pháp chuyên biệt (Grammar Distractor Map)
+const GRAMMAR_DISTRACTOR_MAP: Record<string, string[]> = {
+  '没': ['不', '别', '未'],
+  '没有': ['不有', '不是', '别有'],
+  '不': ['没', '别', '无'],
+  '不要': ['不想要', '没要', '别想'],
+  '的': ['得', '地', '着'],
+  '在': ['有', '是', '去'],
+  '有': ['在', '是', '要'],
+  '和': ['跟', '还是', '或者'],
+  '还是': ['或者', '和', '也'],
+  '或者': ['还是', '和', '且'],
+  '吗': ['呢', '吧', '啊'],
+  '呢': ['吗', '吧', '呀'],
+  '吧': ['吗', '呢', '了'],
+  '会': ['能', '可以', '想'],
+  '能': ['会', '可以', '要'],
+  '可以': ['能', '会', '行'],
+  '个': ['只', '本', '件'],
+  '岁': ['年', '月', '号'],
+  '两': ['二', '双', '个'],
+  '二': ['两', '几', '多'],
+  '太': ['很', '非常', '真'],
+  '都': ['也', '还', '常'],
+  '也': ['都', '还', '又'],
+  '叫': ['姓', '是', '有'],
+  '姓': ['叫', '名', '是'],
+  '去': ['来', '在', '到'],
+  '要': ['想', '会', '爱'],
+  '想': ['要', '爱', '愿'],
+  '比': ['跟', '同', '和'],
+  '了': ['着', '过', '在'],
+  '过': ['了', '着', '过'],
+  '把': ['被', '给', '让'],
+  '被': ['把', '叫', '给'],
+};
+
+/**
+ * Xây dựng bộ bài tập thực hành ngữ pháp chuyên sâu (5-6 câu):
+ * Bao gồm:
+ * 1. Sắp xếp câu đúng cấu trúc ngữ pháp (Word Scramble)
+ * 2. Điền trợ từ / từ khóa ngữ pháp vào ô trống (Cloze test)
+ * 3. Luyện dịch câu áp dụng ngữ pháp (Translation)
+ */
+export function buildGrammarExercises(
+  topic: {
+    id: string;
+    title: string;
+    structure?: string;
+    meaning?: string;
+    usage?: string;
+    notes?: string[];
+    examples?: { zh: string; pinyin: string; vi: string }[];
+  },
+  allVocab: VocabEntry[]
+): Exercise[] {
+  const exercises: Exercise[] = [];
+  const examples = (topic.examples && topic.examples.length > 0)
+    ? topic.examples
+    : [{ zh: '我学中文。', pinyin: 'Wǒ xué Zhōngwén.', vi: 'Tôi học tiếng Trung.' }];
+
+  // 1. Sắp xếp câu đúng trật tự ngữ pháp (Word Scramble) cho các câu ví dụ
+  examples.forEach((ex) => {
+    const cleanSentence = ex.zh.replace(/[。！？，、]/g, '');
+    let words = segmentChineseSentence(cleanSentence);
+    if (words.length <= 1) {
+      words = cleanSentence.split('').filter(Boolean);
+    }
+    if (words.length >= 2) {
+      let scrambled = shuffle([...words]);
+      if (scrambled.join('') === words.join('') && words.length > 1) {
+        scrambled = [words[words.length - 1], ...words.slice(0, words.length - 1)];
+      }
+      exercises.push({
+        type: 'word_scramble',
+        vocabId: topic.id,
+        question: {
+          prompt: `Sắp xếp thành câu đúng theo cấu trúc: ${topic.structure || topic.title}\n"${ex.vi}"`,
+          promptPinyin: ex.pinyin,
+          sentence: ex.vi,
+          words: scrambled,
+          audioText: ex.zh,
+        },
+        answer: {
+          correct: words,
+          explanation: `Cấu trúc: ${topic.structure || topic.title}\nCâu chuẩn: ${ex.zh} (${ex.pinyin})`,
+        },
+      });
+    }
+  });
+
+  // 2. Điền từ/trợ từ ngữ pháp vào ô trống (Cloze Test)
+  examples.forEach((ex) => {
+    const zhMatches = (topic.structure || topic.title).match(/[\u4e00-\u9fff]+/g) || [];
+    let targetKeyword = zhMatches.find(kw => kw.length <= 4 && ex.zh.includes(kw));
+    if (!targetKeyword && zhMatches.length > 0) {
+      targetKeyword = zhMatches[0];
+    }
+
+    if (targetKeyword && ex.zh.includes(targetKeyword)) {
+      const maskedZh = ex.zh.replace(targetKeyword, '___');
+      const distractors = GRAMMAR_DISTRACTOR_MAP[targetKeyword] || ['不', '没', '是', '在'].filter(d => d !== targetKeyword);
+      const options = makeOptions(targetKeyword, distractors.slice(0, 3));
+
+      exercises.push({
+        type: 'cloze',
+        vocabId: topic.id,
+        question: {
+          prompt: maskedZh,
+          promptPinyin: ex.pinyin,
+          sentence: ex.vi,
+          options,
+          audioText: ex.zh,
+        },
+        answer: {
+          correct: targetKeyword,
+          explanation: `Đáp án đúng là "${targetKeyword}". Cấu trúc: ${topic.structure || topic.title}.\n${ex.zh} (${ex.pinyin}): ${ex.vi}`,
+        },
+      });
+    }
+  });
+
+  // 3. Luyện dịch Việt - Trung áp dụng ngữ pháp (Translation)
+  if (examples.length > 0) {
+    const ex = examples[0];
+    const clean = ex.zh.replace(/[。！？，、]/g, '');
+    const tokens = segmentChineseSentence(clean);
+    const level1Vocab = allVocab.filter(v => (v.hsk2Level || 1) <= 1);
+    const distractors = pickRandom(level1Vocab, 2).map(v => v.simplified);
+    const chips = shuffle([...tokens, ...distractors]);
+
+    exercises.push({
+      type: 'translation',
+      vocabId: topic.id,
+      question: {
+        prompt: `Dịch câu sang tiếng Trung (áp dụng cấu trúc ${topic.structure || topic.title}):\n"${ex.vi}"`,
+        promptPinyin: ex.pinyin,
+        sentence: ex.vi,
+        options: chips,
+        audioText: ex.zh,
+      },
+      answer: {
+        correct: ex.zh,
+        explanation: `${ex.zh} (${ex.pinyin}) = ${ex.vi}`,
+      },
+    });
+  }
+
+  // Shuffle & giới hạn 5 câu bài tập mỗi lần luyện để không bị ngấy
+  return exercises.length > 0 ? shuffle(exercises).slice(0, 5) : [];
 }
