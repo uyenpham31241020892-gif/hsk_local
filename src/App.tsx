@@ -22,6 +22,7 @@ import { BottomNav } from './components/navigation/BottomNav';
 
 function AppInner() {
   const { state } = useApp();
+  const chineseFont = state.progress.settings.chineseFont || 'kaiti';
 
   const renderView = () => {
     switch (state.view) {
@@ -48,7 +49,10 @@ function AppInner() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6]">
+    <div 
+      className={`min-h-screen bg-[#FAF9F6] font-chinese-${chineseFont}`}
+      data-chinese-font={chineseFont}
+    >
       {renderView()}
       <BottomNav />
     </div>

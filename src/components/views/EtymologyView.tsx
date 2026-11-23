@@ -89,7 +89,7 @@ export function EtymologyView() {
                 Gốc âm (Thanh phù cốt lõi)
               </span>
               <div className="flex items-center justify-center gap-3">
-                <span className="chinese-char text-6xl font-light text-[#1a1a1a]">
+                <span className="chinese-char text-6xl font-normal text-[#1a1a1a]">
                   {selectedFamily.rootChar}
                 </span>
                 <button
@@ -178,7 +178,7 @@ export function EtymologyView() {
                   {/* 2 Characters Side by Side */}
                   <div className="grid grid-cols-2 gap-3 text-center">
                     <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-[#e5e1d8] space-y-1">
-                      <span className="chinese-char text-5xl font-light text-[#1a1a1a] block">
+                      <span className="chinese-char text-5xl font-normal text-[#1a1a1a] block">
                         {pair.char1}
                       </span>
                       <p className="text-sm font-bold text-[#4a7c59]">{pair.pinyin1}</p>
@@ -192,7 +192,7 @@ export function EtymologyView() {
                     </div>
 
                     <div className="bg-[#FAF9F6] p-4 rounded-2xl border border-[#e5e1d8] space-y-1">
-                      <span className="chinese-char text-5xl font-light text-[#1a1a1a] block">
+                      <span className="chinese-char text-5xl font-normal text-[#1a1a1a] block">
                         {pair.char2}
                       </span>
                       <p className="text-sm font-bold text-amber-600">{pair.pinyin2}</p>

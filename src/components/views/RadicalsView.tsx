@@ -246,7 +246,7 @@ export function RadicalsView() {
           {/* Top navigation buttons (Trước / Sau) */}
           <div className="flex items-center justify-between border-b border-[#e5e1d8] pb-4">
             <div className="flex items-baseline gap-3">
-              <span className="chinese-char text-6xl font-light text-[#1a1a1a]">
+              <span className="chinese-char text-6xl font-normal text-[#1a1a1a]">
                 {selectedRadical.char}
               </span>
               {selectedRadical.variant && (

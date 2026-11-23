@@ -209,7 +209,7 @@ export function TranslatorView() {
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <span className="chinese-char text-3xl font-light text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
+                    <span className="chinese-char text-3xl font-normal text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
                       {tok.char}
                     </span>
                     <p className="text-sm font-bold text-[#4a7c59] mt-0.5">{tok.pinyin}</p>

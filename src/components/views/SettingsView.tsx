@@ -214,8 +214,48 @@ export function SettingsView() {
           </div>
         </Section>
 
-        {/* 4. Display Toggles */}
-        <Section title="4. Tùy chọn hiển thị & Luyện tập" sub="Điều chỉnh trải nghiệm làm bài tập và flashcard">
+        {/* 4. Chinese Font Selection */}
+        <Section title="4. Kiểu Font Chữ Hán" sub="Chọn phông chữ hiển thị cho toàn bộ từ vựng, flashcard và bài tập">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+            {[
+              { id: 'kaiti', title: 'Khải Thể (KaiTi)', sub: 'Chuẩn SGK & Thư pháp', sample: '谢谢 你好' },
+              { id: 'serif', title: 'Tống Thể (Noto Serif)', sub: 'Trang nhã, thanh đậm', sample: '谢谢 你好' },
+              { id: 'sans', title: 'Hắc Thể (Noto Sans)', sub: 'Hiện đại, nét đều', sample: '谢谢 你好' },
+            ].map(item => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => update({ chineseFont: item.id as any }, `Font: ${item.title}`)}
+                className={`p-3.5 rounded-2xl border text-left transition-all flex flex-col justify-between ${
+                  (s.chineseFont || 'kaiti') === item.id
+                    ? 'bg-emerald-50 border-[#4a7c59] ring-2 ring-[#4a7c59]/20 shadow-xs'
+                    : 'border-[#e5e1d8] bg-white hover:border-[#4a7c59]/50'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#1a1a1a]">{item.title}</span>
+                  {(s.chineseFont || 'kaiti') === item.id && <span className="text-xs text-[#4a7c59] font-bold">✓ Đang dùng</span>}
+                </div>
+                <p className="text-[11px] text-[#6b7280] mt-0.5">{item.sub}</p>
+                <p 
+                  className="text-2xl mt-3 text-[#1a1a1a] select-none"
+                  style={{
+                    fontFamily: item.id === 'kaiti'
+                      ? "'LXGW WenKai Screen', 'KaiTi', 'STKaiti', serif"
+                      : item.id === 'serif'
+                      ? "'Noto Serif SC', 'Songti SC', serif"
+                      : "'Noto Sans SC', 'PingFang SC', sans-serif"
+                  }}
+                >
+                  {item.sample}
+                </p>
+              </button>
+            ))}
+          </div>
+        </Section>
+
+        {/* 5. Display Toggles */}
+        <Section title="5. Tùy chọn hiển thị & Luyện tập" sub="Điều chỉnh trải nghiệm làm bài tập và flashcard">
           <div className="space-y-3">
             <Toggle
               label="Hiển thị Pinyin trước"
@@ -238,8 +278,8 @@ export function SettingsView() {
           </div>
         </Section>
 
-        {/* 5. Daily Goal */}
-        <Section title={`5. Mục tiêu học hàng ngày: ${s.dailyGoal} từ / ngày`} sub="Được tính vào tiến độ theo dõi mỗi ngày">
+        {/* 6. Daily Goal */}
+        <Section title={`6. Mục tiêu học hàng ngày: ${s.dailyGoal} từ / ngày`} sub="Được tính vào tiến độ theo dõi mỗi ngày">
           <input
             type="range" min="5" max="100" step="5"
             value={s.dailyGoal}

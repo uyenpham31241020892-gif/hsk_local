@@ -69,7 +69,7 @@ export function CharRecognition({ exercise, speechRate, showPinyin: showPinyinPr
           </button>
         </div>
 
-        <span className="chinese-char text-6xl font-light text-[#1a1a1a] leading-none my-2">
+        <span className="chinese-char text-6xl font-normal text-[#1a1a1a] leading-none my-2">
           {exercise.question.prompt}
         </span>
 

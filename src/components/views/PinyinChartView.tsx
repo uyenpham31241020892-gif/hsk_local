@@ -237,7 +237,7 @@ export function PinyinChartView() {
                       className="p-4 bg-[#FAF9F6] border border-[#e5e1d8] rounded-2xl flex items-center justify-between cursor-pointer hover:border-sky-500 hover:bg-white transition-all"
                     >
                       <div>
-                        <span className="chinese-char text-3xl font-light text-[#1a1a1a]">{ex.zh}</span>
+                        <span className="chinese-char text-3xl font-normal text-[#1a1a1a]">{ex.zh}</span>
                         <p className="text-xs font-bold text-sky-700">{ex.pinyin}</p>
                         <p className="text-xs text-[#6b7280]">{ex.vi}</p>
                       </div>

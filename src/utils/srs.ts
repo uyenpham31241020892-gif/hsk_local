@@ -10,6 +10,7 @@ const defaultSettings: UserSettings = {
   showPinyinFirst: false,
   enableStrokeOrder: true,
   blindMode: false,
+  chineseFont: 'kaiti',
 };
 
 export function loadProgress(): UserProgress {

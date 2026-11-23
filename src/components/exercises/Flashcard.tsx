@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import type { VocabEntry } from '../../types';
 import { speak } from '../../utils/exercises';
 import { Volume2, RotateCcw, Lightbulb, ChevronRight, CheckCircle2, Eye, EyeOff } from 'lucide-react';
+import { useApp } from '../../store/AppContext';
 
 interface FlashcardProps {
   vocab: VocabEntry;
@@ -14,9 +15,20 @@ interface FlashcardProps {
 }
 
 export function Flashcard({ vocab, speechRate, showPinyinFirst, showPinyin: showPinyinProp, onTogglePinyin, onGrade, onNext }: FlashcardProps) {
+  const { state, dispatch } = useApp();
+  const currentFont = state.progress.settings.chineseFont || 'kaiti';
+
   const [flipped, setFlipped] = useState(false);
   const [showTip, setShowTip] = useState(false);
   const [graded, setGraded] = useState(false);
+
+  const handleCycleFont = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    const nextFont = currentFont === 'kaiti' ? 'serif' : currentFont === 'serif' ? 'sans' : 'kaiti';
+    dispatch({ type: 'UPDATE_SETTINGS', settings: { chineseFont: nextFont } });
+  };
+
+  const fontLabel = currentFont === 'kaiti' ? 'Khải Thể (SGK)' : currentFont === 'serif' ? 'Tống Thể' : 'Hắc Thể';
 
   const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
     const saved = localStorage.getItem('hsk_exercise_show_pinyin');
@@ -65,6 +77,16 @@ export function Flashcard({ vocab, speechRate, showPinyinFirst, showPinyin: show
         <div className={`card-inner ${flipped ? 'flipped' : ''}`} style={{ height: '100%' }}>
           {/* Front */}
           <div className="card-face bg-white rounded-2xl border border-[#e5e1d8] shadow-sm flex flex-col items-center justify-center p-8 gap-3 relative">
+            {/* Quick font toggle pill on top-left */}
+            <button
+              type="button"
+              onClick={handleCycleFont}
+              className="absolute top-3.5 left-3.5 px-2 py-1 rounded-xl text-xs font-medium border bg-[#FAF9F6] border-[#e5e1d8] hover:border-[#4a7c59] text-[#6b7280] hover:text-[#1a1a1a] flex items-center gap-1 transition-all shadow-2xs z-10"
+              title="Bấm để chuyển font chữ Hán: Khải thể (SGK) ⇄ Tống thể (Serif) ⇄ Hắc thể (Sans)"
+            >
+              <span>🔤 {fontLabel}</span>
+            </button>
+
             {/* Quick toggle pill on the card */}
             <button
               type="button"
@@ -83,7 +105,7 @@ export function Flashcard({ vocab, speechRate, showPinyinFirst, showPinyin: show
             {isPinyinVisible && showPinyinFirst && (
               <p className="text-[#4a7c59] text-lg tracking-widest font-medium">{vocab.pinyin}</p>
             )}
-            <span className="chinese-char text-7xl font-light text-[#1a1a1a] leading-none select-none">
+            <span className="chinese-char text-7xl font-normal text-[#1a1a1a] leading-none select-none">
               {vocab.simplified}
             </span>
             {/* Pinyin always visible below when enabled */}

@@ -109,7 +109,7 @@ export function MeasureWordsView() {
         <div className="bg-white rounded-3xl border border-[#e5e1d8] p-6 space-y-4 shadow-sm slide-up">
           <div className="flex items-center justify-between border-b border-[#e5e1d8] pb-3">
             <div className="flex items-baseline gap-3">
-              <span className="chinese-char text-5xl font-light text-[#1a1a1a]">
+              <span className="chinese-char text-5xl font-normal text-[#1a1a1a]">
                 {selectedMw.char}
               </span>
               <div>

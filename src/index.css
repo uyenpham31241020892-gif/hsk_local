@@ -1,5 +1,6 @@
-/* Google Fonts – phải đứng trước @import tailwindcss */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Google Fonts & Web Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css');
 
 @import "tailwindcss";
 
@@ -19,8 +20,10 @@
   body {
     background-color: var(--bg-paper);
     color: var(--text-ink);
-    font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   * {
@@ -28,10 +31,29 @@
   }
 }
 
-/* Chinese character font */
+/* Chinese character font stacks */
 
-.chinese-char {
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', serif;
+/* 1. Mặc định: Khải thể (KaiTi) chuẩn sách giáo khoa, thư pháp thanh thoát tự nhiên */
+.chinese-char,
+.font-chinese-kaiti .chinese-char,
+[data-chinese-font="kaiti"] .chinese-char {
+  font-family: 'LXGW WenKai Screen', 'KaiTi', 'STKaiti', 'BiauKai', '楷体', 'Noto Serif SC', serif;
+  font-feature-settings: "palt";
+  letter-spacing: 0.02em;
+}
+
+/* 2. Tống thể (Songti / Serif) trang nhã, nét thanh nét đậm chuẩn văn học */
+.font-chinese-serif .chinese-char,
+[data-chinese-font="serif"] .chinese-char {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'SimSun', serif;
+  letter-spacing: 0.02em;
+}
+
+/* 3. Hắc thể (Sans) hiện đại, nét đều không chân */
+.font-chinese-sans .chinese-char,
+[data-chinese-font="sans"] .chinese-char {
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  letter-spacing: 0.02em;
 }
 
 /* Card flip animation */

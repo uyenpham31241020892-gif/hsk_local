@@ -89,6 +89,7 @@ export interface UserSettings {
   showPinyinFirst: boolean;
   enableStrokeOrder: boolean;
   blindMode: boolean;       // hide stroke hints
+  chineseFont?: 'kaiti' | 'serif' | 'sans';
 }
 
 // Study modes
