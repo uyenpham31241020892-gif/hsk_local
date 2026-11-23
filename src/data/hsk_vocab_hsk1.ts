@@ -1,6 +1,5 @@
 import type { VocabEntry } from '../types';
 
-// HSK 1 Toàn diện (Chuẩn HSK 3.0 - 497 từ sắp xếp theo thứ tự lộ trình sư phạm bài bản)
 export const hsk1Vocab: VocabEntry[] = [
   {
     "id": "v268",
@@ -366,9 +365,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是朋友。",
-        "pinyin": "Wǒmen shì péngyou.",
-        "vi": "Chúng tôi là bạn bè."
+        "zh": "我们是学生。",
+        "pinyin": "Wǒmen shì xuéshēng.",
+        "vi": "Chúng tôi là học sinh."
       }
     ],
     "tags": [
@@ -498,9 +497,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "中国好。",
-        "pinyin": "Zhōngguó hǎo.",
-        "vi": "Trung Quốc rất tốt."
+        "zh": "中国很好。",
+        "pinyin": "Zhōngguó hěn hǎo.",
+        "vi": "Trung Quốc rất đẹp/tốt."
       }
     ],
     "tags": [
@@ -652,9 +651,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她是学生。",
-        "pinyin": "Tā shì xuéshēng.",
-        "vi": "Cô ấy là học sinh."
+        "zh": "她是老师。",
+        "pinyin": "Tā shì lǎoshī.",
+        "vi": "Cô ấy là giáo viên."
       }
     ],
     "tags": [
@@ -696,9 +695,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "两个人。",
-        "pinyin": "Liǎng gè rén.",
-        "vi": "Hai người."
+        "zh": "一、二、三。",
+        "pinyin": "Yī, èr, sān.",
+        "vi": "Một, hai, ba."
       }
     ],
     "tags": [
@@ -764,7 +763,7 @@ export const hsk1Vocab: VocabEntry[] = [
       {
         "zh": "五个老师。",
         "pinyin": "Wǔ gè lǎoshī.",
-        "vi": "Năm thầy cô giáo."
+        "vi": "Năm giáo viên."
       }
     ],
     "tags": [
@@ -896,7 +895,7 @@ export const hsk1Vocab: VocabEntry[] = [
       {
         "zh": "一零一。",
         "pinyin": "Yī líng yī.",
-        "vi": "Số một không một (101)."
+        "vi": "Một không một (101)."
       }
     ],
     "tags": [
@@ -982,9 +981,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "两个人。",
-        "pinyin": "Liǎng gè rén.",
-        "vi": "Hai người."
+        "zh": "他是第一，我是第二。",
+        "pinyin": "Tā shì dì-yī, wǒ shì dì-èr.",
+        "vi": "Anh ấy thứ nhất, tôi thứ hai."
       }
     ],
     "tags": [
@@ -1006,7 +1005,7 @@ export const hsk1Vocab: VocabEntry[] = [
       {
         "zh": "他是我的爸爸。",
         "pinyin": "Tā shì wǒ de bàba.",
-        "vi": "Ông ấy là ba của tôi."
+        "vi": "Ông ấy là bố tôi."
       }
     ],
     "tags": [
@@ -1028,7 +1027,7 @@ export const hsk1Vocab: VocabEntry[] = [
       {
         "zh": "她是我的妈妈。",
         "pinyin": "Tā shì wǒ de māma.",
-        "vi": "Bà ấy là mẹ của tôi."
+        "vi": "Bà ấy là mẹ tôi."
       }
     ],
     "tags": [
@@ -1048,9 +1047,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一个哥哥。",
-        "pinyin": "Wǒ yǒu yí gè gēge.",
-        "vi": "Tôi có một người anh trai."
+        "zh": "他是我的哥哥。",
+        "pinyin": "Tā shì wǒ de gēge.",
+        "vi": "Anh ấy là anh trai tôi."
       }
     ],
     "tags": [
@@ -1092,9 +1091,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一个弟弟。",
-        "pinyin": "Wǒ yǒu yí gè dìdi.",
-        "vi": "Tôi có một người em trai."
+        "zh": "他有一个弟弟。",
+        "pinyin": "Tā yǒu yí gè dìdi.",
+        "vi": "Anh ấy có một người em trai."
       }
     ],
     "tags": [
@@ -1114,9 +1113,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有两个妹妹。",
-        "pinyin": "Wǒ yǒu liǎng gè mèimei.",
-        "vi": "Tôi có hai người em gái."
+        "zh": "我有一个妹妹。",
+        "pinyin": "Wǒ yǒu yí gè mèimei.",
+        "vi": "Tôi có một người em gái."
       }
     ],
     "tags": [
@@ -1180,9 +1179,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "孩子们在公园玩儿。",
-        "pinyin": "Háizimen zài gōngyuán wánr",
-        "vi": "Mấy đứa trẻ đang chơi trong công viên."
+        "zh": "我家有两个孩子。",
+        "pinyin": "Wǒ jiā yǒu liǎng gè háizi.",
+        "vi": "Nhà tôi có hai đứa con."
       }
     ],
     "tags": [
@@ -1202,8 +1201,8 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有四个人。",
-        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "zh": "我家有四口人。",
+        "pinyin": "Wǒ jiā yǒu sì kǒu rén.",
         "vi": "Nhà tôi có bốn người."
       }
     ],
@@ -1224,9 +1223,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "他们是我的家人。",
+        "pinyin": "Tāmen shì wǒ de jiārén.",
+        "vi": "Họ là người nhà của tôi."
       }
     ],
     "tags": [
@@ -1312,9 +1311,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我用盐水漱口。\n\n出口在左边，不要走错了。",
-        "pinyin": "Wǒ yòng yánshuǐ shù kǒu\n\nChūkǒu zài zuǒbiān, bùyào zǒu cuò le",
-        "vi": "Tôi dùng nước muối để súc miệng.\n\nCửa ra ở bên trái, đừng đi sai nhé."
+        "zh": "我家有五口人。",
+        "pinyin": "Wǒ jiā yǒu wǔ kǒu rén.",
+        "vi": "Nhà tôi có năm người."
       }
     ],
     "tags": [
@@ -1334,9 +1333,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天的天气很好。",
-        "pinyin": "Jīntiān de tiānqì hěn hǎo",
-        "vi": "Thời tiết hôm nay rất đẹp."
+        "zh": "今天是星期一。",
+        "pinyin": "Jīntiān shì xīngqīyī.",
+        "vi": "Hôm nay là thứ hai."
       }
     ],
     "tags": [
@@ -1356,9 +1355,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "明天是星期几？",
-        "pinyin": "Míngtiān shì xīngqī jǐ",
-        "vi": "Ngày mai là thứ mấy?"
+        "zh": "明天见！",
+        "pinyin": "Míngtiān jiàn!",
+        "vi": "Ngày mai gặp lại!"
       }
     ],
     "tags": [
@@ -1378,9 +1377,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "昨天天气很好，我们去公园了。",
-        "pinyin": "Zuótiān tiānqì hěn hǎo, wǒmen qù gōngyuán le",
-        "vi": "Hôm qua thời tiết rất đẹp, chúng tôi đã đi công viên."
+        "zh": "昨天是星期天。",
+        "pinyin": "Zuótiān shì xīngqītiān.",
+        "vi": "Hôm qua là chủ nhật."
       }
     ],
     "tags": [
@@ -1400,9 +1399,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今年是2025年。",
-        "pinyin": "Jīnnián shì 2025 nián",
-        "vi": "Năm nay là năm 2025."
+        "zh": "今年好。",
+        "pinyin": "Jīnnián hǎo.",
+        "vi": "Năm nay thuận lợi."
       }
     ],
     "tags": [
@@ -1422,9 +1421,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "明年我想去中国。",
-        "pinyin": "Míngnián wǒ xiǎng qù Zhōngguó",
-        "vi": "Năm sau tôi muốn đi Trung Quốc."
+        "zh": "明年见。",
+        "pinyin": "Míngnián jiàn.",
+        "vi": "Năm sau gặp lại."
       }
     ],
     "tags": [
@@ -1444,9 +1443,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "去年我买了一辆新车。",
-        "pinyin": "Qùnián wǒ mǎi le yī liàng xīnchē",
-        "vi": "Năm ngoái tôi đã mua một chiếc xe mới."
+        "zh": "去年他是学生。",
+        "pinyin": "Qùnián tā shì xuéshēng.",
+        "vi": "Năm ngoái anh ấy là học sinh."
       }
     ],
     "tags": [
@@ -1466,9 +1465,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今年的二月有二十九天。\n\n今天的月亮很漂亮。",
-        "pinyin": "Jīnnián de èryuè yǒu èrshíjiǔ tiān\n\nJīntiān de yuèliàng hěn piàoliang",
-        "vi": "Tháng Hai năm nay có 29 ngày.\n\nMặt trăng hôm nay rất đẹp."
+        "zh": "现在是八月。",
+        "pinyin": "Xiànzài shì bā yuè.",
+        "vi": "Bây giờ là tháng tám."
       }
     ],
     "tags": [
@@ -1488,9 +1487,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他的生日在六月。\n\n日出的时候很美。",
-        "pinyin": "Tā de shēngrì zài liù yuè\n\nRì chū de shíhòu hěn měi",
-        "vi": "Ngày sinh nhật của anh ấy vào tháng sáu.\n\nLúc mặt trời mọc rất đẹp."
+        "zh": "今天是一月一日。",
+        "pinyin": "Jīntiān shì yī yuè yī rì.",
+        "vi": "Hôm nay là ngày một tháng một."
       }
     ],
     "tags": [
@@ -1510,9 +1509,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的房间号是多少？",
-        "pinyin": "Nǐ de fángjiān hào shì duōshǎo",
-        "vi": "Số phòng của bạn là bao nhiêu?"
+        "zh": "今天是五号。",
+        "pinyin": "Jīntiān shì wǔ hào.",
+        "vi": "Hôm nay là ngày mùng năm."
       }
     ],
     "tags": [
@@ -1532,9 +1531,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个星期很忙。",
-        "pinyin": "Zhège xīngqī hěn máng",
-        "vi": "Tuần này rất bận."
+        "zh": "这个星期。",
+        "pinyin": "Zhè gè xīngqī.",
+        "vi": "Tuần này."
       }
     ],
     "tags": [
@@ -1554,9 +1553,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我现在就去做。",
-        "pinyin": "Wǒ xiànzài jiù qù zuò",
-        "vi": "Tôi đi làm bây giờ đây."
+        "zh": "现在几点？",
+        "pinyin": "Xiànzài jǐ diǎn?",
+        "vi": "Bây giờ mấy giờ?"
       }
     ],
     "tags": [
@@ -1576,9 +1575,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们去那个点看看。",
-        "pinyin": "Wǒmen qù nàgè diǎn kàn kàn",
-        "vi": "Chúng ta đi đến chỗ đó xem thử."
+        "zh": "现在八点。",
+        "pinyin": "Xiànzài bā diǎn.",
+        "vi": "Bây giờ tám giờ."
       }
     ],
     "tags": [
@@ -1598,9 +1597,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "现在六点半。\n\n我们在半路上遇到了他。",
-        "pinyin": "Xiànzài liù diǎn bàn\n\nWǒmen zài bàn lùshàng yù dàole tā",
-        "vi": "Bây giờ là 6 giờ rưỡi.\n\nChúng tôi đã gặp anh ấy giữa đường."
+        "zh": "现在八点半。",
+        "pinyin": "Xiànzài bā diǎn bàn.",
+        "vi": "Bây giờ tám rưỡi."
       }
     ],
     "tags": [
@@ -1620,9 +1619,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "早上空气很好。",
-        "pinyin": "Zǎoshang kōngqì hěn hǎo",
-        "vi": "Không khí buổi sáng rất tốt."
+        "zh": "早上好！",
+        "pinyin": "Zǎoshang hǎo!",
+        "vi": "Chào buổi sáng!"
       }
     ],
     "tags": [
@@ -1642,9 +1641,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "晚上我们一起去看电影吧。",
-        "pinyin": "Wǎnshàng wǒmen yìqǐ qù kàn diànyǐng ba",
-        "vi": "Buổi tối chúng ta cùng đi xem phim nhé."
+        "zh": "晚上好！",
+        "pinyin": "Wǎnshang hǎo!",
+        "vi": "Chào buổi tối!"
       }
     ],
     "tags": [
@@ -1664,9 +1663,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们学校很大。",
-        "pinyin": "Wǒmen xuéxiào hěn dà",
-        "vi": "Trường của chúng tôi rất lớn."
+        "zh": "他在学校。",
+        "pinyin": "Tā zài xuéxiào.",
+        "vi": "Anh ấy ở trường học."
       }
     ],
     "tags": [
@@ -1686,9 +1685,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他生病了，要去医院。",
-        "pinyin": "Tā shēngbìng le, yào qù yīyuàn",
-        "vi": "Anh ấy bị ốm, cần đến bệnh viện."
+        "zh": "她在医院。",
+        "pinyin": "Tā zài yīyuàn.",
+        "vi": "Cô ấy ở bệnh viện."
       }
     ],
     "tags": [
@@ -1708,9 +1707,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个商店很大。",
-        "pinyin": "Zhège shāngdiàn hěn dà",
-        "vi": "Cửa hàng này rất lớn."
+        "zh": "商店很大。",
+        "pinyin": "Shāngdiàn hěn dà.",
+        "vi": "Cửa hàng rất to."
       }
     ],
     "tags": [
@@ -1730,9 +1729,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这家饭店的菜很好吃。",
-        "pinyin": "Zhè jiā fàndiàn de cài hěn hǎochī",
-        "vi": "Đồ ăn của nhà hàng này rất ngon."
+        "zh": "他在饭店。",
+        "pinyin": "Tā zài fàndiàn.",
+        "vi": "Anh ấy ở quán ăn."
       }
     ],
     "tags": [
@@ -1753,7 +1752,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "这是我的房间。",
-        "pinyin": "Zhè shì wǒ de fángjiān",
+        "pinyin": "Zhè shì wǒ de fángjiān.",
         "vi": "Đây là phòng của tôi."
       }
     ],
@@ -1774,9 +1773,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他们买了一套新房子。",
-        "pinyin": "Tāmen mǎi le yī tào xīn fángzi",
-        "vi": "Họ đã mua một căn nhà mới."
+        "zh": "这个房子很大。",
+        "pinyin": "Zhè gè fángzi hěn dà.",
+        "vi": "Ngôi nhà này rất lớn."
       }
     ],
     "tags": [
@@ -1796,9 +1795,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "书在桌子上。",
-        "pinyin": "Shū zài zhuōzi shàng",
-        "vi": "Quyển sách ở trên bàn."
+        "zh": "桌子上。",
+        "pinyin": "Zhuōzi shàng.",
+        "vi": "Ở trên bàn."
       }
     ],
     "tags": [
@@ -1818,9 +1817,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "上有父母，下有儿女。",
-        "pinyin": "Shàng yǒu fùmǔ, xià yǒu érnǚ",
-        "vi": "Trên có cha mẹ, dưới có con cái."
+        "zh": "楼下。",
+        "pinyin": "Lóuxià.",
+        "vi": "Ở dưới lầu."
       }
     ],
     "tags": [
@@ -1840,9 +1839,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "房间里有很多书。",
-        "pinyin": "Fángjiān lǐ yǒu hěn duō shū",
-        "vi": "Trong phòng có rất nhiều sách."
+        "zh": "学校里。",
+        "pinyin": "Xuéxiào lǐ.",
+        "vi": "Ở trong trường học."
       }
     ],
     "tags": [
@@ -1862,9 +1861,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们去外面吃饭吧。",
-        "pinyin": "Wǒmen qù wàimiàn chīfàn ba",
-        "vi": "Chúng ta ra ngoài ăn đi."
+        "zh": "外面冷。",
+        "pinyin": "Wàimiàn lěng.",
+        "vi": "Bên ngoài trời lạnh."
       }
     ],
     "tags": [
@@ -1884,9 +1883,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你来这儿看看吧。",
-        "pinyin": "Nǐ lái zhèr kànkan ba",
-        "vi": "Bạn đến chỗ này xem thử đi."
+        "zh": "他在这儿。",
+        "pinyin": "Tā zài zhèr.",
+        "vi": "Anh ấy ở đây."
       }
     ],
     "tags": [
@@ -1906,9 +1905,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你要去那儿做什么？",
-        "pinyin": "Nǐ yào qù nàr zuò shénme",
-        "vi": "Bạn muốn đến đó làm gì?"
+        "zh": "学校在那儿。",
+        "pinyin": "Xuéxiào zài nàr.",
+        "vi": "Trường học ở đằng kia."
       }
     ],
     "tags": [
@@ -1928,9 +1927,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "那部电影是在哪儿拍的？",
-        "pinyin": "Nà bù diànyǐng shì zài nǎr pāi de",
-        "vi": "Bộ phim đó được quay ở đâu vậy?"
+        "zh": "你在哪儿？",
+        "pinyin": "Nǐ zài nǎr?",
+        "vi": "Bạn ở đâu?"
       }
     ],
     "tags": [
@@ -1950,9 +1949,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在家看电视。",
-        "pinyin": "Wǒ zài jiā kàn diànshì",
-        "vi": "Tôi ở nhà xem tivi."
+        "zh": "我在家。",
+        "pinyin": "Wǒ zài jiā.",
+        "vi": "Tôi ở nhà."
       }
     ],
     "tags": [
@@ -1972,9 +1971,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他是这个地方的人。",
-        "pinyin": "Tā shì zhège dìfāng de rén",
-        "vi": "Anh ấy là người bản địa."
+        "zh": "这个地方很好。",
+        "pinyin": "Zhè gè dìfang hěn hǎo.",
+        "vi": "Nơi này rất tốt."
       }
     ],
     "tags": [
@@ -1994,9 +1993,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天都吃米饭。",
-        "pinyin": "Wǒ měitiān dōu chī mǐfàn",
-        "vi": "Ngày nào tôi cũng ăn cơm."
+        "zh": "我吃米饭。",
+        "pinyin": "Wǒ chī mǐfàn.",
+        "vi": "Tôi ăn cơm."
       }
     ],
     "tags": [
@@ -2016,9 +2015,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我想喝水。",
-        "pinyin": "Wǒ xiǎng hē shuǐ",
-        "vi": "Tôi muốn uống nước."
+        "zh": "请喝水。",
+        "pinyin": "Qǐng hē shuǐ.",
+        "vi": "Xin mời uống nước."
       }
     ],
     "tags": [
@@ -2038,9 +2037,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢喝茶。",
-        "pinyin": "Wǒ xǐhuān hē chá",
-        "vi": "Tôi thích uống trà."
+        "zh": "老师喝茶。",
+        "pinyin": "Lǎoshī hē chá.",
+        "vi": "Thầy cô uống trà."
       }
     ],
     "tags": [
@@ -2060,9 +2059,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这碗面条儿很好吃。",
-        "pinyin": "Zhè wǎn miàntiáor hěn hǎochī",
-        "vi": "Tô mì này rất ngon."
+        "zh": "我吃面条儿。",
+        "pinyin": "Wǒ chī miàntiáor.",
+        "vi": "Tôi ăn mì sợi."
       }
     ],
     "tags": [
@@ -2082,9 +2081,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天的菜很好吃。",
-        "pinyin": "Jīntiān de cài hěn hǎo chī",
-        "vi": "Món ăn của hôm nay rất ngon."
+        "zh": "这个菜好吃。",
+        "pinyin": "Zhè gè cài hǎochī.",
+        "vi": "Món ăn này rất ngon."
       }
     ],
     "tags": [
@@ -2104,9 +2103,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我买了一些鸡蛋。",
-        "pinyin": "Wǒ mǎi le yīxiē jīdàn",
-        "vi": "Tôi đã mua một vài quả trứng."
+        "zh": "我吃鸡蛋。",
+        "pinyin": "Wǒ chī jīdàn.",
+        "vi": "Tôi ăn trứng gà."
       }
     ],
     "tags": [
@@ -2126,9 +2125,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你想吃面包吗？",
-        "pinyin": "Nǐ xiǎng chī miànbāo ma",
-        "vi": "Bạn có muốn ăn bánh mì không?"
+        "zh": "他吃面包。",
+        "pinyin": "Tā chī miànbāo.",
+        "vi": "Anh ấy ăn bánh mì."
       }
     ],
     "tags": [
@@ -2148,9 +2147,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我今天早上吃了两个包子。",
-        "pinyin": "Wǒ jīntiān zǎoshang chī le liǎng gè bāozǐ",
-        "vi": "Sáng nay tôi đã ăn 2 cái bánh bao."
+        "zh": "吃包子。",
+        "pinyin": "Chī bāozi.",
+        "vi": "Ăn bánh bao."
       }
     ],
     "tags": [
@@ -2170,9 +2169,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢喝牛奶。",
-        "pinyin": "Wǒ xǐhuan hē niúnǎi",
-        "vi": "Tôi thích uống sữa."
+        "zh": "喝牛奶。",
+        "pinyin": "Hē niúnǎi.",
+        "vi": "Uống sữa bò."
       }
     ],
     "tags": [
@@ -2192,9 +2191,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天都吃水果。",
-        "pinyin": "Wǒ měitiān dōu chī shuǐguǒ",
-        "vi": "Tôi ăn trái cây mỗi ngày."
+        "zh": "吃水果。",
+        "pinyin": "Chī shuǐguǒ.",
+        "vi": "Ăn hoa quả."
       }
     ],
     "tags": [
@@ -2214,9 +2213,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢吃苹果。",
-        "pinyin": "Wǒ xǐhuan chī píngguǒ",
-        "vi": "Tôi thích ăn táo."
+        "zh": "请吃！",
+        "pinyin": "Qǐng chī!",
+        "vi": "Xin mời ăn!"
       }
     ],
     "tags": [
@@ -2236,9 +2235,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天早上都喝咖啡。",
-        "pinyin": "Wǒ měitiān zǎoshang dōu hē kāfēi",
-        "vi": "Mỗi sáng tôi đều uống cà phê."
+        "zh": "请喝！",
+        "pinyin": "Qǐng hē!",
+        "vi": "Xin mời uống!"
       }
     ],
     "tags": [
@@ -2258,9 +2257,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "米饭很好吃。",
+        "pinyin": "Mǐfàn hěn hǎochī.",
+        "vi": "Cơm rất ngon."
       }
     ],
     "tags": [
@@ -2280,9 +2279,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我口渴了，想喝水。",
-        "pinyin": "Wǒ kǒu kě le, xiǎng hē shuǐ",
-        "vi": "Tôi khát nước rồi, muốn uống nước."
+        "zh": "我渴了，我想喝水。",
+        "pinyin": "Wǒ kě le, wǒ xiǎng hē shuǐ.",
+        "vi": "Tôi khát rồi, tôi muốn uống nước."
       }
     ],
     "tags": [
@@ -2302,9 +2301,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我现在很饿。",
-        "pinyin": "Wǒ xiànzài hěn è",
-        "vi": "Bây giờ tôi rất đói."
+        "zh": "我饿了，我想吃米饭。",
+        "pinyin": "Wǒ è le, wǒ xiǎng chī mǐfàn.",
+        "vi": "Tôi đói rồi, tôi muốn ăn cơm."
       }
     ],
     "tags": [
@@ -2324,9 +2323,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我没钱。",
-        "pinyin": "Wǒ méi qián",
-        "vi": "Tôi không có tiền."
+        "zh": "这个多少钱？",
+        "pinyin": "Zhè gè duōshǎo qián?",
+        "vi": "Cái này bao nhiêu tiền?"
       }
     ],
     "tags": [
@@ -2346,9 +2345,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢吃糖块儿。",
-        "pinyin": "Wǒ xǐhuan chī táng kuàir",
-        "vi": "Tôi thích ăn kẹo viên."
+        "zh": "五块钱。",
+        "pinyin": "Wǔ kuài qián.",
+        "vi": "Năm đồng (tệ)."
       }
     ],
     "tags": [
@@ -2368,9 +2367,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我想买一件衣服。",
-        "pinyin": "Wǒ xiǎng mǎi yí jiàn yīfu",
-        "vi": "Tôi muốn mua một cái áo."
+        "zh": "我买水果。",
+        "pinyin": "Wǒ mǎi shuǐguǒ.",
+        "vi": "Tôi mua hoa quả."
       }
     ],
     "tags": [
@@ -2390,9 +2389,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这件衣服太贵了。",
-        "pinyin": "Zhè jiàn yīfu tài guì le",
-        "vi": "Bộ quần áo này quá đắt!"
+        "zh": "这个太贵了！",
+        "pinyin": "Zhè gè tài guì le!",
+        "vi": "Cái này đắt quá!"
       }
     ],
     "tags": [
@@ -2412,9 +2411,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "吃东西的时候不要说话。",
-        "pinyin": "Chī dōngxi de shíhòu bùyào shuōhuà",
-        "vi": "Không nên nói chuyện khi đang ăn."
+        "zh": "去买东西。",
+        "pinyin": "Qù mǎi dōngxi.",
+        "vi": "Đi mua đồ."
       }
     ],
     "tags": [
@@ -2434,9 +2433,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这件衣服很漂亮。",
-        "pinyin": "Zhè jiàn yīfu hěn piàoliang",
-        "vi": "Bộ quần áo này rất đẹp."
+        "zh": "买衣服。",
+        "pinyin": "Mǎi yīfu.",
+        "vi": "Mua quần áo."
       }
     ],
     "tags": [
@@ -2456,9 +2455,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天我穿了件新衣服。",
-        "pinyin": "Jīntiān wǒ chuān le jiàn xīn yīfu",
-        "vi": "Hôm nay tôi mặc quần áo mới."
+        "zh": "穿新衣服。",
+        "pinyin": "Chuān xīn yīfu.",
+        "vi": "Mặc quần áo mới."
       }
     ],
     "tags": [
@@ -2478,9 +2477,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "买一些水果。",
+        "pinyin": "Mǎi yìxiē shuǐguǒ.",
+        "vi": "Mua một ít hoa quả."
       }
     ],
     "tags": [
@@ -2500,9 +2499,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你见过哪些名人？",
-        "pinyin": "Nǐ jiànguò nǎxiē míngrén",
-        "vi": "Bạn đã gặp những người nổi tiếng nào?"
+        "zh": "哪些东西？",
+        "pinyin": "Nǎxiē dōngxi?",
+        "vi": "Những món đồ nào?"
       }
     ],
     "tags": [
@@ -2522,9 +2521,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个地方真美。",
-        "pinyin": "Zhège dìfāng zhēn měi",
-        "vi": "Nơi này thật đẹp!"
+        "zh": "真好！",
+        "pinyin": "Zhēn hǎo!",
+        "vi": "Thật là tốt!"
       }
     ],
     "tags": [
@@ -2544,9 +2543,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我买了一个新手机。",
-        "pinyin": "Wǒ mǎi le yī gè xīn shǒujī",
-        "vi": "Tôi đã mua một chiếc điện thoại mới."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -2566,9 +2565,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我的钱包不见了。",
-        "pinyin": "Wǒ de qiánbāo bú jiàn le",
-        "vi": "Ví tiền của tôi bị mất rồi."
+        "zh": "这是我的钱包。",
+        "pinyin": "Zhè shì wǒ de qiánbāo.",
+        "vi": "Đây là ví tiền của tôi."
       }
     ],
     "tags": [
@@ -2588,9 +2587,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们去商场买衣服吧。",
-        "pinyin": "Wǒmen qù shāngchǎng mǎi yīfú ba",
-        "vi": "Chúng ta đi trung tâm thương mại mua quần áo đi."
+        "zh": "他在商场买东西。",
+        "pinyin": "Tā zài shāngchǎng mǎi dōngxi.",
+        "vi": "Anh ấy mua đồ ở trung tâm thương mại."
       }
     ],
     "tags": [
@@ -2610,9 +2609,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢去书店。",
-        "pinyin": "Wǒ xǐhuan qù shūdiàn",
-        "vi": "Tôi thích đi nhà sách."
+        "zh": "我去书店买书。",
+        "pinyin": "Wǒ qù shūdiàn mǎi shū.",
+        "vi": "Tôi đi hiệu sách mua sách."
       }
     ],
     "tags": [
@@ -2632,9 +2631,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这本书五十元。",
-        "pinyin": "Zhè běn shū wǔshí yuán",
-        "vi": "Cuốn sách này giá 50 tệ."
+        "zh": "十元。",
+        "pinyin": "Shí yuán.",
+        "vi": "Mười tệ."
       }
     ],
     "tags": [
@@ -2654,9 +2653,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我第一次坐飞机时特别开心。",
-        "pinyin": "Wǒ dì yī cì zuò fēijī shí tèbié kāixīn",
-        "vi": "Lần đầu tiên tôi đi máy bay, tôi rất vui mừng."
+        "zh": "坐飞机去北京。",
+        "pinyin": "Zuò fēijī qù Běijīng.",
+        "vi": "Đi máy bay đến Bắc Kinh."
       }
     ],
     "tags": [
@@ -2676,9 +2675,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我坐火车去北京。",
-        "pinyin": "Wǒ zuò huǒchē qù Běijīng",
-        "vi": "Tôi đi Bắc Kinh bằng tàu hỏa."
+        "zh": "坐火车。",
+        "pinyin": "Zuò huǒchē.",
+        "vi": "Đi tàu hỏa."
       }
     ],
     "tags": [
@@ -2698,9 +2697,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这辆汽车是我爸爸的。",
-        "pinyin": "Zhè liàng qìchē shì wǒ bàba de",
-        "vi": "Hai chiếc ô tô này là của bố tôi."
+        "zh": "坐汽车。",
+        "pinyin": "Zuò qìchē.",
+        "vi": "Đi xe ô tô."
       }
     ],
     "tags": [
@@ -2720,9 +2719,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们开车去旅行。",
-        "pinyin": "Wǒmen kāichē qù lǚxíng",
-        "vi": "Chúng tôi lái xe đi du lịch."
+        "zh": "开车去学校。",
+        "pinyin": "Kāi chē qù xuéxiào.",
+        "vi": "Lái xe đến trường."
       }
     ],
     "tags": [
@@ -2742,9 +2741,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "车站离这里不远。",
-        "pinyin": "Chēzhàn lí zhè lǐ bù yuǎn",
-        "vi": "Trạm xe cách đây không xa."
+        "zh": "他在车站等你。",
+        "pinyin": "Tā zài chēzhàn děng nǐ.",
+        "vi": "Anh ấy ở bến xe đợi bạn."
       }
     ],
     "tags": [
@@ -2764,9 +2763,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他去机场接朋友。",
-        "pinyin": "Tā qù jīchǎng jiē péngyǒu",
-        "vi": "Anh ấy đến sân bay đón bạn."
+        "zh": "去机场。",
+        "pinyin": "Qù jīchǎng.",
+        "vi": "Đi sân bay."
       }
     ],
     "tags": [
@@ -2786,9 +2785,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请坐这里，老师马上来。",
-        "pinyin": "Qǐng zuò zhèlǐ, lǎoshī mǎshàng lái",
-        "vi": "Mời ngồi đây, thầy giáo sẽ đến ngay."
+        "zh": "请坐！",
+        "pinyin": "Qǐng zuò!",
+        "vi": "Xin mời ngồi!"
       }
     ],
     "tags": [
@@ -2808,9 +2807,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他正在学开车。",
-        "pinyin": "Tā zhèngzài xué kāichē",
-        "vi": "Anh ấy đang học lái xe."
+        "zh": "开门。",
+        "pinyin": "Kāi mén.",
+        "vi": "Mở cửa."
       }
     ],
     "tags": [
@@ -2828,7 +2827,13 @@ export const hsk1Vocab: VocabEntry[] = [
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "爸爸开车。",
+        "pinyin": "Bàba kāi chē.",
+        "vi": "Bố lái xe."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
@@ -2846,9 +2851,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们打车去机场。",
-        "pinyin": "Wǒmen dǎ chē qù jīchǎng",
-        "vi": "Chúng ta bắt xe đến sân bay."
+        "zh": "我们打车去吧。",
+        "pinyin": "Wǒmen dǎ chē qù ba.",
+        "vi": "Chúng ta bắt taxi đi nhé."
       }
     ],
     "tags": [
@@ -2868,9 +2873,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们一起走吧，太晚了。",
-        "pinyin": "Wǒmen yīqǐ zǒu ba, tài wǎn le",
-        "vi": "Chúng ta cùng đi thôi, trễ quá rồi."
+        "zh": "我们走吧。",
+        "pinyin": "Wǒmen zǒu ba.",
+        "vi": "Chúng ta đi thôi."
       }
     ],
     "tags": [
@@ -2890,9 +2895,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他吃完饭就去了。",
-        "pinyin": "Tā chī wán fàn jiù qù le",
-        "vi": "Anh ấy ăn xong rồi đi ngay."
+        "zh": "你去哪儿？",
+        "pinyin": "Nǐ qù nǎr?",
+        "vi": "Bạn đi đâu đấy?"
       }
     ],
     "tags": [
@@ -2912,9 +2917,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天六点回家。",
-        "pinyin": "Wǒ měitiān liù diǎn huí jiā",
-        "vi": "Tôi về nhà lúc 6 giờ mỗi ngày."
+        "zh": "回家。",
+        "pinyin": "Huí jiā.",
+        "vi": "Về nhà."
       }
     ],
     "tags": [
@@ -2934,9 +2939,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有四个人。",
-        "pinyin": "Wǒ jiā yǒu sì gè rén.",
-        "vi": "Nhà tôi có bốn người."
+        "zh": "妈妈回家了。",
+        "pinyin": "Māma huí jiā le.",
+        "vi": "Mẹ về nhà rồi."
       }
     ],
     "tags": [
@@ -2956,9 +2961,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们到达了目的地。",
-        "pinyin": "Wǒmen dàodá le mùdìdì",
-        "vi": "Chúng ta đã đến nơi."
+        "zh": "他到学校了。",
+        "pinyin": "Tā dào xuéxiào le.",
+        "vi": "Anh ấy đến trường rồi."
       }
     ],
     "tags": [
@@ -2978,9 +2983,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个房子很大。",
-        "pinyin": "Zhège fángzi hěn dà",
-        "vi": "Căn nhà này rất lớn."
+        "zh": "这个苹果很大。",
+        "pinyin": "Zhè gè píngguǒ hěn dà.",
+        "vi": "Quả táo này rất to."
       }
     ],
     "tags": [
@@ -3000,9 +3005,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这只狗很小，很可爱。",
-        "pinyin": "Zhè zhī gǒu hěn xiǎo, hěn kě'ài",
-        "vi": "Con chó này rất nhỏ, rất đáng yêu."
+        "zh": "那个猫很小。",
+        "pinyin": "Nà gè māo hěn xiǎo.",
+        "vi": "Con mèo kia rất nhỏ."
       }
     ],
     "tags": [
@@ -3022,9 +3027,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "多少人？",
-        "pinyin": "Duōshǎo rén?",
-        "vi": "Bao nhiêu người?"
+        "zh": "学校里人很多。",
+        "pinyin": "Xuéxiào lǐ rén hěn duō.",
+        "vi": "Trong trường học rất đông người."
       }
     ],
     "tags": [
@@ -3044,9 +3049,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "多少人？",
-        "pinyin": "Duōshǎo rén?",
-        "vi": "Bao nhiêu người?"
+        "zh": "这里的车很少。",
+        "pinyin": "Zhèlǐ de chē hěn shǎo.",
+        "vi": "Xe ở đây rất ít."
       }
     ],
     "tags": [
@@ -3066,9 +3071,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "外面很冷，多穿点衣服。",
-        "pinyin": "Wàimiàn hěn lěng, duō chuān diǎn yīfu",
-        "vi": "Bên ngoài rất lạnh, mặc thêm áo vào."
+        "zh": "今天天气很冷。",
+        "pinyin": "Jīntiān tiānqì hěn lěng.",
+        "vi": "Thời tiết hôm nay rất lạnh."
       }
     ],
     "tags": [
@@ -3088,9 +3093,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天的天气很热。",
-        "pinyin": "Jīntiān de tiānqì hěn rè",
-        "vi": "Thời tiết của hôm nay rất nóng."
+        "zh": "今天很热，喝水吧。",
+        "pinyin": "Jīntiān hěn rè, hē shuǐ ba.",
+        "vi": "Hôm nay rất nóng, uống nước đi."
       }
     ],
     "tags": [
@@ -3110,9 +3115,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "火车快要来了。",
-        "pinyin": "Huǒchē kuài yào lái le",
-        "vi": "Tàu hỏa sắp đến rồi."
+        "zh": "火车很快。",
+        "pinyin": "Huǒchē hěn kuài.",
+        "vi": "Tàu hỏa chạy rất nhanh."
       }
     ],
     "tags": [
@@ -3132,9 +3137,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请说慢一点儿。",
-        "pinyin": "Qǐng shuō màn yìdiǎnr",
-        "vi": "Xin hãy nói chậm một chút."
+        "zh": "走慢点儿。",
+        "pinyin": "Zǒu màn diǎnr.",
+        "vi": "Đi chậm một chút nhé."
       }
     ],
     "tags": [
@@ -3154,9 +3159,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家离学校很远。",
-        "pinyin": "Wǒ jiā lí xuéxiào hěn yuǎn",
-        "vi": "Nhà tôi cách trường học rất xa."
+        "zh": "学校不远。",
+        "pinyin": "Xuéxiào bù yuǎn.",
+        "vi": "Trường học không xa."
       }
     ],
     "tags": [
@@ -3176,9 +3181,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我买了一件新衣服。",
-        "pinyin": "Wǒ mǎi le yí jiàn xīn yīfú",
-        "vi": "Tôi đã mua một bộ quần áo mới."
+        "zh": "这是我的新书。",
+        "pinyin": "Zhè shì wǒ de xīn shū.",
+        "vi": "Đây là quyển sách mới của tôi."
       }
     ],
     "tags": [
@@ -3198,9 +3203,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的答案是对的。",
-        "pinyin": "Nǐ de dá'àn shì duì de",
-        "vi": "Câu trả lời của bạn là đúng."
+        "zh": "你说得很对。",
+        "pinyin": "Nǐ shuō de hěn duì.",
+        "vi": "Bạn nói rất đúng."
       }
     ],
     "tags": [
@@ -3220,9 +3225,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你做错了。",
-        "pinyin": "Nǐ zuò cuò le",
-        "vi": "Bạn làm sai rồi."
+        "zh": "这个字写错了。",
+        "pinyin": "Zhè gè zì xiě cuò le.",
+        "vi": "Chữ này viết sai rồi."
       }
     ],
     "tags": [
@@ -3242,9 +3247,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天的课文很长， 生词很多。",
-        "pinyin": "Jīntiān de kèwén hěn cháng, shēngcí hěnduō",
-        "vi": "Hôm nay bài khoá rất dài, nên từ mới rất nhiều."
+        "zh": "我很好，谢谢！",
+        "pinyin": "Wǒ hěn hǎo, xièxie!",
+        "vi": "Tôi rất khỏe, cảm ơn!"
       }
     ],
     "tags": [
@@ -3264,9 +3269,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个地方非常漂亮。",
-        "pinyin": "Zhège dìfāng fēicháng piàoliang",
-        "vi": "Nơi này cực kỳ đẹp."
+        "zh": "今天我非常高兴。",
+        "pinyin": "Jīntiān wǒ fēicháng gāoxìng.",
+        "vi": "Hôm nay tôi vô cùng vui mừng."
       }
     ],
     "tags": [
@@ -3287,7 +3292,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "这件衣服很漂亮。",
-        "pinyin": "Zhè jiàn yīfu hěn piàoliang",
+        "pinyin": "Zhè jiàn yīfu hěn piàoliang.",
         "vi": "Bộ quần áo này rất đẹp."
       }
     ],
@@ -3308,9 +3313,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "书在桌子上，你看见了吗？",
-        "pinyin": "Shū zài zhuōzi shàng, nǐ kànjiàn le ma",
-        "vi": "Quyển sách ở trên bàn, bạn thấy chưa?"
+        "zh": "书在桌子上。",
+        "pinyin": "Shū zài zhuōzi shàng.",
+        "vi": "Sách ở trên bàn."
       }
     ],
     "tags": [
@@ -3330,9 +3335,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "爸爸在看电视。",
-        "pinyin": "Bàba zài kàn diànshì",
-        "vi": "Bố đang xem tivi."
+        "zh": "在家看电视。",
+        "pinyin": "Zài jiā kàn diànshì.",
+        "vi": "Ở nhà xem tivi."
       }
     ],
     "tags": [
@@ -3352,9 +3357,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个电脑非常贵。",
-        "pinyin": "Zhège diànnǎo fēicháng guì",
-        "vi": "Máy tính này rất đắt."
+        "zh": "这是我的电脑。",
+        "pinyin": "Zhè shì wǒ de diànnǎo.",
+        "vi": "Đây là máy tính của tôi."
       }
     ],
     "tags": [
@@ -3374,9 +3379,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我的手机在那里。",
-        "pinyin": "Wǒ de shǒujī zài nàlǐ",
-        "vi": "Điện thoại của tôi ở đằng kia."
+        "zh": "看手机。",
+        "pinyin": "Kàn shǒujī.",
+        "vi": "Xem điện thoại."
       }
     ],
     "tags": [
@@ -3396,9 +3401,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他正在打电话。",
-        "pinyin": "Tā zhèngzài dǎ diànhuà",
-        "vi": "Anh ấy đang gọi điện thoại."
+        "zh": "打电话给妈妈。",
+        "pinyin": "Dǎ diànhuà gěi māma.",
+        "vi": "Gọi điện thoại cho mẹ."
       }
     ],
     "tags": [
@@ -3418,9 +3423,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喜欢看书。",
-        "pinyin": "Wǒ xǐhuan kàn shū",
-        "vi": "Tôi thích đọc sách."
+        "zh": "我看书。",
+        "pinyin": "Wǒ kàn shū.",
+        "vi": "Tôi đọc sách."
       }
     ],
     "tags": [
@@ -3440,9 +3445,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你读过这本书了吗？",
-        "pinyin": "Nǐ dúguò zhè běn shū le ma?",
-        "vi": "Bạn đã đọc cuốn sách này chưa?"
+        "zh": "我买了一本书。",
+        "pinyin": "Wǒ mǎi le yì běn shū.",
+        "vi": "Tôi đã mua một quyển sách."
       }
     ],
     "tags": [
@@ -3462,9 +3467,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个歌剧的本子挺有意思的。\n\n在越南，满18周岁就可以考本子了。",
-        "pinyin": "Zhège gējù de běnzi tǐng yǒuyìsi de\n\nZài Yuènán, mǎn 18 zhōusuì jiù kěyǐ kǎo běnzǐ le",
-        "vi": "Bản nhạc kịch này thật thú vị.\n\nỞ Việt Nam, bạn đủ 18 tuổi đã có thể thi giấy phép lấy xe."
+        "zh": "这是我的本子。",
+        "pinyin": "Zhè shì wǒ de běnzi.",
+        "vi": "Đây là cuốn vở của tôi."
       }
     ],
     "tags": [
@@ -3484,9 +3489,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我喝了一杯奶茶。\n\n我们队赢得了冠军杯。",
-        "pinyin": "Wǒ hēle yībēi nǎichá\n\nWǒmen duì yíngdéle guànjūn bēi",
-        "vi": "Tôi đã uống 1 ly trà sữa.\n\nĐội chúng tôi đã giành được cúp vô địch."
+        "zh": "喝一杯茶。",
+        "pinyin": "Hē yì bēi chá.",
+        "vi": "Uống một tách trà."
       }
     ],
     "tags": [
@@ -3506,9 +3511,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个杯子太小了。",
-        "pinyin": "Zhège bēizǐ tài xiǎole",
-        "vi": "Cái ly này quá nhỏ."
+        "zh": "桌子上有杯子。",
+        "pinyin": "Zhuōzi shàng yǒu bēizi.",
+        "vi": "Trên bàn có chiếc cốc."
       }
     ],
     "tags": [
@@ -3528,9 +3533,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "妈妈在包饺子。",
-        "pinyin": "Māma zài bāo jiǎozǐ",
-        "vi": "Mẹ đang gói sủi cảo."
+        "zh": "这是我的包。",
+        "pinyin": "Zhè shì wǒ de bāo.",
+        "vi": "Đây là cái túi của tôi."
       }
     ],
     "tags": [
@@ -3550,9 +3555,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "快过年了，你买火车票了吗？",
-        "pinyin": "Kuài guò nián le, nǐ mǎi huǒchē piào huí jiā le ma?",
-        "vi": "Tết sắp đến rồi, bạn đã mua vé tàu về nhà chưa?"
+        "zh": "买车票。",
+        "pinyin": "Mǎi chēpiào.",
+        "vi": "Mua vé xe."
       }
     ],
     "tags": [
@@ -3572,9 +3577,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的名字是什么？",
-        "pinyin": "Nǐ de míngzi shì shénme?",
-        "vi": "Tên của bạn là gì?"
+        "zh": "写汉字。",
+        "pinyin": "Xiě hànzì.",
+        "vi": "Viết chữ Hán."
       }
     ],
     "tags": [
@@ -3594,9 +3599,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我会写汉字。",
-        "pinyin": "Wǒ huì xiě Hànzì",
-        "vi": "Tôi biết viết chữ Hán."
+        "zh": "汉字很有意思。",
+        "pinyin": "Hànzì hěn yǒu yìsi.",
+        "vi": "Chữ Hán rất thú vị."
       }
     ],
     "tags": [
@@ -3616,9 +3621,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天都要休息一小时。",
-        "pinyin": "Wǒ měitiān dōu yào xiūxi yī xiǎoshí",
-        "vi": "Tôi phải nghỉ ngơi một giờ mỗi ngày."
+        "zh": "你太累了，休息一下吧。",
+        "pinyin": "Nǐ tài lèi le, xiūxi yíxià ba.",
+        "vi": "Bạn mệt quá rồi, nghỉ ngơi một lát đi."
       }
     ],
     "tags": [
@@ -3638,9 +3643,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "孩子们都去睡觉了。",
-        "pinyin": "Háizǐmen dōu qù shuìjiào le",
-        "vi": "Bọn trẻ đều đi ngủ rồi."
+        "zh": "我去睡觉了。",
+        "pinyin": "Wǒ qù shuìjiào le.",
+        "vi": "Tôi đi ngủ đây."
       }
     ],
     "tags": [
@@ -3660,9 +3665,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我每天六点起床。",
-        "pinyin": "Wǒ měitiān liù diǎn qǐchuáng",
-        "vi": "Mỗi ngày tôi thức dậy lúc 6 giờ."
+        "zh": "早上七点起床。",
+        "pinyin": "Zǎoshang qī diǎn qǐchuáng.",
+        "vi": "Buổi sáng thức dậy lúc 7 giờ."
       }
     ],
     "tags": [
@@ -3682,9 +3687,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请不要大声说话。",
-        "pinyin": "Qǐng bùyào dàshēng shuōhuà",
-        "vi": "Vui lòng đừng nói chuyện lớn tiếng."
+        "zh": "请不要说话。",
+        "pinyin": "Qǐng bú yào shuōhuà.",
+        "vi": "Xin vui lòng đừng nói chuyện."
       }
     ],
     "tags": [
@@ -3704,9 +3709,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我会说汉语。",
-        "pinyin": "Wǒ huì shuō Hànyǔ",
-        "vi": "Tôi biết nói tiếng Trung."
+        "zh": "你说得很好。",
+        "pinyin": "Nǐ shuō de hěn hǎo.",
+        "vi": "Bạn nói rất hay."
       }
     ],
     "tags": [
@@ -3726,9 +3731,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我正在读书。",
-        "pinyin": "Wǒ zhèngzài dú shū",
-        "vi": "Tôi đang đọc sách."
+        "zh": "读课文。",
+        "pinyin": "Dú kèwén.",
+        "vi": "Đọc bài khóa."
       }
     ],
     "tags": [
@@ -3748,9 +3753,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请写下你的名字。",
-        "pinyin": "Qǐng xiě xià nǐ de míngzi",
-        "vi": "Vui lòng viết tên của bạn xuống."
+        "zh": "写汉字。",
+        "pinyin": "Xiě hànzì.",
+        "vi": "Viết chữ Hán."
       }
     ],
     "tags": [
@@ -3770,9 +3775,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这本书我看完了。",
-        "pinyin": "Zhè běn shū wǒ kànwán le",
-        "vi": "Tôi đã đọc xong cuốn sách này."
+        "zh": "看书。",
+        "pinyin": "Kàn shū.",
+        "vi": "Đọc sách."
       }
     ],
     "tags": [
@@ -3792,9 +3797,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "再见！",
-        "pinyin": "Zàijiàn!",
-        "vi": "Tạm biệt / Hẹn gặp lại!"
+        "zh": "我看见他了。",
+        "pinyin": "Wǒ kànjiàn tā le.",
+        "vi": "Tôi nhìn thấy anh ấy rồi."
       }
     ],
     "tags": [
@@ -3814,9 +3819,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他在听歌。",
-        "pinyin": "Tā zài tīng gē",
-        "vi": "Anh ấy đang nghe nhạc."
+        "zh": "听老师说。",
+        "pinyin": "Tīng lǎoshī shuō.",
+        "vi": "Nghe giáo viên nói."
       }
     ],
     "tags": [
@@ -3836,9 +3841,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "再见！",
-        "pinyin": "Zàijiàn!",
-        "vi": "Tạm biệt / Hẹn gặp lại!"
+        "zh": "我听见了。",
+        "pinyin": "Wǒ tīngjiàn le.",
+        "vi": "Tôi nghe thấy rồi."
       }
     ],
     "tags": [
@@ -3858,9 +3863,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在找我的手机。",
-        "pinyin": "Wǒ zài zhǎo wǒ de shǒujī",
-        "vi": "Tôi đang tìm điện thoại của tôi."
+        "zh": "你在找什么？",
+        "pinyin": "Nǐ zài zhǎo shénme?",
+        "vi": "Bạn đang tìm cái gì vậy?"
       }
     ],
     "tags": [
@@ -3880,9 +3885,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他经常帮我做家务。",
-        "pinyin": "Tā jīngcháng bāng wǒ zuò jiāwù",
-        "vi": "Anh ấy thường giúp tôi làm việc nhà."
+        "zh": "请帮我一下。",
+        "pinyin": "Qǐng bāng wǒ yíxià.",
+        "vi": "Xin hãy giúp tôi một chút."
       }
     ],
     "tags": [
@@ -3902,9 +3907,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你可以来帮忙吗？",
-        "pinyin": "Nǐ kěyǐ lái bāngmáng ma?",
-        "vi": "Bạn có thể lại giúp đỡ không?"
+        "zh": "谢谢你的帮忙。",
+        "pinyin": "Xièxie nǐ de bāngmáng.",
+        "vi": "Cảm ơn sự giúp đỡ của bạn."
       }
     ],
     "tags": [
@@ -3924,9 +3929,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "A: 你准备好了吗？\nB: 我们要出发了。",
-        "pinyin": "A: Nǐ zhǔnbèi hǎo le ma\nB: Wǒmen yào chūfā le",
-        "vi": "A: Bạn chuẩn bị xong chưa? \nB: Chúng ta sắp xuất phát rồi."
+        "zh": "准备好了吗？",
+        "pinyin": "Zhǔnbèi hǎo le ma?",
+        "vi": "Đã chuẩn bị xong chưa?"
       }
     ],
     "tags": [
@@ -3946,9 +3951,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我妈做中国菜非常好吃。",
-        "pinyin": "Wǒ mā zuò Zhōngguó cài fēicháng hǎochī",
-        "vi": "Mẹ tôi làm đồ ăn Trung Quốc rất ngon."
+        "zh": "你在做什么？",
+        "pinyin": "Nǐ zài zuò shénme?",
+        "vi": "Bạn đang làm gì đấy?"
       }
     ],
     "tags": [
@@ -3968,9 +3973,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "爸爸爱妈妈。",
-        "pinyin": "Bàba ài māmā",
-        "vi": "Ba yêu mẹ."
+        "zh": "我爱我的爸爸妈妈。",
+        "pinyin": "Wǒ ài wǒ de bàba māma.",
+        "vi": "Tôi yêu bố mẹ tôi."
       }
     ],
     "tags": [
@@ -3990,9 +3995,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "你的爱好是什么？",
+        "pinyin": "Nǐ de àihào shì shénme?",
+        "vi": "Sở thích của bạn là gì?"
       }
     ],
     "tags": [
@@ -4012,9 +4017,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我很喜欢吃中国菜。",
-        "pinyin": "Wǒ hěn xǐhuan chī Zhōngguó cài",
-        "vi": "Tôi rất thích ăn món Trung Quốc."
+        "zh": "我喜欢学中文。",
+        "pinyin": "Wǒ xǐhuan xué Zhōngwén.",
+        "vi": "Tôi thích học tiếng Trung."
       }
     ],
     "tags": [
@@ -4034,9 +4039,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我想去日本旅游。",
-        "pinyin": "Wǒ xiǎng qù Rìběn lǚyóu",
-        "vi": "Tôi muốn đi du lịch Nhật Bản."
+        "zh": "我想喝水。",
+        "pinyin": "Wǒ xiǎng hē shuǐ.",
+        "vi": "Tôi muốn uống nước."
       }
     ],
     "tags": [
@@ -4056,9 +4061,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我想要一杯咖啡。",
-        "pinyin": "Wǒ xiǎng yào yī bēi kāfēi",
-        "vi": "Tôi muốn một ly cà phê."
+        "zh": "你要喝水吗？",
+        "pinyin": "Nǐ yào hē shuǐ ma?",
+        "vi": "Bạn muốn uống nước không?"
       }
     ],
     "tags": [
@@ -4078,9 +4083,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你会做中国菜吗？",
-        "pinyin": "Nǐ huì zuò zhōngguó cài ma",
-        "vi": "Bạn biết nấu món Trung Quốc không?"
+        "zh": "我会说汉语。",
+        "pinyin": "Wǒ huì shuō Hànyǔ.",
+        "vi": "Tôi biết nói tiếng Hán."
       }
     ],
     "tags": [
@@ -4100,9 +4105,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "咱们一定能完成任务。",
-        "pinyin": "Zánmen yídìng néng wánchéng rènwù",
-        "vi": "Chúng ta nhất định có thể hoàn thành nhiệm vụ."
+        "zh": "你能来吗？",
+        "pinyin": "Nǐ néng lái ma?",
+        "vi": "Bạn có thể đến không?"
       }
     ],
     "tags": [
@@ -4122,9 +4127,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "孩子们喜欢玩儿游戏。",
-        "pinyin": "Háizimen xǐhuān wánr yóuxì",
-        "vi": "Bọn trẻ thích chơi trò chơi."
+        "zh": "去公园玩儿。",
+        "pinyin": "Qù gōngyuán wánr.",
+        "vi": "Đi công viên chơi."
       }
     ],
     "tags": [
@@ -4144,9 +4149,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "北京很好玩儿。",
+        "pinyin": "Běijīng hěn hǎowánr.",
+        "vi": "Bắc Kinh chơi rất vui."
       }
     ],
     "tags": [
@@ -4166,9 +4171,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家邻居昨天一直不停地唱歌。",
-        "pinyin": "Wǒjiā línjū zuótiān yīzhí bù tíng de chànggē",
-        "vi": "Ngày hôm qua hàng xóm của tôi ca hát không ngừng."
+        "zh": "她喜欢唱歌。",
+        "pinyin": "Tā xǐhuan chànggē.",
+        "vi": "Cô ấy thích ca hát."
       }
     ],
     "tags": [
@@ -4189,7 +4194,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "这首歌很好听。",
-        "pinyin": "Zhè shǒu gē hěn hǎotīng",
+        "pinyin": "Zhè shǒu gē hěn hǎotīng.",
         "vi": "Bài hát này rất hay."
       }
     ],
@@ -4210,9 +4215,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "昨天我们看了一部电影。",
-        "pinyin": "Zuótiān wǒmen kàn le yī bù diànyǐng",
-        "vi": "Hôm qua chúng tôi đã xem một bộ phim."
+        "zh": "去看电影。",
+        "pinyin": "Qù kàn diànyǐng.",
+        "vi": "Đi xem phim chiếu rạp."
       }
     ],
     "tags": [
@@ -4232,9 +4237,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们去电影院看电影。",
-        "pinyin": "Wǒmen qù diànyǐngyuàn kàn diànyǐng",
-        "vi": "Chúng tôi đi rạp chiếu phim để xem phim."
+        "zh": "他在电影院看电影。",
+        "pinyin": "Tā zài diànyǐngyuàn kàn diànyǐng.",
+        "vi": "Anh ấy xem phim ở rạp chiếu phim."
       }
     ],
     "tags": [
@@ -4254,9 +4259,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他们很喜欢打球。",
-        "pinyin": "Tā xǐhuān dǎ lánqiú",
-        "vi": "Cậu ấy thích chơi bóng rổ."
+        "zh": "我们去打球吧。",
+        "pinyin": "Wǒmen qù dǎqiú ba.",
+        "vi": "Chúng mình đi chơi bóng đi."
       }
     ],
     "tags": [
@@ -4276,9 +4281,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他喜欢踢足球。",
-        "pinyin": "Tā xǐhuan tī zúqiú",
-        "vi": "Anh ấy thích đá bóng."
+        "zh": "买一个球。",
+        "pinyin": "Mǎi yí gè qiú.",
+        "vi": "Mua một quả bóng."
       }
     ],
     "tags": [
@@ -4298,9 +4303,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他是我的朋友。",
-        "pinyin": "Tā shì wǒ de péngyou.",
-        "vi": "Anh ấy là bạn của tôi."
+        "zh": "他们是我的朋友。",
+        "pinyin": "Tāmen shì wǒ de péngyou.",
+        "vi": "Họ là bạn của tôi."
       }
     ],
     "tags": [
@@ -4320,9 +4325,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她是学生。",
-        "pinyin": "Tā shì xuéshēng.",
-        "vi": "Cô ấy là học sinh."
+        "zh": "她们是学生。",
+        "pinyin": "Tāmen shì xuéshēng.",
+        "vi": "Các cô ấy là học sinh."
       }
     ],
     "tags": [
@@ -4540,9 +4545,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "北边的天气很冷。",
-        "pinyin": "Běibian de tiānqì hěn lěng",
-        "vi": "Thời tiết của phương bắc rất lạnh."
+        "zh": "车站在北边。",
+        "pinyin": "Chēzhàn zài běibiān.",
+        "vi": "Bến xe ở phía bắc."
       }
     ],
     "tags": [
@@ -4628,9 +4633,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "请多帮助别人。",
+        "pinyin": "Qǐng duō bāngzhù biérén.",
+        "vi": "Hãy giúp đỡ người khác nhiều hơn."
       }
     ],
     "tags": [
@@ -4672,9 +4677,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "医生在看病人。",
+        "pinyin": "Yīshēng zài kàn bìngrén.",
+        "vi": "Bác sĩ đang khám cho bệnh nhân."
       }
     ],
     "tags": [
@@ -4694,9 +4699,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "不好！",
-        "pinyin": "Bù hǎo!",
-        "vi": "Không tốt / Không ổn!"
+        "zh": "这个房间不大。",
+        "pinyin": "Zhè gè fángjiān bú dà.",
+        "vi": "Căn phòng này không to lắm."
       }
     ],
     "tags": [
@@ -4716,9 +4721,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "不好！",
-        "pinyin": "Bù hǎo!",
-        "vi": "Không tốt / Không ổn!"
+        "zh": "这个字写得不对。",
+        "pinyin": "Zhè gè zì xiě de bú duì.",
+        "vi": "Chữ này viết không đúng."
       }
     ],
     "tags": [
@@ -4738,9 +4743,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "不好！",
-        "pinyin": "Bù hǎo!",
-        "vi": "Không tốt / Không ổn!"
+        "zh": "不用客气！",
+        "pinyin": "Bú yòng kèqi!",
+        "vi": "Không cần khách sáo đâu!"
       }
     ],
     "tags": [
@@ -5112,9 +5117,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "学生好！",
-        "pinyin": "Xuéshēng hǎo!",
-        "vi": "Chào các em học sinh!"
+        "zh": "我是大学生。",
+        "pinyin": "Wǒ shì dàxuéshēng.",
+        "vi": "Tôi là sinh viên đại học."
       }
     ],
     "tags": [
@@ -5352,7 +5357,13 @@ export const hsk1Vocab: VocabEntry[] = [
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "学校在东边。",
+        "pinyin": "Xuéxiào zài dōngbiān.",
+        "vi": "Trường học ở phía đông."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
@@ -5458,9 +5469,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "不好！",
-        "pinyin": "Bù hǎo!",
-        "vi": "Không tốt / Không ổn!"
+        "zh": "对不起，我来晚了。",
+        "pinyin": "Duìbuqǐ, wǒ lái wǎn le.",
+        "vi": "Xin lỗi, tôi đến muộn rồi."
       }
     ],
     "tags": [
@@ -5700,9 +5711,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你叫什么名字？",
-        "pinyin": "Nǐ jiào shénme míngzi?",
-        "vi": "Bạn tên là gì?"
+        "zh": "你在干什么呢？",
+        "pinyin": "Nǐ zài gàn shénme ne?",
+        "vi": "Bạn đang làm gì đấy?"
       }
     ],
     "tags": [
@@ -5810,9 +5821,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "我爸爸是工人。",
+        "pinyin": "Wǒ bàba shì gōngrén.",
+        "vi": "Bố tôi là công nhân."
       }
     ],
     "tags": [
@@ -5898,9 +5909,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有四个人。",
-        "pinyin": "Wǒ jiā yǒu sì gè rén.",
-        "vi": "Nhà tôi có bốn người."
+        "zh": "中国是一个大国家。",
+        "pinyin": "Zhōngguó shì yí gè dà guójiā.",
+        "vi": "Trung Quốc là một quốc gia lớn."
       }
     ],
     "tags": [
@@ -5986,9 +5997,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他是老师。",
-        "pinyin": "Tā shì lǎoshī.",
-        "vi": "Anh ấy là giáo viên."
+        "zh": "你喝茶还是喝水？",
+        "pinyin": "Nǐ hē chá háishì hē shuǐ?",
+        "vi": "Bạn uống trà hay uống nước?"
       }
     ],
     "tags": [
@@ -6008,9 +6019,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "桌子上有书，还有手机。",
+        "pinyin": "Zhuōzi shàng yǒu shū, hái yǒu shǒujī.",
+        "vi": "Trên bàn có sách, và còn có điện thoại."
       }
     ],
     "tags": [
@@ -6052,9 +6063,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "这件衣服真好看！",
+        "pinyin": "Zhè jiàn yīfu zhēn hǎokàn!",
+        "vi": "Bộ quần áo này thật đẹp!"
       }
     ],
     "tags": [
@@ -6074,9 +6085,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "这首歌真好听！",
+        "pinyin": "Zhè shǒu gē zhēn hǎotīng!",
+        "vi": "Bài hát này nghe thật hay!"
       }
     ],
     "tags": [
@@ -6426,9 +6437,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有四个人。",
-        "pinyin": "Wǒ jiā yǒu sì gè rén.",
-        "vi": "Nhà tôi có bốn người."
+        "zh": "他在家里看书。",
+        "pinyin": "Tā zài jiā lǐ kàn shū.",
+        "vi": "Anh ấy ở trong nhà đọc sách."
       }
     ],
     "tags": [
@@ -6470,9 +6481,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "再见！",
-        "pinyin": "Zàijiàn!",
-        "vi": "Tạm biệt / Hẹn gặp lại!"
+        "zh": "很高兴和你见面！",
+        "pinyin": "Hěn gāoxìng hé nǐ jiànmiàn!",
+        "vi": "Rất vui được gặp mặt bạn!"
       }
     ],
     "tags": [
@@ -6514,9 +6525,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "教学楼在图书馆东边。",
-        "pinyin": "Jiàoxué lóu zài túshū guǎn dōngbian",
-        "vi": "Tòa nhà giảng dạy nằm ở phía đông của thư viện."
+        "zh": "这是我们的教学楼。",
+        "pinyin": "Zhè shì wǒmen de jiàoxuélóu.",
+        "vi": "Đây là tòa nhà giảng đường của chúng tôi."
       }
     ],
     "tags": [
@@ -6712,9 +6723,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我今天去医院看病。",
-        "pinyin": "Wǒ jīntiān qù yīyuàn kàn bìng",
-        "vi": "Hôm nay tôi đi bệnh viện khám bệnh."
+        "zh": "我去医院看病。",
+        "pinyin": "Wǒ qù yīyuàn kànbìng.",
+        "vi": "Tôi đi bệnh viện khám bệnh."
       }
     ],
     "tags": [
@@ -6776,7 +6787,13 @@ export const hsk1Vocab: VocabEntry[] = [
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "明天我们要考试。",
+        "pinyin": "Míngtiān wǒmen yào kǎoshì.",
+        "vi": "Ngày mai chúng tôi phải thi."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
@@ -6882,9 +6899,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他来到公司了。",
-        "pinyin": "Tā láidào gōngsī le",
-        "vi": "Anh ấy đến công ty rồi."
+        "zh": "欢迎来到北京！",
+        "pinyin": "Huānyíng lái dào Běijīng!",
+        "vi": "Chào mừng đến với Bắc Kinh!"
       }
     ],
     "tags": [
@@ -6926,9 +6943,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "路上有一位老人。",
+        "pinyin": "Lù shàng yǒu yí wèi lǎorén.",
+        "vi": "Trên đường có một cụ già."
       }
     ],
     "tags": [
@@ -7036,9 +7053,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我哥哥在楼上睡觉。",
-        "pinyin": "Wǒ gēge zài lóu shàng shuìjiào",
-        "vi": "Anh trai tôi đang ngủ trên tầng."
+        "zh": "他在楼上看书。",
+        "pinyin": "Tā zài lóushàng kàn shū.",
+        "vi": "Anh ấy ở trên lầu đọc sách."
       }
     ],
     "tags": [
@@ -7059,8 +7076,8 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "我在楼下等你。",
-        "pinyin": "Wǒ zài lóu xià děng nǐ",
-        "vi": "Tôi đang đợi bạn ở tầng dưới."
+        "pinyin": "Wǒ zài lóuxià děng nǐ.",
+        "vi": "Tôi ở dưới lầu đợi bạn."
       }
     ],
     "tags": [
@@ -7102,9 +7119,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个路口有很多车。",
-        "pinyin": "Zhège lùkǒu yǒu hěn duō chē",
-        "vi": "Ngã tư này có rất nhiều xe."
+        "zh": "在十字路口等我。",
+        "pinyin": "Zài shízì lùkǒu děng wǒ.",
+        "vi": "Đợi tôi ở ngã tư đường."
       }
     ],
     "tags": [
@@ -7124,9 +7141,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在路上，看见了你。",
-        "pinyin": "Wǒ zài lùshàng, kànjiàn le nǐ",
-        "vi": "Tôi trên đường, nhìn thấy bạn."
+        "zh": "路上车很多。",
+        "pinyin": "Lù shàng chē hěn duō.",
+        "vi": "Trên đường rất nhiều xe cộ."
       }
     ],
     "tags": [
@@ -7146,9 +7163,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个马路很长。",
-        "pinyin": "Zhège mǎlù hěn cháng",
-        "vi": "Con đường này rất dài."
+        "zh": "过马路要小心。",
+        "pinyin": "Guò mǎlù yào xiǎoxīn.",
+        "vi": "Sang đường phải cẩn thận."
       }
     ],
     "tags": [
@@ -7278,9 +7295,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "没关系，我没生气。",
-        "pinyin": "Méiguānxi, wǒ méi shēngqì",
-        "vi": "Không sao, tôi không giận đâu."
+        "zh": "没关系，不要紧。",
+        "pinyin": "Méi guānxi, bú yàojǐn.",
+        "vi": "Không sao đâu, không có gì."
       }
     ],
     "tags": [
@@ -7300,9 +7317,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你叫什么名字？",
-        "pinyin": "Nǐ jiào shénme míngzi?",
-        "vi": "Bạn tên là gì?"
+        "zh": "没什么大问题。",
+        "pinyin": "Méi shénme dà wèntí.",
+        "vi": "Không có vấn đề gì to tát đâu."
       }
     ],
     "tags": [
@@ -7322,9 +7339,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "没事儿，我帮你。",
-        "pinyin": "Méi shìr, wǒ bāng nǐ",
-        "vi": "Không sao đâu, tôi giúp bạn."
+        "zh": "我没事儿，谢谢你！",
+        "pinyin": "Wǒ méi shìr, xièxie nǐ!",
+        "vi": "Tôi không sao đâu, cảm ơn bạn!"
       }
     ],
     "tags": [
@@ -7366,9 +7383,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在门口等你。",
-        "pinyin": "Wǒ zài ménkǒu děng nǐ",
-        "vi": "Tôi đang đợi bạn ở cửa ra vào."
+        "zh": "我在学校门口等你。",
+        "pinyin": "Wǒ zài xuéxiào ménkǒu děng nǐ.",
+        "vi": "Tôi đợi bạn ở cổng trường."
       }
     ],
     "tags": [
@@ -7388,9 +7405,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这张门票多少钱？",
-        "pinyin": "Zhè zhāng ménpiào duōshǎo qián",
-        "vi": ""
+        "zh": "买两张门票。",
+        "pinyin": "Mǎi liǎng zhāng ménpiào.",
+        "vi": "Mua hai vé vào cửa."
       }
     ],
     "tags": [
@@ -7410,9 +7427,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyou.",
-        "vi": "Chúng tôi là bạn tốt."
+        "zh": "朋友们，大家早上好！",
+        "pinyin": "Péngyoumen, dàjiā zǎoshang hǎo!",
+        "vi": "Chào các bạn, chào buổi sáng mọi người!"
       }
     ],
     "tags": [
@@ -7652,9 +7669,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "男孩儿在公园里踢足球。",
-        "pinyin": "Nánháir zài gōngyuán lǐ tī zúqiú",
-        "vi": "Cậu bé đang đá bóng trong công viên."
+        "zh": "他是一个好男孩儿。",
+        "pinyin": "Tā shì yí gè hǎo nánháir.",
+        "vi": "Cậu ấy là một bé trai ngoan."
       }
     ],
     "tags": [
@@ -7674,9 +7691,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyou.",
-        "vi": "Chúng tôi là bạn tốt."
+        "zh": "他是我的男朋友。",
+        "pinyin": "Tā shì wǒ de nánpéngyou.",
+        "vi": "Anh ấy là bạn trai của tôi."
       }
     ],
     "tags": [
@@ -7696,9 +7713,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "那个男人是老师。",
+        "pinyin": "Nà gè nánrén shì lǎoshī.",
+        "vi": "Người đàn ông kia là giáo viên."
       }
     ],
     "tags": [
@@ -7718,9 +7735,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个班的男生比女生多。",
-        "pinyin": "Zhège bān de nánshēng bǐ nǚshēng duō",
-        "vi": "Nam sinh trong lớp này nhiều hơn nữ sinh."
+        "zh": "班里有十个男生。",
+        "pinyin": "Bān lǐ yǒu shí gè nánshēng.",
+        "vi": "Trong lớp có 10 bạn nam."
       }
     ],
     "tags": [
@@ -7762,9 +7779,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家在学校南边。",
-        "pinyin": "Wǒ jiā zài xuéxiào nánbiān",
-        "vi": "Nhà tôi ở phía nam của trường."
+        "zh": "商店在南边。",
+        "pinyin": "Shāngdiàn zài nánbiān.",
+        "vi": "Cửa hàng ở phía nam."
       }
     ],
     "tags": [
@@ -7872,9 +7889,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你家女孩儿几岁了？",
-        "pinyin": "Nǐ jiā nǚháir jǐ suì le",
-        "vi": "Con gái nhà bạn mấy tuổi rồi?"
+        "zh": "那个女孩儿很漂亮。",
+        "pinyin": "Nà gè nǚháir hěn piàoliang.",
+        "vi": "Bé gái kia rất xinh xắn."
       }
     ],
     "tags": [
@@ -7894,9 +7911,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyou.",
-        "vi": "Chúng tôi là bạn tốt."
+        "zh": "她是我的女朋友。",
+        "pinyin": "Tā shì wǒ de nǚpéngyou.",
+        "vi": "Cô ấy là bạn gái của tôi."
       }
     ],
     "tags": [
@@ -7916,9 +7933,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是中国人。",
-        "pinyin": "Wǒ shì Zhōngguó rén.",
-        "vi": "Tôi là người Trung Quốc."
+        "zh": "那个女人是医生。",
+        "pinyin": "Nà gè nǚrén shì yīshēng.",
+        "vi": "Người phụ nữ kia là bác sĩ."
       }
     ],
     "tags": [
@@ -7938,9 +7955,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这些女生喜欢画画。",
-        "pinyin": "Zhèxiē nǚshēng xǐhuān huà huà",
-        "vi": "Những nữ sinh này thích vẽ."
+        "zh": "班里有很多女生。",
+        "pinyin": "Bān lǐ yǒu hěn duō nǚshēng.",
+        "vi": "Trong lớp có rất nhiều bạn nữ."
       }
     ],
     "tags": [
@@ -8114,9 +8131,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请！",
-        "pinyin": "Qǐng!",
-        "vi": "Xin mời!"
+        "zh": "今天我想请假。",
+        "pinyin": "Jīntiān wǒ xiǎng qǐngjià.",
+        "vi": "Hôm nay tôi muốn xin nghỉ phép."
       }
     ],
     "tags": [
@@ -8136,9 +8153,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请！",
-        "pinyin": "Qǐng!",
-        "vi": "Xin mời!"
+        "zh": "请进！请坐！",
+        "pinyin": "Qǐng jìn! Qǐng zuò!",
+        "vi": "Mời vào! Mời ngồi!"
       }
     ],
     "tags": [
@@ -8158,9 +8175,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请！",
-        "pinyin": "Qǐng!",
-        "vi": "Xin mời!"
+        "zh": "老师好，请坐！",
+        "pinyin": "Lǎoshī hǎo, qǐng zuò!",
+        "vi": "Chào thầy cô, xin mời ngồi!"
       }
     ],
     "tags": [
@@ -8642,9 +8659,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "不好！",
-        "pinyin": "Bù hǎo!",
-        "vi": "Không tốt / Không ổn!"
+        "zh": "你是不是老师？",
+        "pinyin": "Nǐ shì bu shì lǎoshī?",
+        "vi": "Bạn có phải là giáo viên không?"
       }
     ],
     "tags": [
@@ -9162,13 +9179,19 @@ export const hsk1Vocab: VocabEntry[] = [
     "id": "v382",
     "simplified": "西边",
     "pinyin": "xībiān",
-    "meaning": "",
+    "meaning": "Phía tây, bên tây",
     "pos": [
       "n"
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "医院在西边。",
+        "pinyin": "Yīyuàn zài xībiān.",
+        "vi": "Bệnh viện ở phía tây."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
@@ -9472,9 +9495,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyou.",
-        "vi": "Chúng tôi là bạn tốt."
+        "zh": "小朋友们在学校看书。",
+        "pinyin": "Xiǎopéngyǒu men zài xuéxiào kàn shū.",
+        "vi": "Các bạn nhỏ đang đọc sách ở trường."
       }
     ],
     "tags": [
@@ -9538,9 +9561,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "学生好！",
-        "pinyin": "Xuéshēng hǎo!",
-        "vi": "Chào các em học sinh!"
+        "zh": "我弟弟是小学生。",
+        "pinyin": "Wǒ dìdi shì xiǎoxuéshēng.",
+        "vi": "Em trai tôi là học sinh tiểu học."
       }
     ],
     "tags": [
@@ -9802,9 +9825,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "这个苹果我们一人一半。",
+        "pinyin": "Zhè gè píngguǒ wǒmen yì rén yíbàn.",
+        "vi": "Quả táo này mỗi người chúng ta một nửa nhé."
       }
     ],
     "tags": [
@@ -9824,9 +9847,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "请等我一会儿。",
+        "pinyin": "Qǐng děng wǒ yíhuìr.",
+        "vi": "Xin đợi tôi một lát."
       }
     ],
     "tags": [
@@ -9846,9 +9869,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "我们一块儿去学校吧。",
+        "pinyin": "Wǒmen yíkuàir qù xuéxiào ba.",
+        "vi": "Chúng ta cùng nhau đi đến trường nhé."
       }
     ],
     "tags": [
@@ -9868,9 +9891,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "请看一下儿这本书。",
+        "pinyin": "Qǐng kàn yíxiàr zhè běn shū.",
+        "vi": "Xin hãy xem qua cuốn sách này một chút."
       }
     ],
     "tags": [
@@ -9890,9 +9913,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "这两个杯子一样。",
+        "pinyin": "Zhè liǎng gè bēizi yíyàng.",
+        "vi": "Hai chiếc cốc này giống nhau."
       }
     ],
     "tags": [
@@ -9912,9 +9935,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "他在路的那一边。",
+        "pinyin": "Tā zài lù de nà yìbiān.",
+        "vi": "Anh ấy ở bên kia đường."
       }
     ],
     "tags": [
@@ -9934,9 +9957,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "我想喝一点儿茶。",
+        "pinyin": "Wǒ xiǎng hē yìdiǎnr chá.",
+        "vi": "Tôi muốn uống một chút trà."
       }
     ],
     "tags": [
@@ -9956,9 +9979,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "我们一起去买水果吧。",
+        "pinyin": "Wǒmen yìqǐ qù mǎi shuǐguǒ ba.",
+        "vi": "Chúng mình cùng đi mua hoa quả nhé."
       }
     ],
     "tags": [
@@ -10000,9 +10023,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "有的书好看，有的书不好看。",
+        "pinyin": "Yǒude shū hǎokàn, yǒude shū bù hǎokàn.",
+        "vi": "Có những cuốn sách hay, có những cuốn không hay."
       }
     ],
     "tags": [
@@ -10022,9 +10045,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "这位中国医生很有名。",
+        "pinyin": "Zhè wèi Zhōngguó yīshēng hěn yǒumíng.",
+        "vi": "Vị bác sĩ Trung Quốc này rất nổi tiếng."
       }
     ],
     "tags": [
@@ -10044,9 +10067,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "我有时候喜欢喝茶。",
+        "pinyin": "Wǒ yǒushíhou xǐhuan hē chá.",
+        "vi": "Tôi đôi khi thích uống trà."
       }
     ],
     "tags": [
@@ -10066,9 +10089,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "一个人。",
-        "pinyin": "Yí gè rén.",
-        "vi": "Một người."
+        "zh": "桌子上有一些水果。",
+        "pinyin": "Zhuōzi shàng yǒu yìxiē shuǐguǒ.",
+        "vi": "Trên bàn có một vài thứ hoa quả."
       }
     ],
     "tags": [
@@ -10088,9 +10111,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "学汉语很有用。",
+        "pinyin": "Xué Hànyǔ hěn yǒuyòng.",
+        "vi": "Học tiếng Hán rất có ích."
       }
     ],
     "tags": [
@@ -10130,7 +10153,13 @@ export const hsk1Vocab: VocabEntry[] = [
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "洗手间在右边。",
+        "pinyin": "Xǐshǒujiān zài yòubiān.",
+        "vi": "Nhà vệ sinh ở bên tay phải."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
@@ -10192,9 +10221,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有四个人。",
-        "pinyin": "Wǒ jiā yǒu sì gè rén.",
-        "vi": "Nhà tôi có bốn người."
+        "zh": "妈妈今天在家做饭。",
+        "pinyin": "Māma jīntiān zài jiā zuò fàn.",
+        "vi": "Hôm nay mẹ ở nhà nấu cơm."
       }
     ],
     "tags": [
@@ -10654,9 +10683,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "学生好！",
-        "pinyin": "Xuéshēng hǎo!",
-        "vi": "Chào các em học sinh!"
+        "zh": "我哥哥是中学生。",
+        "pinyin": "Wǒ gēge shì zhōngxuéshēng.",
+        "vi": "Anh trai tôi là học sinh trung học."
       }
     ],
     "tags": [
@@ -10742,9 +10771,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的桌子很大，很好看。",
-        "pinyin": "Nǐ de zhuōzi hěn dà, hěn hǎokàn",
-        "vi": "Cái bàn của bạn rất lớn, rất đẹp."
+        "zh": "这张桌子很好看。",
+        "pinyin": "Zhè zhāng zhuōzi hěn hǎokàn.",
+        "vi": "Chiếc bàn này rất đẹp."
       }
     ],
     "tags": [
@@ -10808,9 +10837,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师好！",
-        "pinyin": "Lǎoshī hǎo!",
-        "vi": "Chào thầy cô!"
+        "zh": "今天天气最好。",
+        "pinyin": "Jīntiān tiānqì zuì hǎo.",
+        "vi": "Hôm nay thời tiết tốt nhất."
       }
     ],
     "tags": [
@@ -10874,9 +10903,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家在学校左边。",
-        "pinyin": "Wǒ jiā zài xuéxiào zuǒbian",
-        "vi": "Nhà tôi ở bên trái trường học."
+        "zh": "学校在左边。",
+        "pinyin": "Xuéxiào zài zuǒbiān.",
+        "vi": "Trường học ở bên tay trái."
       }
     ],
     "tags": [
@@ -10896,9 +10925,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "咱们坐下谈吧。",
-        "pinyin": "Zánmen zuòxia tán ba",
-        "vi": "Chúng ta ngồi xuống nói chuyện."
+        "zh": "请大家坐下。",
+        "pinyin": "Qǐng dàjiā zuòxià.",
+        "vi": "Xin mời mọi người ngồi xuống."
       }
     ],
     "tags": [

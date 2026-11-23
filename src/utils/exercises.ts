@@ -18,7 +18,11 @@ export function pickRandom<T>(arr: T[], n: number): T[] {
 }
 
 /** Helper: lấy ngẫu nhiên 1 câu ví dụ phong phú từ vocab hoặc ngân hàng câu mở rộng theo đúng cấp độ */
-export function getRandomSentence(vocab: VocabEntry): ExampleSentence | null {
+export function getRandomSentence(vocab: VocabEntry, lessonVocab?: VocabEntry[]): ExampleSentence | null {
+  // Nếu đang trong bài học cụ thể, TUYỆT ĐỐI chỉ lấy câu ví dụ mẫu được biên soạn chuẩn theo đúng bài học
+  if (lessonVocab && lessonVocab.length > 0 && vocab.exampleSentences && vocab.exampleSentences.length > 0) {
+    return vocab.exampleSentences[0];
+  }
   const level = vocab.hsk2Level || vocab.hsk3Level || 1;
   const allSentences = getSentencesForVocab(vocab.simplified, vocab.exampleSentences, level);
   if (!allSentences || allSentences.length === 0) return null;
@@ -187,7 +191,7 @@ export function segmentChineseSentence(s: string, targetVocab?: string): string[
 }
 
 function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
-  const ex = getRandomSentence(vocab);
+  const ex = getRandomSentence(vocab, lessonVocab);
   if (!ex) return buildCharRecognition(vocab, allVocab, lessonVocab);
 
   const sentence = ex.zh.replace(vocab.simplified, '___');
@@ -218,7 +222,7 @@ function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: Voc
 }
 
 function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
-  const ex = getRandomSentence(vocab);
+  const ex = getRandomSentence(vocab, lessonVocab);
   if (!ex) return buildCharRecognition(vocab, allVocab, lessonVocab);
 
   const sentence = ex.zh.replace(vocab.simplified, '___');
@@ -259,7 +263,7 @@ function buildTranslation(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab
   // 1. Nếu đang làm bài trong 1 bài học cụ thể (lessonVocab có dữ liệu)
   // Tuyệt đối chỉ lấy câu ví dụ của từ đó trong bài, KHÔNG lấy từ kho bừa bãi
   if (lessonVocab && lessonVocab.length > 0) {
-    ex = getRandomSentence(vocab);
+    ex = getRandomSentence(vocab, lessonVocab);
   } else {
     // 2. Chế độ ôn tập tổng hợp toàn bộ (SRS Mix): ưu tiên câu thực chiến chuẩn cấp độ
     const matchingAuth = authenticTranslations.filter(t => t.hsk <= userLevel && t.zh.includes(vocab.simplified));
@@ -300,8 +304,8 @@ function buildTranslation(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab
   };
 }
 
-function buildWordScramble(vocab: VocabEntry, _lessonVocab?: VocabEntry[]): Exercise {
-  const ex = getRandomSentence(vocab);
+function buildWordScramble(vocab: VocabEntry, lessonVocab?: VocabEntry[]): Exercise {
+  const ex = getRandomSentence(vocab, lessonVocab);
   if (!ex) return buildFlashcard(vocab);
 
   const cleanSentence = ex.zh.replace(/[。！？，、]/g, '');
