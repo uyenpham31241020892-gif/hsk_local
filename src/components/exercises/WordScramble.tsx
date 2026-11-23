@@ -6,11 +6,12 @@ import { vocabById } from '../../data';
 interface WordScrambleProps {
   exercise: Exercise;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function WordScramble({ exercise, showPinyin = true, onAnswer, onNext }: WordScrambleProps) {
+export function WordScramble({ exercise, showPinyin = true, onTogglePinyin: _onTogglePinyin, onAnswer, onNext }: WordScrambleProps) {
   const correctWords = Array.isArray(exercise.answer.correct)
     ? exercise.answer.correct
     : [exercise.answer.correct];

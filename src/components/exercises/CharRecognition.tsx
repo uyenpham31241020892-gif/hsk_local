@@ -7,11 +7,12 @@ interface CharRecognitionProps {
   exercise: Exercise;
   speechRate: number;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function CharRecognition({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: CharRecognitionProps) {
+export function CharRecognition({ exercise, speechRate, showPinyin: showPinyinProp, onTogglePinyin, onAnswer, onNext }: CharRecognitionProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const correct = Array.isArray(exercise.answer.correct) ? exercise.answer.correct[0] : exercise.answer.correct;
@@ -25,9 +26,13 @@ export function CharRecognition({ exercise, speechRate, showPinyin: showPinyinPr
   const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
 
   const togglePinyin = () => {
-    const next = !showPinyin;
-    setLocalShowPinyin(next);
-    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    if (onTogglePinyin) {
+      onTogglePinyin();
+    } else {
+      const next = !showPinyin;
+      setLocalShowPinyin(next);
+      localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    }
   };
 
   useEffect(() => {

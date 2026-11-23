@@ -8,11 +8,12 @@ interface StrokeOrderProps {
   exercise: Exercise;
   blindMode: boolean;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function StrokeOrder({ exercise, blindMode, showPinyin = true, onAnswer, onNext }: StrokeOrderProps) {
+export function StrokeOrder({ exercise, blindMode, showPinyin = true, onTogglePinyin: _onTogglePinyin, onAnswer, onNext }: StrokeOrderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const writerRef = useRef<any>(null);
   const [loaded, setLoaded] = useState(false);

@@ -7,11 +7,12 @@ interface TranslationProps {
   exercise: Exercise;
   speechRate?: number;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyinProp, onAnswer, onNext }: TranslationProps) {
+export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyinProp, onTogglePinyin, onAnswer, onNext }: TranslationProps) {
   // Input mode: 'chips' (click word tiles) or 'type' (free input keyboard)
   const [inputMode, setInputMode] = useState<'chips' | 'type'>('chips');
   const [typedInput, setTypedInput] = useState('');
@@ -19,6 +20,7 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
   const [availableTokens, setAvailableTokens] = useState<{ id: string; text: string }[]>([]);
   const [answered, setAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showHelpHint, setShowHelpHint] = useState(false);
   const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
     const saved = localStorage.getItem('hsk_exercise_show_pinyin');
     if (saved !== null) return saved === 'true';
@@ -28,10 +30,14 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
   const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
 
   const togglePinyin = () => {
-    const next = !showPinyin;
-    setLocalShowPinyin(next);
-    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
-    localStorage.setItem('hsk_show_translation_pinyin', String(next));
+    if (onTogglePinyin) {
+      onTogglePinyin();
+    } else {
+      const next = !showPinyin;
+      setLocalShowPinyin(next);
+      localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+      localStorage.setItem('hsk_show_translation_pinyin', String(next));
+    }
   };
 
   const targetSentence: string = Array.isArray(exercise.answer.correct)
@@ -57,6 +63,7 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
     setTypedInput('');
     setAnswered(false);
     setIsCorrect(false);
+    setShowHelpHint(false);
   }, [exercise, targetSentence]);
 
   const handleSelectChip = (token: { id: string; text: string }) => {
@@ -83,6 +90,15 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
     return str.replace(/[。！？，、,.!? \s]/g, '').toLowerCase().trim();
   };
 
+  const stripTones = (str: string) => {
+    return str
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/ü/g, 'v')
+      .toLowerCase()
+      .replace(/[^a-z0-9\u4e00-\u9fff]/g, '');
+  };
+
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (answered) return;
@@ -97,8 +113,12 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
     const cleanTarget = cleanString(targetSentence);
     const cleanPinyin = cleanString(targetPinyin);
 
-    // Accept either exact Hanzi match or accurate Pinyin match
-    const correct: boolean = Boolean(cleanUser === cleanTarget || (cleanPinyin && cleanUser === cleanPinyin));
+    // Accept exact Hanzi match or accurate Pinyin match (with or without tone marks)
+    const correct: boolean = Boolean(
+      cleanUser === cleanTarget || 
+      (cleanPinyin && cleanUser === cleanPinyin) ||
+      (targetPinyin && stripTones(userChinese) === stripTones(targetPinyin))
+    );
 
     setIsCorrect(correct);
     setAnswered(true);
@@ -117,9 +137,14 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
           <span>🔄</span> Luyện dịch Việt ➔ Trung
         </span>
         <button
+          type="button"
           onClick={togglePinyin}
-          className="text-xs text-[#6b7280] hover:text-[#1a1a1a] flex items-center gap-1.5 bg-white border border-[#e5e1d8] px-2.5 py-1 rounded-xl shadow-2xs transition-colors"
-          title="Bật hoặc ẩn gợi ý Pinyin"
+          className={`text-xs flex items-center gap-1.5 border px-2.5 py-1 rounded-xl shadow-2xs transition-colors ${
+            showPinyin
+              ? 'bg-emerald-50 border-emerald-300 text-[#4a7c59]'
+              : 'bg-zinc-100 border-zinc-300 text-zinc-600'
+          }`}
+          title={showPinyin ? 'Đang bật Pinyin. Bấm để ẩn Pinyin' : 'Đang ẩn Pinyin. Bấm để bật Pinyin'}
         >
           {showPinyin ? <Eye size={13} className="text-[#4a7c59]" /> : <EyeOff size={13} />}
           <span>Pinyin: {showPinyin ? 'Bật' : 'Tắt'}</span>
@@ -132,14 +157,36 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
           Hãy dịch câu sau sang tiếng Trung:
         </p>
 
-        <p className="text-lg sm:text-xl font-bold text-[#1a1a1a] leading-relaxed">
+        <p className="text-xl sm:text-2xl font-bold text-[#1a1a1a] leading-relaxed">
           {vietnamesePrompt}
         </p>
 
-        {showPinyin && targetPinyin && (
-          <p className="text-xs text-[#4a7c59] font-medium tracking-wide">
-            💡 Gợi ý Pinyin: {targetPinyin}
-          </p>
+        {/* Optional Hint - Collapsed by default, NEVER leaks answer automatically */}
+        {!answered && targetPinyin && showPinyin && (
+          <div className="pt-0.5">
+            {showHelpHint ? (
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 slide-up">
+                <span>💡 Gợi ý Pinyin:</span>
+                <span className="font-bold text-[#4a7c59]">{targetPinyin}</span>
+                <button
+                  type="button"
+                  onClick={() => setShowHelpHint(false)}
+                  className="text-[#9ca3af] hover:text-amber-900 text-xs ml-1 font-bold"
+                  title="Ẩn gợi ý"
+                >
+                  ✕
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setShowHelpHint(true)}
+                className="text-[11px] text-[#6b7280] hover:text-[#4a7c59] inline-flex items-center gap-1 transition-colors py-0.5"
+              >
+                <span>💡 Cần gợi ý Pinyin? (Bấm để xem)</span>
+              </button>
+            )}
+          </div>
         )}
 
         {/* Input Mode Selector */}
@@ -232,12 +279,13 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
           ) : (
             /* Free Typing Mode */
             <form onSubmit={handleSubmit} className="space-y-3">
+              {/* Free typing input field */}
               <div className="relative">
                 <input
                   type="text"
                   value={typedInput}
                   onChange={(e) => setTypedInput(e.target.value)}
-                  placeholder="Gõ chữ Hán (hoặc Pinyin không dấu)..."
+                  placeholder="Gõ chữ Hán hoặc Pinyin (ví dụ: ni hao)..."
                   className="w-full px-4 py-3.5 bg-white border border-[#e5e1d8] focus:border-[#4a7c59] rounded-2xl text-base text-[#1a1a1a] focus:outline-none shadow-xs"
                   autoFocus
                 />
@@ -251,23 +299,6 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
                   </button>
                 )}
               </div>
-
-              {/* Quick char inserts if available in options */}
-              {exercise.question.options && exercise.question.options.length > 0 && (
-                <div className="flex flex-wrap items-center gap-1.5 px-1">
-                  <span className="text-[11px] text-[#6b7280]">Chạm nhanh:</span>
-                  {exercise.question.options.map((opt, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setTypedInput(prev => prev + opt)}
-                      className="chinese-char px-2 py-0.5 bg-white border border-[#e5e1d8] hover:border-[#4a7c59] rounded-lg text-xs text-[#1a1a1a]"
-                    >
-                      {opt}
-                    </button>
-                  ))}
-                </div>
-              )}
 
               <button
                 type="submit"
@@ -318,8 +349,14 @@ export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyin
             </p>
 
             {targetPinyin && (
-              <p className="text-sm text-[#4a7c59] font-medium tracking-wide">
-                {targetPinyin}
+              <p className="text-sm font-medium tracking-wide">
+                {showPinyin ? (
+                  <span className="text-[#4a7c59]">{targetPinyin}</span>
+                ) : (
+                  <span className="text-[#9ca3af] text-xs italic">
+                    (Pinyin đang ẩn · Bấm "Pinyin: Bật" để xem)
+                  </span>
+                )}
               </p>
             )}
 

@@ -8,11 +8,12 @@ interface DictationProps {
   exercise: Exercise;
   speechRate: number;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function Dictation({ exercise, speechRate, onAnswer, onNext }: DictationProps) {
+export function Dictation({ exercise, speechRate, showPinyin = true, onTogglePinyin, onAnswer, onNext }: DictationProps) {
   const [input, setInput] = useState('');
   const [revealed, setRevealed] = useState(false);
   const [playCount, setPlayCount] = useState(0);
@@ -170,7 +171,7 @@ export function Dictation({ exercise, speechRate, onAnswer, onNext }: DictationP
             <p className="text-xs text-[#6b7280]">Đáp án chính xác:</p>
             <div className="flex items-baseline gap-3">
               <span className="chinese-char text-3xl font-bold text-[#1a1a1a]">{correct}</span>
-              {vocab && (
+              {vocab && showPinyin && (
                 <span className="text-base text-[#4a7c59] font-bold tracking-wider">{vocab.pinyin}</span>
               )}
             </div>

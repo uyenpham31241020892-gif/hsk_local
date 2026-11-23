@@ -8,11 +8,12 @@ interface ClozeTypingProps {
   exercise: Exercise;
   speechRate: number;
   showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function ClozeTyping({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: ClozeTypingProps) {
+export function ClozeTyping({ exercise, speechRate, showPinyin: showPinyinProp, onTogglePinyin, onAnswer, onNext }: ClozeTypingProps) {
   const [input, setInput] = useState('');
   const [revealed, setRevealed] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -31,9 +32,13 @@ export function ClozeTyping({ exercise, speechRate, showPinyin: showPinyinProp, 
   const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
 
   const togglePinyin = () => {
-    const next = !showPinyin;
-    setLocalShowPinyin(next);
-    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    if (onTogglePinyin) {
+      onTogglePinyin();
+    } else {
+      const next = !showPinyin;
+      setLocalShowPinyin(next);
+      localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    }
   };
 
   useEffect(() => {

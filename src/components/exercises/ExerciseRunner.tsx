@@ -169,25 +169,25 @@ export function ExerciseRunner({
             />
           )}
           {current.type === 'char_recognition' && (
-            <CharRecognition exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <CharRecognition exercise={current} speechRate={speechRate} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'cloze' && (
-            <ClozeTest exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <ClozeTest exercise={current} speechRate={speechRate} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'cloze_typing' && (
-            <ClozeTyping exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <ClozeTyping exercise={current} speechRate={speechRate} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'translation' && (
-            <Translation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <Translation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'word_scramble' && (
-            <WordScramble exercise={current} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <WordScramble exercise={current} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'dictation' && (
-            <Dictation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <Dictation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'stroke_order' && (
-            <StrokeOrder exercise={current} blindMode={blindMode} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
+            <StrokeOrder exercise={current} blindMode={blindMode} showPinyin={showPinyin} onTogglePinyin={togglePinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'error_spot' && (
             <ErrorSpot exercise={current} onAnswer={handleAnswer} onNext={advance} />
