@@ -36,19 +36,19 @@ export const grammarTopics: GrammarTopicEntry[] = [
     ],
     "examples": [
       {
-        "zh": "我们在北京没有房子。",
-        "pinyin": "Wǒmen zàiBěijīng méiyǒu fángzi.",
-        "vi": "Chúng tôikhông có nhà ở Bắc Kinh."
+        "zh": "我没有哥哥。",
+        "pinyin": "Wǒ méiyǒu gēge.",
+        "vi": "Tôi không có anh trai."
       },
       {
-        "zh": "他没有工作吗？",
-        "pinyin": "Tā méiyǒu gōngzuò ma?",
-        "vi": "Anh ta không có việc làm à?"
+        "zh": "他没有钱。",
+        "pinyin": "Tā méiyǒu qián.",
+        "vi": "Anh ấy không có tiền."
       },
       {
-        "zh": "我没钱了。",
-        "pinyin": "Wǒ méi qián le.",
-        "vi": "Tôihết tiềnrồi."
+        "zh": "我们没有书。",
+        "pinyin": "Wǒmen méiyǒu shū.",
+        "vi": "Chúng tôi không có sách."
       }
     ]
   },
@@ -69,24 +69,24 @@ export const grammarTopics: GrammarTopicEntry[] = [
     ],
     "examples": [
       {
-        "zh": "他们不是坏孩子。",
-        "pinyin": "Tāmen bù shìhuài háizi.",
-        "vi": "Chúng không phải lànhững đứa trẻ hư."
+        "zh": "我不是老师，我是学生。",
+        "pinyin": "Wǒ bú shì lǎoshī, wǒ shì xuésheng.",
+        "vi": "Tôi không phải giáo viên, tôi là học sinh."
       },
       {
-        "zh": "我们不喝酒。",
-        "pinyin": "Wǒmen bù hē jiǔ.",
-        "vi": "Chúng tôikhông uống rượu."
+        "zh": "他不是中国人。",
+        "pinyin": "Tā bú shì Zhōngguó rén.",
+        "vi": "Anh ấy không phải người Trung Quốc."
       },
       {
-        "zh": "我哥哥不太高，但是很帅。",
-        "pinyin": "Wǒ gēge bù tàigāo, dànshì hěn shuài.",
-        "vi": "Anh traitôikhông cao, nhưng anh ấy rấtđẹp trai."
+        "zh": "我不认识他。",
+        "pinyin": "Wǒ bú rènshi tā.",
+        "vi": "Tôi không quen biết anh ấy."
       },
       {
-        "zh": "不要走！等等我！",
-        "pinyin": "Búyào zǒu! Děng děng wǒ!",
-        "vi": "Đừng đi!Đợi mình với!"
+        "zh": "我不叫李文。",
+        "pinyin": "Wǒ bù jiào Lǐ Wén.",
+        "vi": "Tôi không tên là Lý Văn."
       }
     ]
   },
@@ -463,24 +463,19 @@ export const grammarTopics: GrammarTopicEntry[] = [
     ],
     "examples": [
       {
-        "zh": "你的手机",
-        "pinyin": "Nǐ de shǒujī",
-        "vi": "Điện thoạidi động của bạn"
+        "zh": "我的爸爸是医生。",
+        "pinyin": "Wǒ de bàba shì yīshēng.",
+        "vi": "Bố của tôi là bác sĩ."
       },
       {
-        "zh": "上海的天气",
-        "pinyin": "Shànghǎi de tiānqì",
-        "vi": "Thời tiếtThượng Hải"
+        "zh": "这是我的书。",
+        "pinyin": "Zhè shì wǒ de shū.",
+        "vi": "Đây là sách của tôi."
       },
       {
-        "zh": "这是我的书，那是他的。",
-        "pinyin": "Zhè shì wǒ de shū, nà shì tāde.",
-        "vi": "Đây là sách của tôi,kialà sách của anh ấy."
-      },
-      {
-        "zh": "A：这是谁的花？",
-        "pinyin": "Zhè shìshéi de huā?",
-        "vi": "Đây làhoa của ai? B:是我的。 Shì wǒ de. Hoa của tôi."
+        "zh": "他的名字叫王兰。",
+        "pinyin": "Tā de míngzi jiào Wáng Lán.",
+        "vi": "Tên của anh ấy là Vương Lan."
       }
     ]
   },
@@ -555,7 +550,23 @@ export const grammarTopics: GrammarTopicEntry[] = [
     "meaning": "Thể hiện sự sở hữu",
     "usage": "有 (yǒu) có thể được sử dụng theo nhiều cách khác nhau, nhưng ý nghĩa cơ bản nhất\ncủa động từ này bạn cần biếtlà 'có'\nCấu trúc: Chủ ngữ + 有 + Tân ngữ\nCấu trúc này có thể dùng để thể hiện:\n ● Aicó cái gì(sự sở hữu)\n ● Cái gìgồm có bao nhiêu\nĐộng từ 有 (yǒu) bịphủ địnhtheo cách đặc biệt.Không giống như hầu hết các động từ\nkhác,nó bịphủ định với 没 (méi)thay vì 不 (bù). Để biếtthêm về chủ đề này, hãy xem\nphần phủ định '不 'với'没'.\n\n3.Ví dụ\n\n ● VD1: 我有钱。\n\n Wǒ yǒu qián.\n\n Tôicó tiền.\n\n ● VD2: 她没有车。\n\n Tā méiyǒu chē.\n\n Cô ấy không có xe hơi.\n ● VD3: 他有女朋友吗？\n\n Tā yǒu nǚpéngyou ma?\n\n Anh ấy có bạn gáichưa?",
     "notes": [],
-    "examples": []
+    "examples": [
+      {
+        "zh": "我家有四口人。",
+        "pinyin": "Wǒ jiā yǒu sì kǒu rén.",
+        "vi": "Nhà tôi có 4 người."
+      },
+      {
+        "zh": "我有两个弟弟。",
+        "pinyin": "Wǒ yǒu liǎng gè dìdi.",
+        "vi": "Tôi có hai người em trai."
+      },
+      {
+        "zh": "你有中国朋友吗？",
+        "pinyin": "Nǐ yǒu Zhōngguó péngyou ma?",
+        "vi": "Bạn có bạn Trung Quốc không?"
+      }
+    ]
   },
   {
     "id": "gram_hsk1_20",
@@ -566,7 +577,28 @@ export const grammarTopics: GrammarTopicEntry[] = [
     "meaning": "Giớithiệu người",
     "usage": "Động từ叫 (jiào)được sử dụng để chỉra aiđó hoặc cái gìđó được gọi, hoặc tên của ai\nđó hoặc cái gìđó là gì.Cách sử dụng của nó có vẻ hơi lạđối với người mới bắt đầu, vì\nvậy nó có điểm ngữ pháp riêng.\n ● Động từ叫 (jiào)có nghĩa là cả 'đểgọi'hoặc 'được gọi.'Ta có thể tìm hiểucấu\n trúcđơn giản sau:\n Cấu trúc: Chủ ngữ + 叫 + [Tên]\n Cấu trúc này có thể được dịch là'Ai/cáigì'tên/gọi (làgì)'.\n ● Bạn cũng có thể hỏimột người/ vật tênhoặc cách gọi với 叫 (jiào):\n Cấu trúc: Chủ ngữ + 叫 + 什么（Shénme）？\n\n3.Ví dụ\n\n ● VD1: 他叫李小龙。\n\n Tā jiàoLǐXiǎolóng.\n\n Tên anh ấy làLý Tiểu Long.\n\n ● VD2: 那个叫什么？\n\n Nàge jiàoshénme?\n\n Cái đó gọilà gì?\n\n ● VD3: 这个地方叫外滩。\n\n Zhège dìfang jiàoWàitān.\n Nơi này được gọi làBến Thượng Hải.",
     "notes": [],
-    "examples": []
+    "examples": [
+      {
+        "zh": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "vi": "Bạn tên là gì?"
+      },
+      {
+        "zh": "我叫李文。",
+        "pinyin": "Wǒ jiào Lǐ Wén.",
+        "vi": "Tôi tên là Lý Văn."
+      },
+      {
+        "zh": "他叫什么？",
+        "pinyin": "Tā jiào shénme?",
+        "vi": "Anh ấy tên là gì?"
+      },
+      {
+        "zh": "她叫王兰。",
+        "pinyin": "Tā jiào Wáng Lán.",
+        "vi": "Cô ấy tên là Vương Lan."
+      }
+    ]
   },
   {
     "id": "gram_hsk1_21",
@@ -839,24 +871,24 @@ export const grammarTopics: GrammarTopicEntry[] = [
     ],
     "examples": [
       {
-        "zh": "你说。",
-        "pinyin": "Nǐshuō.",
-        "vi": "Bạn nói coi."
+        "zh": "我明天在学校学习。",
+        "pinyin": "Wǒ míngtiān zài xuéxiào xuéxí.",
+        "vi": "Ngày mai tôi học ở trường."
       },
       {
-        "zh": "他在河内生活。",
-        "pinyin": "Tā zàihénèi shēnghuó.",
-        "vi": "Anh ấy sống ở Hà Nội."
+        "zh": "爸爸晚上在家休息。",
+        "pinyin": "Bàba wǎnshang zài jiā xiūxi.",
+        "vi": "Buổi tối bố ở nhà nghỉ ngơi."
       },
       {
-        "zh": "我也是学生。",
-        "pinyin": "Wǒ yěshì xuéshēng.",
-        "vi": "Tôicũng làmột sinhviên."
+        "zh": "我们今天去商店买东西。",
+        "pinyin": "Wǒmen jīntiān qù shāngdiàn mǎi dōngxi.",
+        "vi": "Hôm nay chúng tôi đến cửa hàng mua đồ."
       },
       {
-        "zh": "他昨天在北京跟小林结婚了。",
-        "pinyin": "Tā zuótiān zàiběijīng gēn xiǎolínjiéhūnle.",
-        "vi": "Anh ấy cưới TiểuLâm ở Bắc Kinh ngày hôm qua."
+        "zh": "你在哪儿吃饭？",
+        "pinyin": "Nǐ zài nǎr chīfàn?",
+        "vi": "Bạn ăn cơm ở đâu?"
       }
     ]
   },
@@ -875,27 +907,22 @@ export const grammarTopics: GrammarTopicEntry[] = [
       {
         "zh": "我是学生。",
         "pinyin": "Wǒ shì xuésheng.",
-        "vi": "Tôi là một sinh viên."
+        "vi": "Tôi là học sinh."
       },
       {
-        "zh": "你是老板吗？",
-        "pinyin": "Nǐshì lǎobǎn ma?",
-        "vi": "Anh có phải là ông chủ không?"
+        "zh": "他是老师。",
+        "pinyin": "Tā shì lǎoshī.",
+        "vi": "Thầy ấy là giáo viên."
       },
       {
-        "zh": "他没听到，是不是？",
-        "pinyin": "Tā méi tīngdào, shì bu shì?",
-        "vi": "Anh ấy không nghe thấy,phải không?"
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       },
       {
-        "zh": "你们是不是中国人？",
-        "pinyin": "Nǐmen shì bu shìZhōngguó rén?",
-        "vi": "Các bạn làngười Trung Quốc hả?"
-      },
-      {
-        "zh": "你到了，是吗？",
-        "pinyin": "Nǐdào le,shì ma?",
-        "vi": "Bạn đến rồi,phải không?"
+        "zh": "我们是朋友。",
+        "pinyin": "Wǒmen shì péngyou.",
+        "vi": "Chúng tôi là bạn bè."
       }
     ]
   },
@@ -1032,24 +1059,24 @@ export const grammarTopics: GrammarTopicEntry[] = [
     ],
     "examples": [
       {
-        "zh": "你喜欢咖啡。",
-        "pinyin": "Nǐ xǐhuan kāfēi.",
-        "vi": "Bạn thích cà phê. → 你喜欢咖啡吗？ Nǐ xǐhuan kāfēi ma? Bạn có thích cà phê không"
+        "zh": "你是老师吗？",
+        "pinyin": "Nǐ shì lǎoshī ma?",
+        "vi": "Bạn có phải là giáo viên không?"
       },
       {
-        "zh": "你是大学生吗？",
-        "pinyin": "Nǐ shì dàxuéshēng ma?",
-        "vi": "Có phải bạn là sinh viên đại học không?"
+        "zh": "他是中国人吗？",
+        "pinyin": "Tā shì Zhōngguó rén ma?",
+        "vi": "Anh ấy có phải là người Trung Quốc không?"
       },
       {
-        "zh": "A: 你知道了吗？",
-        "pinyin": "Nǐ zhīdào le ma?",
-        "vi": "Bạn biết rồichứ? B: 知道了。 Zhīdào le. Tôi biết."
+        "zh": "你们是朋友吗？",
+        "pinyin": "Nǐmen shì péngyou ma?",
+        "vi": "Các bạn có phải là bạn bè không?"
       },
       {
-        "zh": "A: 你没有工作吗？",
-        "pinyin": "Nǐ méiyǒu gōngzuò ma?",
-        "vi": "Bạn không có việclàm sao? B: 对。 Duì. Đúng, tôi không có việc làm."
+        "zh": "你好吗？",
+        "pinyin": "Nǐ hǎo ma?",
+        "vi": "Bạn có khỏe không?"
       }
     ]
   },

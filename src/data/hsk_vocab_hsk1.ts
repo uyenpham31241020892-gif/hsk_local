@@ -333,6 +333,336 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
+    "id": "v377",
+    "simplified": "我",
+    "pinyin": "wǒ",
+    "meaning": "Tôi, mình",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我是学生。",
+        "pinyin": "Wǒ shì xuéshēng",
+        "vi": "Tôi là học sinh."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v378",
+    "simplified": "我们",
+    "pinyin": "wǒmen",
+    "meaning": "Chúng tôi, chúng ta",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我们是好朋友。",
+        "pinyin": "Wǒmen shì hǎo péngyǒu",
+        "vi": "Chúng tôi là bạn tốt của nhau."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v174",
+    "simplified": "叫",
+    "pinyin": "jiào",
+    "meaning": "Gọi, kêu",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "妈妈叫我回家。",
+        "pinyin": "Māmā jiào wǒ huí jiā",
+        "vi": "Mẹ gọi tôi về nhà."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v325",
+    "simplified": "什么",
+    "pinyin": "shénme",
+    "meaning": "Gì, cái gì",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "你想吃什么？",
+        "pinyin": "Nǐ xiǎng chī shénme",
+        "vi": "Bạn muốn ăn gì?"
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v243",
+    "simplified": "名字",
+    "pinyin": "míngzi",
+    "meaning": "Tên gọi",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "你的名字是什么？",
+        "pinyin": "Nǐ de míngzi shì shénme",
+        "vi": "Tên của bạn là gì?"
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v334",
+    "simplified": "是",
+    "pinyin": "shì",
+    "meaning": "Là",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "他是我的好朋友。",
+        "pinyin": "Tā shì wǒ de hǎo péngyǒu",
+        "vi": "Anh ấy là bạn tốt của tôi."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v302",
+    "simplified": "人",
+    "pinyin": "rén",
+    "meaning": "Người",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "这个世界上有很多好人。",
+        "pinyin": "Zhège shìjiè shàng yǒu hěn duō hǎorén",
+        "vi": "Trên thế giới này có rất nhiều người tốt."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v474",
+    "simplified": "中国",
+    "pinyin": "Zhōngguó",
+    "meaning": "Trung quốc",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "中国是一个美丽的国家。",
+        "pinyin": "Zhōngguó shì yī gè měilì de guójiā",
+        "vi": "Trung Quốc là một đất nước xinh đẹp."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v021",
+    "simplified": "北京",
+    "pinyin": "Běijīng",
+    "meaning": "Bắc kinh",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "北京是中国的首都。",
+        "pinyin": "Běijīng shì zhōngguó de shǒudū",
+        "vi": "Bắc Kinh là thủ đô của Trung Quốc."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v281",
+    "simplified": "朋友",
+    "pinyin": "péngyou",
+    "meaning": "Bạn bè",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我有很多朋友。",
+        "pinyin": "Wǒ yǒu hěn duō péngyou",
+        "vi": "Tôi có rất nhiều bạn."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v322",
+    "simplified": "谁",
+    "pinyin": "shéi",
+    "meaning": "Ai",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "这是谁的书？",
+        "pinyin": "Zhè shì shéi de shū",
+        "vi": "Đây là sách của ai?"
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v303",
+    "simplified": "认识",
+    "pinyin": "rènshi",
+    "meaning": "Quen biết",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我认识他。",
+        "pinyin": "Wǒ rènshi tā",
+        "vi": "Tôi quen biết anh ấy."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v115",
+    "simplified": "高兴",
+    "pinyin": "gāoxìng",
+    "meaning": "Vui mừng; háo hức",
+    "pos": [
+      "adj"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "今天我很高兴。",
+        "pinyin": "Jīntiān wǒ hěn gāoxìng",
+        "vi": "Hôm nay tôi rất vui."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v351",
+    "simplified": "他",
+    "pinyin": "tā",
+    "meaning": "Anh ấy, ông ấy",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "他是我的朋友。",
+        "pinyin": "Tā shì wǒ de péngyǒu",
+        "vi": "Anh ấy là bạn của tôi."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v353",
+    "simplified": "她",
+    "pinyin": "tā",
+    "meaning": "Cô ấy, bà ấy",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "她喜欢听音乐。",
+        "pinyin": "Tā xǐhuan tīng yīnyuè",
+        "vi": "Cô ấy thích nghe nhạc."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
     "id": "v424",
     "simplified": "一",
     "pinyin": "yī",
@@ -1977,330 +2307,6 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v106",
-    "simplified": "飞机",
-    "pinyin": "fēijī",
-    "meaning": "Máy bay",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我第一次坐飞机时特别开心。",
-        "pinyin": "Wǒ dì yī cì zuò fēijī shí tèbié kāixīn",
-        "vi": "Lần đầu tiên tôi đi máy bay, tôi rất vui mừng."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v159",
-    "simplified": "火车",
-    "pinyin": "huǒchē",
-    "meaning": "Tàu hỏa; xe lửa",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我坐火车去北京。",
-        "pinyin": "Wǒ zuò huǒchē qù Běijīng",
-        "vi": "Tôi đi Bắc Kinh bằng tàu hỏa."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v287",
-    "simplified": "汽车",
-    "pinyin": "qìchē",
-    "meaning": "Xe hơi, ô tô",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "这辆汽车是我爸爸的。",
-        "pinyin": "Zhè liàng qìchē shì wǒ bàba de",
-        "vi": "Hai chiếc ô tô này là của bố tôi."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v042",
-    "simplified": "车",
-    "pinyin": "chē",
-    "meaning": "Xe",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我们开车去旅行。",
-        "pinyin": "Wǒmen kāichē qù lǚxíng",
-        "vi": "Chúng tôi lái xe đi du lịch."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v045",
-    "simplified": "车站",
-    "pinyin": "chēzhàn",
-    "meaning": "Trạm xe",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "车站离这里不远。",
-        "pinyin": "Chēzhàn lí zhè lǐ bù yuǎn",
-        "vi": "Trạm xe cách đây không xa."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v160",
-    "simplified": "机场",
-    "pinyin": "jīchǎng",
-    "meaning": "Sân bay",
-    "pos": [
-      "n"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他去机场接朋友。",
-        "pinyin": "Tā qù jīchǎng jiē péngyǒu",
-        "vi": "Anh ấy đến sân bay đón bạn."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v495",
-    "simplified": "坐",
-    "pinyin": "zuò",
-    "meaning": "Ngồi",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "请坐这里，老师马上来。",
-        "pinyin": "Qǐng zuò zhèlǐ, lǎoshī mǎshàng lái",
-        "vi": "Mời ngồi đây, thầy giáo sẽ đến ngay."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v186",
-    "simplified": "开",
-    "pinyin": "kāi",
-    "meaning": "Mở, bật, lái",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他正在学开车。",
-        "pinyin": "Tā zhèngzài xué kāichē",
-        "vi": "Anh ấy đang học lái xe."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v187",
-    "simplified": "开车",
-    "pinyin": "kāi chē",
-    "meaning": "Lái xe",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v057",
-    "simplified": "打车",
-    "pinyin": "dǎchē",
-    "meaning": "Bắt xe; gọi xe (taxi)",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我们打车去机场。",
-        "pinyin": "Wǒmen dǎ chē qù jīchǎng",
-        "vi": "Chúng ta bắt xe đến sân bay."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v487",
-    "simplified": "走",
-    "pinyin": "zǒu",
-    "meaning": "Đi, rời đi",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我们一起走吧，太晚了。",
-        "pinyin": "Wǒmen yīqǐ zǒu ba, tài wǎn le",
-        "vi": "Chúng ta cùng đi thôi, trễ quá rồi."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v299",
-    "simplified": "去",
-    "pinyin": "qù",
-    "meaning": "Đi, rời đi, rời khỏi",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他吃完饭就去了。",
-        "pinyin": "Tā chī wán fàn jiù qù le",
-        "vi": "Anh ấy ăn xong rồi đi ngay."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v152",
-    "simplified": "回",
-    "pinyin": "huí",
-    "meaning": "Quay lại; quay về",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我每天六点回家。",
-        "pinyin": "Wǒ měitiān liù diǎn huí jiā",
-        "vi": "Tôi về nhà lúc 6 giờ mỗi ngày."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v155",
-    "simplified": "回家",
-    "pinyin": "huí jiā",
-    "meaning": "Về nhà; đến nhà",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "朋友们都回家了。",
-        "pinyin": "Péngyǒumen dōu huí jiā le",
-        "vi": "Các bạn tôi đều đã về nhà rồi."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v064",
-    "simplified": "到",
-    "pinyin": "dào",
-    "meaning": "Đến",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我们到达了目的地。",
-        "pinyin": "Wǒmen dàodá le mùdìdì",
-        "vi": "Chúng ta đã đến nơi."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
     "id": "v291",
     "simplified": "钱",
     "pinyin": "qián",
@@ -2631,142 +2637,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v377",
-    "simplified": "我",
-    "pinyin": "wǒ",
-    "meaning": "Tôi, mình",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我是学生。",
-        "pinyin": "Wǒ shì xuéshēng",
-        "vi": "Tôi là học sinh."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v378",
-    "simplified": "我们",
-    "pinyin": "wǒmen",
-    "meaning": "Chúng tôi, chúng ta",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyǒu",
-        "vi": "Chúng tôi là bạn tốt của nhau."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v351",
-    "simplified": "他",
-    "pinyin": "tā",
-    "meaning": "Anh ấy, ông ấy",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他是我的朋友。",
-        "pinyin": "Tā shì wǒ de péngyǒu",
-        "vi": "Anh ấy là bạn của tôi."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v352",
-    "simplified": "他们",
-    "pinyin": "tāmen",
-    "meaning": "Họ, bọn họ (nam)",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他们在学校学习。",
-        "pinyin": "Tāmen zài xuéxiào xuéxí",
-        "vi": "Họ đang học ở trường."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v353",
-    "simplified": "她",
-    "pinyin": "tā",
-    "meaning": "Cô ấy, bà ấy",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "她喜欢听音乐。",
-        "pinyin": "Tā xǐhuan tīng yīnyuè",
-        "vi": "Cô ấy thích nghe nhạc."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v354",
-    "simplified": "她们",
-    "pinyin": "tāmen",
-    "meaning": "Họ, bọn họ (nữ)",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "她们正在看书。",
-        "pinyin": "Tāmen zhèngzài kàn shū",
-        "vi": "Họ đang đọc sách."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v302",
-    "simplified": "人",
-    "pinyin": "rén",
-    "meaning": "Người",
+    "id": "v106",
+    "simplified": "飞机",
+    "pinyin": "fēijī",
+    "meaning": "Máy bay",
     "pos": [
       "n"
     ],
@@ -2774,9 +2648,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个世界上有很多好人。",
-        "pinyin": "Zhège shìjiè shàng yǒu hěn duō hǎorén",
-        "vi": "Trên thế giới này có rất nhiều người tốt."
+        "zh": "我第一次坐飞机时特别开心。",
+        "pinyin": "Wǒ dì yī cì zuò fēijī shí tèbié kāixīn",
+        "vi": "Lần đầu tiên tôi đi máy bay, tôi rất vui mừng."
       }
     ],
     "tags": [
@@ -2785,10 +2659,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v474",
-    "simplified": "中国",
-    "pinyin": "Zhōngguó",
-    "meaning": "Trung quốc",
+    "id": "v159",
+    "simplified": "火车",
+    "pinyin": "huǒchē",
+    "meaning": "Tàu hỏa; xe lửa",
     "pos": [
       "n"
     ],
@@ -2796,9 +2670,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "中国是一个美丽的国家。",
-        "pinyin": "Zhōngguó shì yī gè měilì de guójiā",
-        "vi": "Trung Quốc là một đất nước xinh đẹp."
+        "zh": "我坐火车去北京。",
+        "pinyin": "Wǒ zuò huǒchē qù Běijīng",
+        "vi": "Tôi đi Bắc Kinh bằng tàu hỏa."
       }
     ],
     "tags": [
@@ -2807,10 +2681,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v021",
-    "simplified": "北京",
-    "pinyin": "Běijīng",
-    "meaning": "Bắc kinh",
+    "id": "v287",
+    "simplified": "汽车",
+    "pinyin": "qìchē",
+    "meaning": "Xe hơi, ô tô",
     "pos": [
       "n"
     ],
@@ -2818,9 +2692,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "北京是中国的首都。",
-        "pinyin": "Běijīng shì zhōngguó de shǒudū",
-        "vi": "Bắc Kinh là thủ đô của Trung Quốc."
+        "zh": "这辆汽车是我爸爸的。",
+        "pinyin": "Zhè liàng qìchē shì wǒ bàba de",
+        "vi": "Hai chiếc ô tô này là của bố tôi."
       }
     ],
     "tags": [
@@ -2829,10 +2703,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v123",
-    "simplified": "工作",
-    "pinyin": "gōngzuò",
-    "meaning": "Công việc",
+    "id": "v042",
+    "simplified": "车",
+    "pinyin": "chē",
+    "meaning": "Xe",
     "pos": [
       "n"
     ],
@@ -2840,9 +2714,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他的工作非常忙。",
-        "pinyin": "Tā de gōngzuò fēicháng máng",
-        "vi": "Công việc của anh ấy rất bận."
+        "zh": "我们开车去旅行。",
+        "pinyin": "Wǒmen kāichē qù lǚxíng",
+        "vi": "Chúng tôi lái xe đi du lịch."
       }
     ],
     "tags": [
@@ -2851,10 +2725,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v426",
-    "simplified": "医生",
-    "pinyin": "yīshēng",
-    "meaning": "Bác sĩ",
+    "id": "v045",
+    "simplified": "车站",
+    "pinyin": "chēzhàn",
+    "meaning": "Trạm xe",
     "pos": [
       "n"
     ],
@@ -2862,9 +2736,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我爸爸是一名医生。",
-        "pinyin": "Wǒ bàba shì yī míng yīshēng",
-        "vi": "Bố tôi là một bác sĩ."
+        "zh": "车站离这里不远。",
+        "pinyin": "Chēzhàn lí zhè lǐ bù yuǎn",
+        "vi": "Trạm xe cách đây không xa."
       }
     ],
     "tags": [
@@ -2873,20 +2747,20 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v322",
-    "simplified": "谁",
-    "pinyin": "shéi",
-    "meaning": "Ai",
+    "id": "v160",
+    "simplified": "机场",
+    "pinyin": "jīchǎng",
+    "meaning": "Sân bay",
     "pos": [
-      "pron"
+      "n"
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这是谁的书？",
-        "pinyin": "Zhè shì shéi de shū",
-        "vi": "Đây là sách của ai?"
+        "zh": "他去机场接朋友。",
+        "pinyin": "Tā qù jīchǎng jiē péngyǒu",
+        "vi": "Anh ấy đến sân bay đón bạn."
       }
     ],
     "tags": [
@@ -2895,10 +2769,10 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v303",
-    "simplified": "认识",
-    "pinyin": "rènshi",
-    "meaning": "Quen biết",
+    "id": "v495",
+    "simplified": "坐",
+    "pinyin": "zuò",
+    "meaning": "Ngồi",
     "pos": [
       "v"
     ],
@@ -2906,9 +2780,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我认识他。",
-        "pinyin": "Wǒ rènshi tā",
-        "vi": "Tôi quen biết anh ấy."
+        "zh": "请坐这里，老师马上来。",
+        "pinyin": "Qǐng zuò zhèlǐ, lǎoshī mǎshàng lái",
+        "vi": "Mời ngồi đây, thầy giáo sẽ đến ngay."
       }
     ],
     "tags": [
@@ -2917,20 +2791,20 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v115",
-    "simplified": "高兴",
-    "pinyin": "gāoxìng",
-    "meaning": "Vui mừng; háo hức",
+    "id": "v186",
+    "simplified": "开",
+    "pinyin": "kāi",
+    "meaning": "Mở, bật, lái",
     "pos": [
-      "adj"
+      "v"
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天我很高兴。",
-        "pinyin": "Jīntiān wǒ hěn gāoxìng",
-        "vi": "Hôm nay tôi rất vui."
+        "zh": "他正在学开车。",
+        "pinyin": "Tā zhèngzài xué kāichē",
+        "vi": "Anh ấy đang học lái xe."
       }
     ],
     "tags": [
@@ -2939,20 +2813,146 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v281",
-    "simplified": "朋友",
-    "pinyin": "péngyou",
-    "meaning": "Bạn bè",
+    "id": "v187",
+    "simplified": "开车",
+    "pinyin": "kāi chē",
+    "meaning": "Lái xe",
     "pos": [
-      "n"
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v057",
+    "simplified": "打车",
+    "pinyin": "dǎchē",
+    "meaning": "Bắt xe; gọi xe (taxi)",
+    "pos": [
+      "v"
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有很多朋友。",
-        "pinyin": "Wǒ yǒu hěn duō péngyou",
-        "vi": "Tôi có rất nhiều bạn."
+        "zh": "我们打车去机场。",
+        "pinyin": "Wǒmen dǎ chē qù jīchǎng",
+        "vi": "Chúng ta bắt xe đến sân bay."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v487",
+    "simplified": "走",
+    "pinyin": "zǒu",
+    "meaning": "Đi, rời đi",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我们一起走吧，太晚了。",
+        "pinyin": "Wǒmen yīqǐ zǒu ba, tài wǎn le",
+        "vi": "Chúng ta cùng đi thôi, trễ quá rồi."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v299",
+    "simplified": "去",
+    "pinyin": "qù",
+    "meaning": "Đi, rời đi, rời khỏi",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "他吃完饭就去了。",
+        "pinyin": "Tā chī wán fàn jiù qù le",
+        "vi": "Anh ấy ăn xong rồi đi ngay."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v152",
+    "simplified": "回",
+    "pinyin": "huí",
+    "meaning": "Quay lại; quay về",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我每天六点回家。",
+        "pinyin": "Wǒ měitiān liù diǎn huí jiā",
+        "vi": "Tôi về nhà lúc 6 giờ mỗi ngày."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v155",
+    "simplified": "回家",
+    "pinyin": "huí jiā",
+    "meaning": "Về nhà; đến nhà",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "朋友们都回家了。",
+        "pinyin": "Péngyǒumen dōu huí jiā le",
+        "vi": "Các bạn tôi đều đã về nhà rồi."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v064",
+    "simplified": "到",
+    "pinyin": "dào",
+    "meaning": "Đến",
+    "pos": [
+      "v"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我们到达了目的地。",
+        "pinyin": "Wǒmen dàodá le mùdìdì",
+        "vi": "Chúng ta đã đến nơi."
       }
     ],
     "tags": [
@@ -3599,20 +3599,20 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v243",
-    "simplified": "名字",
-    "pinyin": "míngzi",
-    "meaning": "Tên gọi",
+    "id": "v414",
+    "simplified": "休息",
+    "pinyin": "xiūxi",
+    "meaning": "Nghỉ ngơi",
     "pos": [
-      "n"
+      "v"
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的名字是什么？",
-        "pinyin": "Nǐ de míngzi shì shénme",
-        "vi": "Tên của bạn là gì?"
+        "zh": "我每天都要休息一小时。",
+        "pinyin": "Wǒ měitiān dōu yào xiūxi yī xiǎoshí",
+        "vi": "Tôi phải nghỉ ngơi một giờ mỗi ngày."
       }
     ],
     "tags": [
@@ -4273,6 +4273,94 @@ export const hsk1Vocab: VocabEntry[] = [
         "zh": "他喜欢踢足球。",
         "pinyin": "Tā xǐhuan tī zúqiú",
         "vi": "Anh ấy thích đá bóng."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v352",
+    "simplified": "他们",
+    "pinyin": "tāmen",
+    "meaning": "Họ, bọn họ (nam)",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "他们在学校学习。",
+        "pinyin": "Tāmen zài xuéxiào xuéxí",
+        "vi": "Họ đang học ở trường."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v354",
+    "simplified": "她们",
+    "pinyin": "tāmen",
+    "meaning": "Họ, bọn họ (nữ)",
+    "pos": [
+      "pron"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "她们正在看书。",
+        "pinyin": "Tāmen zhèngzài kàn shū",
+        "vi": "Họ đang đọc sách."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v123",
+    "simplified": "工作",
+    "pinyin": "gōngzuò",
+    "meaning": "Công việc",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "他的工作非常忙。",
+        "pinyin": "Tā de gōngzuò fēicháng máng",
+        "vi": "Công việc của anh ấy rất bận."
+      }
+    ],
+    "tags": [
+      "HSK1",
+      "3.0"
+    ]
+  },
+{
+    "id": "v426",
+    "simplified": "医生",
+    "pinyin": "yīshēng",
+    "meaning": "Bác sĩ",
+    "pos": [
+      "n"
+    ],
+    "hsk2Level": 1,
+    "hsk3Level": 1,
+    "exampleSentences": [
+      {
+        "zh": "我爸爸是一名医生。",
+        "pinyin": "Wǒ bàba shì yī míng yīshēng",
+        "vi": "Bố tôi là một bác sĩ."
       }
     ],
     "tags": [
@@ -6409,28 +6497,6 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v174",
-    "simplified": "叫",
-    "pinyin": "jiào",
-    "meaning": "Gọi, kêu",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "妈妈叫我回家。",
-        "pinyin": "Māmā jiào wǒ huí jiā",
-        "vi": "Mẹ gọi tôi về nhà."
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
     "id": "v175",
     "simplified": "教学楼",
     "pinyin": "jiàoxuélóu",
@@ -8405,28 +8471,6 @@ export const hsk1Vocab: VocabEntry[] = [
     ]
   },
 {
-    "id": "v325",
-    "simplified": "什么",
-    "pinyin": "shénme",
-    "meaning": "Gì, cái gì",
-    "pos": [
-      "pron"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "你想吃什么？",
-        "pinyin": "Nǐ xiǎng chī shénme",
-        "vi": "Bạn muốn ăn gì?"
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
     "id": "v326",
     "simplified": "生病",
     "pinyin": "shēng bìng",
@@ -8573,28 +8617,6 @@ export const hsk1Vocab: VocabEntry[] = [
         "zh": "我可以试一试吗？",
         "pinyin": "Wǒ kěyǐ shì yī shì ma?",
         "vi": "Tôi có thể thử một chút không?"
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v334",
-    "simplified": "是",
-    "pinyin": "shì",
-    "meaning": "Là",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "他是我的好朋友。",
-        "pinyin": "Tā shì wǒ de hǎo péngyǒu",
-        "vi": "Anh ấy là bạn tốt của tôi."
       }
     ],
     "tags": [
@@ -9623,28 +9645,6 @@ export const hsk1Vocab: VocabEntry[] = [
         "zh": "这样做行不行？",
         "pinyin": "Zhèyàng zuò xíng bù xíng",
         "vi": "Làm như thế này được không?"
-      }
-    ],
-    "tags": [
-      "HSK1",
-      "3.0"
-    ]
-  },
-{
-    "id": "v414",
-    "simplified": "休息",
-    "pinyin": "xiūxi",
-    "meaning": "Nghỉ ngơi",
-    "pos": [
-      "v"
-    ],
-    "hsk2Level": 1,
-    "hsk3Level": 1,
-    "exampleSentences": [
-      {
-        "zh": "我每天都要休息一小时。",
-        "pinyin": "Wǒ měitiān dōu yào xiūxi yī xiǎoshí",
-        "vi": "Tôi phải nghỉ ngơi một giờ mỗi ngày."
       }
     ],
     "tags": [
