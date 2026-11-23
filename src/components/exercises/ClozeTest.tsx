@@ -41,7 +41,7 @@ export function ClozeTest({ exercise, speechRate, onAnswer, onNext }: ClozeTestP
     onAnswer(opt === correct);
   };
 
-  const sentenceParts = exercise.question.prompt.split('___');
+  const sentenceParts = exercise.question.prompt.split(/_{2,}/);
 
   return (
     <div className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
@@ -90,7 +90,7 @@ export function ClozeTest({ exercise, speechRate, onAnswer, onNext }: ClozeTestP
 
         <div className="flex justify-center mt-3">
           <button
-            onClick={() => speak(exercise.question.prompt.replace('___', correct), speechRate)}
+            onClick={() => speak(exercise.question.audioText || exercise.question.prompt.replace(/_{2,}/g, correct), speechRate)}
             className="p-2 rounded-xl border border-[#e5e1d8] hover:bg-[#e8f0eb] text-[#4a7c59] transition-colors"
             title="Nghe đọc cả câu"
           >

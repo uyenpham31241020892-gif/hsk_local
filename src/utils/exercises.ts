@@ -193,7 +193,13 @@ function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   return {
     type: 'cloze',
     vocabId: vocab.id,
-    question: { prompt: sentence, promptPinyin: maskedPinyin, sentence: ex.vi, options },
+    question: {
+      prompt: sentence,
+      promptPinyin: maskedPinyin,
+      sentence: ex.vi,
+      audioText: ex.zh, // Toàn bộ câu gốc chuẩn xác không chứa ô trống để nghe phát âm tự nhiên
+      options
+    },
     answer: { correct: vocab.simplified, explanation: `${vocab.simplified} (${vocab.pinyin}) = ${vocab.meaning}` },
   };
 }
@@ -202,9 +208,9 @@ function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   const ex = getRandomSentence(vocab);
   if (!ex) return buildCharRecognition(vocab, allVocab);
 
-  const sentence = ex.zh.replace(vocab.simplified, '____');
+  const sentence = ex.zh.replace(vocab.simplified, '___');
   const escapedPinyin = vocab.pinyin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const maskedPinyin = ex.pinyin.replace(new RegExp(escapedPinyin, 'i'), '____');
+  const maskedPinyin = ex.pinyin.replace(new RegExp(escapedPinyin, 'i'), '___');
   const targetChars = vocab.simplified.split('');
   
   const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
@@ -221,6 +227,7 @@ function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
       prompt: sentence,
       promptPinyin: maskedPinyin,
       sentence: ex.vi,
+      audioText: ex.zh, // Toàn bộ câu gốc chuẩn xác không chứa ô trống để nghe phát âm tự nhiên
       options,
     },
     answer: {
@@ -514,11 +521,44 @@ export function getSavedSpeechRate(): number {
   return 0.85;
 }
 
+/**
+ * Chuẩn hóa và làm sạch văn bản trước khi đọc bằng AI (SpeechSynthesis):
+ * - Loại bỏ hoàn toàn các ký hiệu gạch dưới / chỗ trống (__., ___, ____, ……)
+ *   để AI KHÔNG BAO GIỜ đọc thành "xià huà xiàn" (hạ hoa tuyến / gạch dưới) hay "underscore dot".
+ * - Thay thế ký hiệu đặc biệt như ★, ☆, ▲, v.v. bằng dấu phẩy để ngắt nghỉ tự nhiên.
+ * - Loại bỏ nhãn người nói như "男：", "女：", "男:", "女:" để không bị đọc thành "Nán mào hào".
+ * - Thay dấu ba chấm "..." bằng ngắt nghỉ nhẹ để không bị đọc thành "diǎn diǎn diǎn".
+ */
+export function cleanSpeechText(text: string): string {
+  if (!text) return '';
+  return text
+    // 1. Loại bỏ các chỗ trống gạch dưới (vd: ____, __., ___, _, ____.)
+    .replace(/[_\uFF3F]{1,}/g, '')
+    // 2. Loại bỏ dấu ngoặc trống (vd: (   ), （   ）)
+    .replace(/[（(]\s*[）)]/g, '')
+    // 3. Biến ký hiệu ngôi sao câu hỏi HSK (★, ☆, ▲, etc.) thành dấu phẩy để ngắt nghỉ
+    .replace(/[★☆▲▼■◆●○•]/g, '，')
+    // 4. Bỏ nhãn hội thoại (男：, 女：, 男:, 女:, A:, B:, etc.)
+    .replace(/(?:^|[。！？，、\s])\s*(?:男|女|[A-Za-z])\s*[：:]\s*/g, (m) => {
+      const punct = m.match(/^[。！？，、]/);
+      return punct ? punct[0] + ' ' : '';
+    })
+    // 5. Thay thế dấu ba chấm lặp lại thành dấu phẩy
+    .replace(/\.{2,}/g, '，')
+    .replace(/…+/g, '，')
+    // 6. Xóa các dấu chấm phẩy lặp cạnh nhau
+    .replace(/[，,]{2,}/g, '，')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 /** Text-to-speech with user-configured rate */
 export function speak(text: string, rate?: number, lang = 'zh-CN'): void {
   if (!('speechSynthesis' in window)) return;
+  const cleaned = cleanSpeechText(text);
+  if (!cleaned) return;
   window.speechSynthesis.cancel();
-  const utter = new SpeechSynthesisUtterance(text);
+  const utter = new SpeechSynthesisUtterance(cleaned);
   utter.lang = lang;
   utter.rate = rate !== undefined ? rate : getSavedSpeechRate();
   window.speechSynthesis.speak(utter);

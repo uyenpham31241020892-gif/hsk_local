@@ -70,7 +70,8 @@ export function ClozeTyping({ exercise, speechRate, onAnswer, onNext }: ClozeTyp
     onAnswer(matched);
 
     if (matched) {
-      speak(exercise.question.prompt.replace('___', correct), speechRate);
+      const fullSentence = exercise.question.audioText || exercise.question.prompt.replace(/_{2,}/g, correct);
+      speak(fullSentence, speechRate);
     }
   };
 
@@ -86,7 +87,7 @@ export function ClozeTyping({ exercise, speechRate, onAnswer, onNext }: ClozeTyp
     inputRef.current?.focus();
   };
 
-  const sentenceParts = exercise.question.prompt.split('___');
+  const sentenceParts = exercise.question.prompt.split(/_{2,}/);
 
   // Virtual quick-character tiles (target chars + random distractors)
   const virtualTiles = React.useMemo(() => {
@@ -176,7 +177,10 @@ export function ClozeTyping({ exercise, speechRate, onAnswer, onNext }: ClozeTyp
 
         <div className="flex justify-center pt-1">
           <button
-            onClick={() => speak(exercise.question.prompt.replace('___', correct), speechRate)}
+            onClick={() => {
+              const fullSentence = exercise.question.audioText || exercise.question.prompt.replace(/_{2,}/g, correct);
+              speak(fullSentence, speechRate);
+            }}
             className="p-2 rounded-xl border border-[#e5e1d8] hover:bg-[#e8f0eb] text-[#4a7c59] transition-colors"
             title="Nghe đọc cả câu"
           >

@@ -4,7 +4,7 @@ import { hskMockExams, generateDynamicHSKExam, type HSKMockExam, type ExamQuesti
 import { milestonePeriodicExams } from '../../data/milestone_exams_data';
 import { thptqgExams, type THPTQGExam } from '../../data/d4_thptqg_data';
 import { checkpointExams } from '../../data/checkpoints_data';
-import { speak } from '../../utils/exercises';
+import { speak, cleanSpeechText } from '../../utils/exercises';
 import { 
   Award, Trophy, CheckCircle, ChevronRight, BookOpen, RotateCcw, 
   Sparkles, ShieldCheck, Volume2, Clock, Check, X, AlertTriangle, 
@@ -98,20 +98,23 @@ export function CheckpointExamView() {
     return () => clearInterval(timer);
   }, [activeExamType, selectedTHPTExam, isThptSubmitted]);
 
-  // Audio player with official 2-repeat cadence
+  // Audio player with official 2-repeat cadence and text-cleaning (no punctuation/blank artifacts spoken)
   const playListeningAudio = (audioScript?: string, questionId?: number) => {
     if (!audioScript) return;
+    const cleanScript = cleanSpeechText(audioScript);
+    if (!cleanScript) return;
+
     window.speechSynthesis?.cancel();
     if (questionId !== undefined) setPlayingAudioId(questionId);
 
-    const firstPlay = new SpeechSynthesisUtterance(audioScript);
+    const firstPlay = new SpeechSynthesisUtterance(cleanScript);
     firstPlay.lang = 'zh-CN';
     firstPlay.rate = 0.82;
 
     firstPlay.onend = () => {
       setTimeout(() => {
         if (!isExamRunning && !isExamSubmitted) return;
-        const secondPlay = new SpeechSynthesisUtterance(audioScript);
+        const secondPlay = new SpeechSynthesisUtterance(cleanScript);
         secondPlay.lang = 'zh-CN';
         secondPlay.rate = 0.82;
         secondPlay.onend = () => {
@@ -412,7 +415,10 @@ export function CheckpointExamView() {
                 {page.section === 'listening' && (
                   <button
                     onClick={() => {
-                      const fullAudioScript = page.questions.map(q => q.audioScript).filter(Boolean).join(' ... ');
+                      const fullAudioScript = page.questions
+                        .map(q => q.audioScript ? cleanSpeechText(q.audioScript) : '')
+                        .filter(Boolean)
+                        .join(' ， ');
                       playListeningAudio(fullAudioScript);
                     }}
                     className="px-3 py-1.5 rounded-xl bg-[#e8f0eb] hover:bg-[#d4e6db] text-[#4a7c59] text-xs font-bold flex items-center gap-1.5 transition-colors shrink-0 shadow-2xs"
