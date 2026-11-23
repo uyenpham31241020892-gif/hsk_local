@@ -2,7 +2,7 @@ import type { VocabEntry } from '../types';
 
 // HSK 1 Toàn diện (Chuẩn HSK 3.0 - 497 từ sắp xếp theo thứ tự lộ trình sư phạm bài bản)
 export const hsk1Vocab: VocabEntry[] = [
-{
+  {
     "id": "v268",
     "simplified": "你",
     "pinyin": "nǐ",
@@ -14,9 +14,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你喜欢吃什么？",
-        "pinyin": "Nǐ xǐhuan chī shénme",
-        "vi": "Bạn thích ăn gì?"
+        "zh": "你好！",
+        "pinyin": "Nǐ hǎo!",
+        "vi": "Chào bạn!"
       }
     ],
     "tags": [
@@ -24,7 +24,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v137",
     "simplified": "好",
     "pinyin": "hǎo",
@@ -36,9 +36,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你身体好吗？",
-        "pinyin": "Nǐ shēntǐ hǎo ma",
-        "vi": "Bạn có khỏe không?"
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -46,7 +46,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v271",
     "simplified": "您",
     "pinyin": "nín",
@@ -58,9 +58,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "您喜欢喝茶还是喝咖啡？",
-        "pinyin": "Nín xǐhuan hē chá háishì hē kāfēi",
-        "vi": "Ngài thích uống trà hay cà phê?"
+        "zh": "您好！",
+        "pinyin": "Nín hǎo!",
+        "vi": "Chào ngài / Chào thầy cô!"
       }
     ],
     "tags": [
@@ -68,7 +68,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v269",
     "simplified": "你们",
     "pinyin": "nǐmen",
@@ -80,9 +80,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你们要去哪儿？",
-        "pinyin": "Nǐmen yào qù nǎr",
-        "vi": "Các bạn muốn đi đâu?"
+        "zh": "你们好！",
+        "pinyin": "Nǐmen hǎo!",
+        "vi": "Chào các bạn!"
       }
     ],
     "tags": [
@@ -90,7 +90,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v207",
     "simplified": "老师",
     "pinyin": "lǎoshī",
@@ -102,9 +102,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她是我们的汉语老师。",
-        "pinyin": "Tā shì wǒmen de Hànyǔ lǎoshī",
-        "vi": "Cô ấy là giáo viên tiếng Trung của chúng tôi."
+        "zh": "谢谢老师！",
+        "pinyin": "Xièxie lǎoshī!",
+        "vi": "Cảm ơn thầy cô!"
       }
     ],
     "tags": [
@@ -112,7 +112,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v416",
     "simplified": "学生",
     "pinyin": "xuéshēng",
@@ -124,9 +124,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她是我的学生。",
-        "pinyin": "Tā shì wǒ de xuéshēng",
-        "vi": "Cô ấy là học sinh của tôi."
+        "zh": "学生好！",
+        "pinyin": "Xuéshēng hǎo!",
+        "vi": "Chào các em học sinh!"
       }
     ],
     "tags": [
@@ -134,7 +134,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v407",
     "simplified": "谢谢",
     "pinyin": "xièxie",
@@ -146,9 +146,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "谢谢你的帮助。",
-        "pinyin": "Xièxie nǐ de bāngzhù",
-        "vi": "Cảm ơn sự giúp đỡ của bạn."
+        "zh": "谢谢你！",
+        "pinyin": "Xièxie nǐ!",
+        "vi": "Cảm ơn bạn!"
       }
     ],
     "tags": [
@@ -156,7 +156,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v032",
     "simplified": "不客气",
     "pinyin": "búkèqi",
@@ -168,9 +168,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "A: 谢谢你！\nB: 不客气！",
-        "pinyin": "A: Xièxiè nǐ\nB: Búkèqi",
-        "vi": "A: Cảm ơn bạn! \nB: Đừng khách sáo!"
+        "zh": "不客气！",
+        "pinyin": "Búkèqi!",
+        "vi": "Không có gì, đừng khách sáo!"
       }
     ],
     "tags": [
@@ -178,7 +178,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v451",
     "simplified": "再见",
     "pinyin": "zàijiàn",
@@ -190,9 +190,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "A: 明天见！\nB: 再见！",
-        "pinyin": "A:Míngtiān jiàn! \nB: Zàijiàn!",
-        "vi": "A: Hẹn gặp lại ngày mai! \nB: Tạm biệt!"
+        "zh": "老师再见！",
+        "pinyin": "Lǎoshī zàijiàn!",
+        "vi": "Tạm biệt thầy cô!"
       }
     ],
     "tags": [
@@ -200,7 +200,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v362",
     "simplified": "同学",
     "pinyin": "tóngxué",
@@ -212,9 +212,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这是我的同学。",
-        "pinyin": "Zhè shì wǒ de tóngxué",
-        "vi": "Đây là bạn học của tôi."
+        "zh": "同学好！",
+        "pinyin": "Tóngxué hǎo!",
+        "vi": "Chào bạn học!"
       }
     ],
     "tags": [
@@ -222,7 +222,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v034",
     "simplified": "不",
     "pinyin": "bù",
@@ -234,9 +234,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我不喜欢吃辣。",
-        "pinyin": "Wǒ bù xǐhuān chī là",
-        "vi": "Tôi không thích ăn cay."
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -244,7 +244,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v171",
     "simplified": "见",
     "pinyin": "jiàn",
@@ -256,9 +256,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在公园见到朋友。",
-        "pinyin": "Wǒ zài gōngyuán jiàn dào péngyǒu",
-        "vi": "Tôi gặp bạn ở công viên."
+        "zh": "再见！",
+        "pinyin": "Zàijiàn!",
+        "vi": "Tạm biệt / Hẹn gặp lại!"
       }
     ],
     "tags": [
@@ -266,7 +266,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v376",
     "simplified": "问",
     "pinyin": "wèn",
@@ -278,9 +278,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你可以问问老师这个问题。",
-        "pinyin": "Nǐ kěyǐ wèn wèn lǎoshī zhège wèntí",
-        "vi": "Bạn có thể hỏi giáo viên câu hỏi này."
+        "zh": "问老师。",
+        "pinyin": "Wèn lǎoshī.",
+        "vi": "Hỏi thầy cô."
       }
     ],
     "tags": [
@@ -288,7 +288,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v293",
     "simplified": "请",
     "pinyin": "qǐng",
@@ -300,9 +300,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请给我一杯水。",
-        "pinyin": "Qǐng gěi wǒ yì bēi shuǐ",
-        "vi": "Xin hãy cho tôi một cốc nước."
+        "zh": "请！",
+        "pinyin": "Qǐng!",
+        "vi": "Xin mời!"
       }
     ],
     "tags": [
@@ -310,7 +310,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v296",
     "simplified": "请问",
     "pinyin": "qǐngwèn",
@@ -322,9 +322,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请问您有空吗？",
-        "pinyin": "Qǐngwèn nín yǒu kòng ma",
-        "vi": "Xin hỏi anh có rảnh không ạ?"
+        "zh": "请问老师！",
+        "pinyin": "Qǐngwèn lǎoshī!",
+        "vi": "Xin hỏi thầy cô!"
       }
     ],
     "tags": [
@@ -332,7 +332,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v377",
     "simplified": "我",
     "pinyin": "wǒ",
@@ -345,7 +345,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "我是学生。",
-        "pinyin": "Wǒ shì xuéshēng",
+        "pinyin": "Wǒ shì xuéshēng.",
         "vi": "Tôi là học sinh."
       }
     ],
@@ -354,7 +354,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v378",
     "simplified": "我们",
     "pinyin": "wǒmen",
@@ -366,9 +366,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyǒu",
-        "vi": "Chúng tôi là bạn tốt của nhau."
+        "zh": "我们是朋友。",
+        "pinyin": "Wǒmen shì péngyou.",
+        "vi": "Chúng tôi là bạn bè."
       }
     ],
     "tags": [
@@ -376,7 +376,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v174",
     "simplified": "叫",
     "pinyin": "jiào",
@@ -388,9 +388,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "妈妈叫我回家。",
-        "pinyin": "Māmā jiào wǒ huí jiā",
-        "vi": "Mẹ gọi tôi về nhà."
+        "zh": "你叫什么？",
+        "pinyin": "Nǐ jiào shénme?",
+        "vi": "Bạn tên là gì?"
       }
     ],
     "tags": [
@@ -398,7 +398,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v325",
     "simplified": "什么",
     "pinyin": "shénme",
@@ -410,9 +410,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你想吃什么？",
-        "pinyin": "Nǐ xiǎng chī shénme",
-        "vi": "Bạn muốn ăn gì?"
+        "zh": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "vi": "Bạn tên là gì?"
       }
     ],
     "tags": [
@@ -420,7 +420,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v243",
     "simplified": "名字",
     "pinyin": "míngzi",
@@ -433,7 +433,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "你的名字是什么？",
-        "pinyin": "Nǐ de míngzi shì shénme",
+        "pinyin": "Nǐ de míngzi shì shénme?",
         "vi": "Tên của bạn là gì?"
       }
     ],
@@ -442,7 +442,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v334",
     "simplified": "是",
     "pinyin": "shì",
@@ -454,9 +454,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他是我的好朋友。",
-        "pinyin": "Tā shì wǒ de hǎo péngyǒu",
-        "vi": "Anh ấy là bạn tốt của tôi."
+        "zh": "他是老师。",
+        "pinyin": "Tā shì lǎoshī.",
+        "vi": "Anh ấy là giáo viên."
       }
     ],
     "tags": [
@@ -464,7 +464,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v302",
     "simplified": "人",
     "pinyin": "rén",
@@ -476,9 +476,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个世界上有很多好人。",
-        "pinyin": "Zhège shìjiè shàng yǒu hěn duō hǎorén",
-        "vi": "Trên thế giới này có rất nhiều người tốt."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -486,7 +486,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v474",
     "simplified": "中国",
     "pinyin": "Zhōngguó",
@@ -498,9 +498,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "中国是一个美丽的国家。",
-        "pinyin": "Zhōngguó shì yī gè měilì de guójiā",
-        "vi": "Trung Quốc là một đất nước xinh đẹp."
+        "zh": "中国好。",
+        "pinyin": "Zhōngguó hǎo.",
+        "vi": "Trung Quốc rất tốt."
       }
     ],
     "tags": [
@@ -508,7 +508,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v021",
     "simplified": "北京",
     "pinyin": "Běijīng",
@@ -520,9 +520,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "北京是中国的首都。",
-        "pinyin": "Běijīng shì zhōngguó de shǒudū",
-        "vi": "Bắc Kinh là thủ đô của Trung Quốc."
+        "zh": "他是北京人。",
+        "pinyin": "Tā shì Běijīng rén.",
+        "vi": "Anh ấy là người Bắc Kinh."
       }
     ],
     "tags": [
@@ -530,7 +530,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v281",
     "simplified": "朋友",
     "pinyin": "péngyou",
@@ -542,9 +542,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有很多朋友。",
-        "pinyin": "Wǒ yǒu hěn duō péngyou",
-        "vi": "Tôi có rất nhiều bạn."
+        "zh": "我们是好朋友。",
+        "pinyin": "Wǒmen shì hǎo péngyou.",
+        "vi": "Chúng tôi là bạn tốt."
       }
     ],
     "tags": [
@@ -552,7 +552,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v322",
     "simplified": "谁",
     "pinyin": "shéi",
@@ -564,9 +564,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这是谁的书？",
-        "pinyin": "Zhè shì shéi de shū",
-        "vi": "Đây là sách của ai?"
+        "zh": "谁是老师？",
+        "pinyin": "Shéi shì lǎoshī?",
+        "vi": "Ai là giáo viên?"
       }
     ],
     "tags": [
@@ -574,7 +574,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v303",
     "simplified": "认识",
     "pinyin": "rènshi",
@@ -586,9 +586,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我认识他。",
-        "pinyin": "Wǒ rènshi tā",
-        "vi": "Tôi quen biết anh ấy."
+        "zh": "认识你很高兴！",
+        "pinyin": "Rènshi nǐ hěn gāoxìng!",
+        "vi": "Quen biết bạn rất vui!"
       }
     ],
     "tags": [
@@ -596,7 +596,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v115",
     "simplified": "高兴",
     "pinyin": "gāoxìng",
@@ -608,9 +608,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天我很高兴。",
-        "pinyin": "Jīntiān wǒ hěn gāoxìng",
-        "vi": "Hôm nay tôi rất vui."
+        "zh": "认识您很高兴！",
+        "pinyin": "Rènshi nín hěn gāoxìng!",
+        "vi": "Quen biết ngài rất vui!"
       }
     ],
     "tags": [
@@ -618,7 +618,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v351",
     "simplified": "他",
     "pinyin": "tā",
@@ -631,7 +631,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "他是我的朋友。",
-        "pinyin": "Tā shì wǒ de péngyǒu",
+        "pinyin": "Tā shì wǒ de péngyou.",
         "vi": "Anh ấy là bạn của tôi."
       }
     ],
@@ -640,7 +640,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v353",
     "simplified": "她",
     "pinyin": "tā",
@@ -652,9 +652,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她喜欢听音乐。",
-        "pinyin": "Tā xǐhuan tīng yīnyuè",
-        "vi": "Cô ấy thích nghe nhạc."
+        "zh": "她是学生。",
+        "pinyin": "Tā shì xuéshēng.",
+        "vi": "Cô ấy là học sinh."
       }
     ],
     "tags": [
@@ -662,7 +662,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v424",
     "simplified": "一",
     "pinyin": "yī",
@@ -674,9 +674,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我只有一个妹妹。",
-        "pinyin": "Wǒ zhǐ yǒu yī gè mèimei",
-        "vi": "Tôi chỉ có một em gái."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -684,7 +684,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v097",
     "simplified": "二",
     "pinyin": "èr",
@@ -696,9 +696,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们班有二十人。",
-        "pinyin": "Wǒmen bān yǒu èrshí rén",
-        "vi": "Lớp chúng ta có 20 người."
+        "zh": "两个人。",
+        "pinyin": "Liǎng gè rén.",
+        "vi": "Hai người."
       }
     ],
     "tags": [
@@ -706,7 +706,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v308",
     "simplified": "三",
     "pinyin": "sān",
@@ -718,9 +718,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有三个好朋友。",
-        "pinyin": "Wǒ yǒu sān gè hǎo péngyǒu",
-        "vi": "Tôi có ba người bạn tốt."
+        "zh": "三个学生。",
+        "pinyin": "Sān gè xuéshēng.",
+        "vi": "Ba học sinh."
       }
     ],
     "tags": [
@@ -728,7 +728,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v348",
     "simplified": "四",
     "pinyin": "sì",
@@ -740,9 +740,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他家有四口人。",
-        "pinyin": "Tā jiā yǒu sì kǒu rén",
-        "vi": "Gia đình anh ấy có bốn người."
+        "zh": "四个朋友。",
+        "pinyin": "Sì gè péngyou.",
+        "vi": "Bốn người bạn."
       }
     ],
     "tags": [
@@ -750,7 +750,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v379",
     "simplified": "五",
     "pinyin": "wǔ",
@@ -762,9 +762,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她今天买了五个苹果。",
-        "pinyin": "Tā jīntiān mǎi le wǔ gè píngguǒ",
-        "vi": "Hôm nay cô ấy đã mua năm quả táo."
+        "zh": "五个老师。",
+        "pinyin": "Wǔ gè lǎoshī.",
+        "vi": "Năm thầy cô giáo."
       }
     ],
     "tags": [
@@ -772,7 +772,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v215",
     "simplified": "六",
     "pinyin": "liù",
@@ -784,9 +784,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家有六口人。",
-        "pinyin": "Wǒ jiā yǒu liù kǒu rén",
-        "vi": "Nhà tôi có sáu người."
+        "zh": "六个人。",
+        "pinyin": "Liù gè rén.",
+        "vi": "Sáu người."
       }
     ],
     "tags": [
@@ -794,7 +794,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v283",
     "simplified": "七",
     "pinyin": "qī",
@@ -806,9 +806,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有七本书。",
-        "pinyin": "Wǒ yǒu qī běn shū",
-        "vi": "Tôi có bảy quyển sách."
+        "zh": "七个学生。",
+        "pinyin": "Qī gè xuéshēng.",
+        "vi": "Bảy học sinh."
       }
     ],
     "tags": [
@@ -816,7 +816,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v003",
     "simplified": "八",
     "pinyin": "bā",
@@ -828,9 +828,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他买了八个苹果。",
-        "pinyin": "Tā mǎi le bā gè píngguǒ",
-        "vi": "Anh ấy đã mua tám quả táo."
+        "zh": "八个朋友。",
+        "pinyin": "Bā gè péngyou.",
+        "vi": "Tám người bạn."
       }
     ],
     "tags": [
@@ -838,7 +838,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v183",
     "simplified": "九",
     "pinyin": "jiǔ",
@@ -850,9 +850,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个班有九个学生。",
-        "pinyin": "Zhège bān yǒu jiǔ gè xuéshēng",
-        "vi": "Lớp này có chín học sinh."
+        "zh": "九个人。",
+        "pinyin": "Jiǔ gè rén.",
+        "vi": "Chín người."
       }
     ],
     "tags": [
@@ -860,7 +860,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v329",
     "simplified": "十",
     "pinyin": "shí",
@@ -872,9 +872,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他十岁就会游泳。",
-        "pinyin": "Tā shí suì jiù huì yóuyǒng",
-        "vi": "Anh ấy mười tuổi đã biết bơi."
+        "zh": "十个学生。",
+        "pinyin": "Shí gè xuéshēng.",
+        "vi": "Mười học sinh."
       }
     ],
     "tags": [
@@ -882,7 +882,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v214",
     "simplified": "零",
     "pinyin": "líng",
@@ -894,9 +894,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个数字是零。",
-        "pinyin": "Zhège shùzì shì líng",
-        "vi": "Số này là số không."
+        "zh": "一零一。",
+        "pinyin": "Yī líng yī.",
+        "vi": "Số một không một (101)."
       }
     ],
     "tags": [
@@ -904,7 +904,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v008",
     "simplified": "百",
     "pinyin": "bǎi",
@@ -916,9 +916,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一百块钱。",
-        "pinyin": "Wǒ yǒu yībǎi kuài qián",
-        "vi": "Tôi có một trăm tệ."
+        "zh": "一百个人。",
+        "pinyin": "Yì bǎi gè rén.",
+        "vi": "Một trăm người."
       }
     ],
     "tags": [
@@ -926,7 +926,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v094",
     "simplified": "多少",
     "pinyin": "duōshǎo",
@@ -938,9 +938,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个多少钱？",
-        "pinyin": "Zhège duōshǎo qián?",
-        "vi": "Cái này bao nhiêu tiền?"
+        "zh": "多少人？",
+        "pinyin": "Duōshǎo rén?",
+        "vi": "Bao nhiêu người?"
       }
     ],
     "tags": [
@@ -948,7 +948,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v163",
     "simplified": "几",
     "pinyin": "jǐ",
@@ -960,9 +960,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你有几个兄弟姐妹？",
-        "pinyin": "Nǐ yǒu jǐ gè xiōngdì jiěmèi",
-        "vi": "Bạn có mấy anh chị em?"
+        "zh": "几个人？",
+        "pinyin": "Jǐ gè rén?",
+        "vi": "Mấy người?"
       }
     ],
     "tags": [
@@ -970,7 +970,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v075",
     "simplified": "第 （第二）",
     "pinyin": "dì (dì èr)",
@@ -982,9 +982,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这是第一个问题。",
-        "pinyin": "Zhè shì dì yī gè wèntí",
-        "vi": "Đây là câu hỏi đầu tiên."
+        "zh": "两个人。",
+        "pinyin": "Liǎng gè rén.",
+        "vi": "Hai người."
       }
     ],
     "tags": [
@@ -992,7 +992,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v004",
     "simplified": "爸爸 | 爸",
     "pinyin": "bàba",
@@ -1005,7 +1005,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "他是我的爸爸。",
-        "pinyin": "Tā shì wǒ de bàba",
+        "pinyin": "Tā shì wǒ de bàba.",
         "vi": "Ông ấy là ba của tôi."
       }
     ],
@@ -1014,7 +1014,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v222",
     "simplified": "妈妈 | 妈",
     "pinyin": "māma | mā",
@@ -1026,9 +1026,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我妈妈做饭很好吃。",
-        "pinyin": "Wǒ māma zuò fàn hěn hǎo chī",
-        "vi": "Mẹ tôi nấu ăn rất ngon."
+        "zh": "她是我的妈妈。",
+        "pinyin": "Tā shì wǒ de māma.",
+        "vi": "Bà ấy là mẹ của tôi."
       }
     ],
     "tags": [
@@ -1036,7 +1036,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v117",
     "simplified": "哥哥  | 哥",
     "pinyin": "gēge  |  gē",
@@ -1048,9 +1048,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我的哥哥比我大五岁。",
-        "pinyin": "Wǒ de gēge bǐ wǒ dà wǔ suì",
-        "vi": "Anh trai tôi lớn hơn tôi năm tuổi."
+        "zh": "我有一个哥哥。",
+        "pinyin": "Wǒ yǒu yí gè gēge.",
+        "vi": "Tôi có một người anh trai."
       }
     ],
     "tags": [
@@ -1058,7 +1058,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v176",
     "simplified": "姐姐",
     "pinyin": "jiějie",
@@ -1071,7 +1071,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "她是我的姐姐。",
-        "pinyin": "Tā shì wǒ de jiějie",
+        "pinyin": "Tā shì wǒ de jiějie.",
         "vi": "Cô ấy là chị gái tôi."
       }
     ],
@@ -1080,7 +1080,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v074",
     "simplified": "弟弟 |  弟",
     "pinyin": "dìdi | dì",
@@ -1093,7 +1093,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "我有一个弟弟。",
-        "pinyin": "Wǒ yǒu yīgè dìdi",
+        "pinyin": "Wǒ yǒu yí gè dìdi.",
         "vi": "Tôi có một người em trai."
       }
     ],
@@ -1102,7 +1102,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v235",
     "simplified": "妹妹 | 妹",
     "pinyin": "mèimei | mèi",
@@ -1114,9 +1114,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一个妹妹。",
-        "pinyin": "Wǒ yǒu yīgè mèimei",
-        "vi": "Tôi có một người em gái."
+        "zh": "我有两个妹妹。",
+        "pinyin": "Wǒ yǒu liǎng gè mèimei.",
+        "vi": "Tôi có hai người em gái."
       }
     ],
     "tags": [
@@ -1124,7 +1124,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v096",
     "simplified": "儿子",
     "pinyin": "érzi",
@@ -1136,9 +1136,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一个儿子。",
-        "pinyin": "Wǒ yǒu yí gè érzi",
-        "vi": "Tôi có một cậu con trai."
+        "zh": "他有一个儿子。",
+        "pinyin": "Tā yǒu yí gè érzi.",
+        "vi": "Anh ấy có một người con trai."
       }
     ],
     "tags": [
@@ -1146,7 +1146,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v274",
     "simplified": "女儿",
     "pinyin": "nǚ’ér",
@@ -1156,13 +1156,19 @@ export const hsk1Vocab: VocabEntry[] = [
     ],
     "hsk2Level": 1,
     "hsk3Level": 1,
-    "exampleSentences": [],
+    "exampleSentences": [
+      {
+        "zh": "她有一个女儿。",
+        "pinyin": "Tā yǒu yí gè nǚ'ér.",
+        "vi": "Cô ấy có một người con gái."
+      }
+    ],
     "tags": [
       "HSK1",
       "3.0"
     ]
   },
-{
+  {
     "id": "v134",
     "simplified": "孩子",
     "pinyin": "hái zi",
@@ -1184,7 +1190,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v167",
     "simplified": "家",
     "pinyin": "jiā",
@@ -1196,9 +1202,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家在上海。",
-        "pinyin": "Wǒ jiā zài Shànghǎi",
-        "vi": "Nhà tôi ở Thượng Hải."
+        "zh": "我家有四个人。",
+        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "vi": "Nhà tôi có bốn người."
       }
     ],
     "tags": [
@@ -1206,7 +1212,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v169",
     "simplified": "家人",
     "pinyin": "jiārén",
@@ -1218,9 +1224,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家人都喜欢吃中国菜。",
-        "pinyin": "Wǒ jiārén dōu xǐhuan chī Zhōngguó cài",
-        "vi": "Cả nhà tôi đều thích ăn đồ ăn Trung Quốc."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -1228,7 +1234,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v438",
     "simplified": "有",
     "pinyin": "yǒu",
@@ -1240,9 +1246,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有一个好朋友。",
-        "pinyin": "Wǒ yǒu yī gè hǎo péngyǒu",
-        "vi": "Tôi có một người bạn tốt."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -1250,7 +1256,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v234",
     "simplified": "没有",
     "pinyin": "méi yǒu",
@@ -1262,9 +1268,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我没有钱。",
-        "pinyin": "Wǒ méiyǒu qián",
-        "vi": "Tôi không có tiền."
+        "zh": "我没有哥哥。",
+        "pinyin": "Wǒ méiyǒu gēge.",
+        "vi": "Tôi không có anh trai."
       }
     ],
     "tags": [
@@ -1272,7 +1278,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v213",
     "simplified": "两",
     "pinyin": "liǎng",
@@ -1284,9 +1290,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有两个姐姐。",
-        "pinyin": "Wǒ yǒu liǎng gè jiějie",
-        "vi": "Tôi có hai chị gái."
+        "zh": "两个好朋友。",
+        "pinyin": "Liǎng gè hǎo péngyou.",
+        "vi": "Hai người bạn tốt."
       }
     ],
     "tags": [
@@ -1294,7 +1300,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v200",
     "simplified": "口",
     "pinyin": "kǒu",
@@ -1316,7 +1322,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v179",
     "simplified": "今天",
     "pinyin": "jīntiān",
@@ -1338,7 +1344,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v246",
     "simplified": "明天",
     "pinyin": "míngtiān",
@@ -1360,7 +1366,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v492",
     "simplified": "昨天",
     "pinyin": "zuótiān",
@@ -1382,7 +1388,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v178",
     "simplified": "今年",
     "pinyin": "jīnnián",
@@ -1404,7 +1410,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v245",
     "simplified": "明年",
     "pinyin": "míngnián",
@@ -1426,7 +1432,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v300",
     "simplified": "去年",
     "pinyin": "qùnián",
@@ -1448,7 +1454,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v449",
     "simplified": "月",
     "pinyin": "yuè",
@@ -1470,7 +1476,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v305",
     "simplified": "日",
     "pinyin": "rì",
@@ -1492,7 +1498,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v142",
     "simplified": "号",
     "pinyin": "hào",
@@ -1514,7 +1520,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v410",
     "simplified": "星期",
     "pinyin": "xīngqī",
@@ -1536,7 +1542,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v396",
     "simplified": "现在",
     "pinyin": "xiànzài",
@@ -1558,7 +1564,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v076",
     "simplified": "点",
     "pinyin": "diǎn",
@@ -1580,7 +1586,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v010",
     "simplified": "半",
     "pinyin": "bàn",
@@ -1602,7 +1608,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v456",
     "simplified": "早上",
     "pinyin": "zǎoshang",
@@ -1624,7 +1630,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v371",
     "simplified": "晚上",
     "pinyin": "wǎnshàng",
@@ -1646,7 +1652,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v418",
     "simplified": "学校",
     "pinyin": "xuéxiào",
@@ -1668,7 +1674,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v427",
     "simplified": "医院",
     "pinyin": "yīyuàn",
@@ -1690,7 +1696,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v311",
     "simplified": "商店",
     "pinyin": "shāngdiàn",
@@ -1712,7 +1718,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v099",
     "simplified": "饭店",
     "pinyin": "fàndiàn",
@@ -1734,7 +1740,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v100",
     "simplified": "房间",
     "pinyin": "fángjiān",
@@ -1756,7 +1762,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v101",
     "simplified": "房子",
     "pinyin": "fángzi",
@@ -1778,7 +1784,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v312",
     "simplified": "上",
     "pinyin": "shàng",
@@ -1800,7 +1806,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v386",
     "simplified": "下",
     "pinyin": "xià",
@@ -1822,7 +1828,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v211",
     "simplified": "里",
     "pinyin": "lǐ",
@@ -1844,7 +1850,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v364",
     "simplified": "外",
     "pinyin": "wài",
@@ -1866,7 +1872,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v464",
     "simplified": "这儿",
     "pinyin": "zhèr",
@@ -1888,7 +1894,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v255",
     "simplified": "那儿",
     "pinyin": "nàr",
@@ -1910,7 +1916,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v250",
     "simplified": "哪儿",
     "pinyin": "nǎr",
@@ -1932,7 +1938,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v452",
     "simplified": "在",
     "pinyin": "zài",
@@ -1954,7 +1960,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v071",
     "simplified": "地方",
     "pinyin": "dìfāng",
@@ -1976,7 +1982,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v240",
     "simplified": "米饭",
     "pinyin": "mǐfàn",
@@ -1998,7 +2004,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v342",
     "simplified": "水",
     "pinyin": "shuǐ",
@@ -2020,7 +2026,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v036",
     "simplified": "茶",
     "pinyin": "chá",
@@ -2042,7 +2048,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v242",
     "simplified": "面条儿",
     "pinyin": "miàntiáor",
@@ -2064,7 +2070,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v035",
     "simplified": "菜",
     "pinyin": "cài",
@@ -2086,7 +2092,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v162",
     "simplified": "鸡蛋",
     "pinyin": "jīdàn",
@@ -2108,7 +2114,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v241",
     "simplified": "面包",
     "pinyin": "miànbāo",
@@ -2130,7 +2136,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v016",
     "simplified": "包子",
     "pinyin": "bāozǐ",
@@ -2152,7 +2158,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v272",
     "simplified": "牛奶",
     "pinyin": "niúnǎi",
@@ -2174,7 +2180,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v343",
     "simplified": "水果",
     "pinyin": "shuǐguǒ",
@@ -2196,7 +2202,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v046",
     "simplified": "吃",
     "pinyin": "chī",
@@ -2218,7 +2224,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v143",
     "simplified": "喝",
     "pinyin": "hē",
@@ -2240,7 +2246,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v138",
     "simplified": "好吃",
     "pinyin": "hǎo chī",
@@ -2252,9 +2258,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这家餐厅的菜非常好吃。",
-        "pinyin": "Zhè jiā cāntīng de cài fēicháng hǎochī",
-        "vi": "Món ăn của nhà hàng này rất ngon."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -2262,7 +2268,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v196",
     "simplified": "渴",
     "pinyin": "kě",
@@ -2284,7 +2290,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v095",
     "simplified": "饿",
     "pinyin": "è",
@@ -2306,7 +2312,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v291",
     "simplified": "钱",
     "pinyin": "qián",
@@ -2328,7 +2334,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v202",
     "simplified": "块",
     "pinyin": "kuài",
@@ -2350,7 +2356,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v226",
     "simplified": "买",
     "pinyin": "mǎi",
@@ -2372,7 +2378,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v126",
     "simplified": "贵",
     "pinyin": "guì",
@@ -2394,7 +2400,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v085",
     "simplified": "东西",
     "pinyin": "dōngxi",
@@ -2416,7 +2422,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v425",
     "simplified": "衣服",
     "pinyin": "yīfu",
@@ -2438,7 +2444,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v051",
     "simplified": "穿",
     "pinyin": "chuān",
@@ -2460,7 +2466,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v436",
     "simplified": "一些",
     "pinyin": "yìxiē",
@@ -2472,9 +2478,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这里有一些苹果。",
-        "pinyin": "Zhèlǐ yǒu yìxiē píngguǒ",
-        "vi": "Ở đây có một vài quả táo."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -2482,7 +2488,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v251",
     "simplified": "哪些",
     "pinyin": "nǎxiē",
@@ -2504,7 +2510,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v467",
     "simplified": "真",
     "pinyin": "zhēn",
@@ -2526,7 +2532,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v119",
     "simplified": "个",
     "pinyin": "gè",
@@ -2548,7 +2554,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v292",
     "simplified": "钱包",
     "pinyin": "qiánbāo",
@@ -2570,7 +2576,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v310",
     "simplified": "商场",
     "pinyin": "shāngchǎng",
@@ -2592,7 +2598,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v340",
     "simplified": "书店",
     "pinyin": "shūdiàn",
@@ -2614,7 +2620,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v447",
     "simplified": "元",
     "pinyin": "yuán",
@@ -2636,7 +2642,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v106",
     "simplified": "飞机",
     "pinyin": "fēijī",
@@ -2658,7 +2664,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v159",
     "simplified": "火车",
     "pinyin": "huǒchē",
@@ -2680,7 +2686,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v287",
     "simplified": "汽车",
     "pinyin": "qìchē",
@@ -2702,7 +2708,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v042",
     "simplified": "车",
     "pinyin": "chē",
@@ -2724,7 +2730,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v045",
     "simplified": "车站",
     "pinyin": "chēzhàn",
@@ -2746,7 +2752,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v160",
     "simplified": "机场",
     "pinyin": "jīchǎng",
@@ -2768,7 +2774,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v495",
     "simplified": "坐",
     "pinyin": "zuò",
@@ -2790,7 +2796,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v186",
     "simplified": "开",
     "pinyin": "kāi",
@@ -2812,7 +2818,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v187",
     "simplified": "开车",
     "pinyin": "kāi chē",
@@ -2828,7 +2834,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v057",
     "simplified": "打车",
     "pinyin": "dǎchē",
@@ -2850,7 +2856,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v487",
     "simplified": "走",
     "pinyin": "zǒu",
@@ -2872,7 +2878,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v299",
     "simplified": "去",
     "pinyin": "qù",
@@ -2894,7 +2900,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v152",
     "simplified": "回",
     "pinyin": "huí",
@@ -2916,7 +2922,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v155",
     "simplified": "回家",
     "pinyin": "huí jiā",
@@ -2928,9 +2934,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "朋友们都回家了。",
-        "pinyin": "Péngyǒumen dōu huí jiā le",
-        "vi": "Các bạn tôi đều đã về nhà rồi."
+        "zh": "我家有四个人。",
+        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "vi": "Nhà tôi có bốn người."
       }
     ],
     "tags": [
@@ -2938,7 +2944,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v064",
     "simplified": "到",
     "pinyin": "dào",
@@ -2960,7 +2966,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v061",
     "simplified": "大",
     "pinyin": "dà",
@@ -2982,7 +2988,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v398",
     "simplified": "小",
     "pinyin": "xiǎo",
@@ -3004,7 +3010,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v093",
     "simplified": "多",
     "pinyin": "duō",
@@ -3016,9 +3022,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "今天的作业不太多。",
-        "pinyin": "Jīntiān de zuòyè bù tài duō",
-        "vi": "Bài tập hôm nay không nhiều lắm."
+        "zh": "多少人？",
+        "pinyin": "Duōshǎo rén?",
+        "vi": "Bao nhiêu người?"
       }
     ],
     "tags": [
@@ -3026,7 +3032,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v321",
     "simplified": "少",
     "pinyin": "shǎo",
@@ -3038,9 +3044,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这里的人很少。",
-        "pinyin": "Zhèlǐ de rén hěn shǎo",
-        "vi": "Ở đây rất ít người."
+        "zh": "多少人？",
+        "pinyin": "Duōshǎo rén?",
+        "vi": "Bao nhiêu người?"
       }
     ],
     "tags": [
@@ -3048,7 +3054,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v210",
     "simplified": "冷",
     "pinyin": "lěng",
@@ -3070,7 +3076,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v301",
     "simplified": "热",
     "pinyin": "rè",
@@ -3092,7 +3098,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v201",
     "simplified": "快",
     "pinyin": "kuài",
@@ -3114,7 +3120,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v227",
     "simplified": "慢",
     "pinyin": "màn",
@@ -3136,7 +3142,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v448",
     "simplified": "远",
     "pinyin": "yuǎn",
@@ -3158,7 +3164,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v408",
     "simplified": "新",
     "pinyin": "xīn",
@@ -3180,7 +3186,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v091",
     "simplified": "对",
     "pinyin": "duì",
@@ -3202,7 +3208,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v055",
     "simplified": "错",
     "pinyin": "cuò",
@@ -3224,7 +3230,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v145",
     "simplified": "很",
     "pinyin": "hěn",
@@ -3246,7 +3252,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v107",
     "simplified": "非常",
     "pinyin": "fēicháng",
@@ -3268,7 +3274,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v282",
     "simplified": "漂亮",
     "pinyin": "piàoliang",
@@ -3290,7 +3296,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v484",
     "simplified": "桌子",
     "pinyin": "zhuōzi",
@@ -3312,7 +3318,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v080",
     "simplified": "电视 | 电视机",
     "pinyin": "diànshì | diànshì jī",
@@ -3334,7 +3340,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v079",
     "simplified": "电脑",
     "pinyin": "diànnǎo",
@@ -3356,7 +3362,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v337",
     "simplified": "手机",
     "pinyin": "shǒujī",
@@ -3378,7 +3384,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v078",
     "simplified": "电话",
     "pinyin": "diànhuà",
@@ -3400,7 +3406,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v338",
     "simplified": "书",
     "pinyin": "shū",
@@ -3422,7 +3428,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v022",
     "simplified": "本",
     "pinyin": "běn",
@@ -3444,7 +3450,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v023",
     "simplified": "本子",
     "pinyin": "běnzǐ",
@@ -3466,7 +3472,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v017",
     "simplified": "杯",
     "pinyin": "bēi",
@@ -3488,7 +3494,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v018",
     "simplified": "杯子",
     "pinyin": "bēizi",
@@ -3510,7 +3516,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v015",
     "simplified": "包",
     "pinyin": "bāo",
@@ -3532,7 +3538,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v043",
     "simplified": "车票",
     "pinyin": "chēpiào",
@@ -3554,7 +3560,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v485",
     "simplified": "字",
     "pinyin": "zì",
@@ -3566,9 +3572,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我不认识这个字。",
-        "pinyin": "Wǒ bù rènshi zhège zì",
-        "vi": "Tôi không biết chữ này."
+        "zh": "你的名字是什么？",
+        "pinyin": "Nǐ de míngzi shì shénme?",
+        "vi": "Tên của bạn là gì?"
       }
     ],
     "tags": [
@@ -3576,7 +3582,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v136",
     "simplified": "汉字",
     "pinyin": "Hàn zì",
@@ -3598,7 +3604,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v414",
     "simplified": "休息",
     "pinyin": "xiūxi",
@@ -3620,7 +3626,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v345",
     "simplified": "睡觉",
     "pinyin": "shuìjiào",
@@ -3642,7 +3648,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v285",
     "simplified": "起床",
     "pinyin": "qǐchuáng",
@@ -3664,7 +3670,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v347",
     "simplified": "说话",
     "pinyin": "shuōhuà",
@@ -3686,7 +3692,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v346",
     "simplified": "说",
     "pinyin": "shuō",
@@ -3708,7 +3714,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v089",
     "simplified": "读",
     "pinyin": "dú",
@@ -3730,7 +3736,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v406",
     "simplified": "写",
     "pinyin": "xiě",
@@ -3752,7 +3758,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v190",
     "simplified": "看",
     "pinyin": "kàn",
@@ -3774,7 +3780,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v193",
     "simplified": "看见",
     "pinyin": "kànjiàn",
@@ -3786,9 +3792,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我看见一只小鸟在树上唱歌。",
-        "pinyin": "Wǒ kànjiàn yī zhī xiǎo niǎo zài shù shàng chànggē",
-        "vi": "Tôi nhìn thấy một con chim đang hót trên cây."
+        "zh": "再见！",
+        "pinyin": "Zàijiàn!",
+        "vi": "Tạm biệt / Hẹn gặp lại!"
       }
     ],
     "tags": [
@@ -3796,7 +3802,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v358",
     "simplified": "听",
     "pinyin": "tīng",
@@ -3818,7 +3824,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v360",
     "simplified": "听见",
     "pinyin": "tīngjiàn",
@@ -3830,9 +3836,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你听见了吗？",
-        "pinyin": "Nǐ tīngjiàn le ma",
-        "vi": "Bạn có nghe thấy không?"
+        "zh": "再见！",
+        "pinyin": "Zàijiàn!",
+        "vi": "Tạm biệt / Hẹn gặp lại!"
       }
     ],
     "tags": [
@@ -3840,7 +3846,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v459",
     "simplified": "找",
     "pinyin": "zhǎo",
@@ -3862,7 +3868,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v013",
     "simplified": "帮",
     "pinyin": "bāng",
@@ -3884,7 +3890,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v014",
     "simplified": "帮忙",
     "pinyin": "bāngmáng",
@@ -3906,7 +3912,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v483",
     "simplified": "准备",
     "pinyin": "zhǔnbèi",
@@ -3928,7 +3934,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v497",
     "simplified": "做",
     "pinyin": "zuò",
@@ -3950,7 +3956,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v001",
     "simplified": "爱",
     "pinyin": "ài",
@@ -3972,7 +3978,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v002",
     "simplified": "爱好",
     "pinyin": "àihào",
@@ -3984,9 +3990,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我爱好打篮球。",
-        "pinyin": "Wǒ àihào dǎ lánqiú",
-        "vi": "Tôi thích chơi bóng rổ."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -3994,7 +4000,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v385",
     "simplified": "喜欢",
     "pinyin": "xǐhuan",
@@ -4016,7 +4022,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v397",
     "simplified": "想",
     "pinyin": "xiǎng",
@@ -4038,7 +4044,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v420",
     "simplified": "要（动）",
     "pinyin": "yào",
@@ -4060,7 +4066,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v158",
     "simplified": "会",
     "pinyin": "huì",
@@ -4082,7 +4088,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v267",
     "simplified": "能",
     "pinyin": "néng",
@@ -4104,7 +4110,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v368",
     "simplified": "玩儿",
     "pinyin": "wánr",
@@ -4126,7 +4132,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v141",
     "simplified": "好玩儿",
     "pinyin": "hǎowánr",
@@ -4138,9 +4144,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个游戏很好玩儿。",
-        "pinyin": "Zhège yóuxì hěn hǎowánr",
-        "vi": "Trò chơi này rất vui."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -4148,7 +4154,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v041",
     "simplified": "唱歌",
     "pinyin": "chànggē",
@@ -4170,7 +4176,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v118",
     "simplified": "歌",
     "pinyin": "gē",
@@ -4192,7 +4198,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v081",
     "simplified": "电影",
     "pinyin": "diànyǐng",
@@ -4214,7 +4220,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v082",
     "simplified": "电影院",
     "pinyin": "diànyǐngyuàn",
@@ -4236,7 +4242,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v060",
     "simplified": "打球",
     "pinyin": "dǎqiú",
@@ -4258,7 +4264,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v298",
     "simplified": "球",
     "pinyin": "qiú",
@@ -4280,7 +4286,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v352",
     "simplified": "他们",
     "pinyin": "tāmen",
@@ -4292,9 +4298,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他们在学校学习。",
-        "pinyin": "Tāmen zài xuéxiào xuéxí",
-        "vi": "Họ đang học ở trường."
+        "zh": "他是我的朋友。",
+        "pinyin": "Tā shì wǒ de péngyou.",
+        "vi": "Anh ấy là bạn của tôi."
       }
     ],
     "tags": [
@@ -4302,7 +4308,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v354",
     "simplified": "她们",
     "pinyin": "tāmen",
@@ -4314,9 +4320,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她们正在看书。",
-        "pinyin": "Tāmen zhèngzài kàn shū",
-        "vi": "Họ đang đọc sách."
+        "zh": "她是学生。",
+        "pinyin": "Tā shì xuéshēng.",
+        "vi": "Cô ấy là học sinh."
       }
     ],
     "tags": [
@@ -4324,7 +4330,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v123",
     "simplified": "工作",
     "pinyin": "gōngzuò",
@@ -4346,7 +4352,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v426",
     "simplified": "医生",
     "pinyin": "yīshēng",
@@ -4368,7 +4374,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v005",
     "simplified": "吧",
     "pinyin": "ba",
@@ -4390,7 +4396,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v006",
     "simplified": "白",
     "pinyin": "bái",
@@ -4412,7 +4418,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v007",
     "simplified": "白天",
     "pinyin": "báitiān",
@@ -4434,7 +4440,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v009",
     "simplified": "班",
     "pinyin": "bān",
@@ -4456,7 +4462,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v011",
     "simplified": "半年",
     "pinyin": "bànnián",
@@ -4478,7 +4484,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v012",
     "simplified": "半天",
     "pinyin": "bàntiān",
@@ -4500,7 +4506,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v019",
     "simplified": "北",
     "pinyin": "běi",
@@ -4512,9 +4518,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们一直往北走吧。",
-        "pinyin": "Wǒmen yīzhí wǎng běi zǒu ba",
-        "vi": "Chúng ta cứ đi về phía bắc đi."
+        "zh": "他是北京人。",
+        "pinyin": "Tā shì Běijīng rén.",
+        "vi": "Anh ấy là người Bắc Kinh."
       }
     ],
     "tags": [
@@ -4522,7 +4528,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v020",
     "simplified": "北边",
     "pinyin": "běibian",
@@ -4544,7 +4550,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v024",
     "simplified": "比",
     "pinyin": "bǐ",
@@ -4566,7 +4572,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v025",
     "simplified": "别",
     "pinyin": "bié",
@@ -4588,7 +4594,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v026",
     "simplified": "别的",
     "pinyin": "bié de",
@@ -4610,7 +4616,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v027",
     "simplified": "别人",
     "pinyin": "biérén",
@@ -4622,9 +4628,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这本书可能是别人的。",
-        "pinyin": "Chúle Xiǎo Lì yǐwài, biérén dōu bù yuànyì qù",
-        "vi": "Ngoại trừ Tiểu Lệ ra, những người khác đều không muốn đi."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -4632,7 +4638,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v028",
     "simplified": "病",
     "pinyin": "bìng",
@@ -4654,7 +4660,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v029",
     "simplified": "病人",
     "pinyin": "bìngrén",
@@ -4666,9 +4672,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "王医生每天都要看十到二十位病人。",
-        "pinyin": "Wáng yīshēng měitiān dōu yào kàn shí dào èrshí wèi bìngrén",
-        "vi": "Bác sĩ Vương mỗi ngày đều phải khám từ 10 đến 20 bệnh nhân."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -4676,7 +4682,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v030",
     "simplified": "不大",
     "pinyin": "bù dà",
@@ -4688,9 +4694,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这个房间不大。",
-        "pinyin": "Zhège fángjiān bù dà",
-        "vi": "Căn phòng này không lớn."
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -4698,7 +4704,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v031",
     "simplified": "不对",
     "pinyin": "bùduì",
@@ -4710,9 +4716,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你的答案不对。",
-        "pinyin": "Nǐ de dá'àn bù duì",
-        "vi": "Đáp án của bạn không đúng."
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -4720,7 +4726,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v033",
     "simplified": "不用",
     "pinyin": "búyòng",
@@ -4732,9 +4738,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你不用担心。",
-        "pinyin": "Nǐ búyòng dānxīn",
-        "vi": "Bạn không cần phải lo lắng."
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -4742,7 +4748,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v037",
     "simplified": "差",
     "pinyin": "chà",
@@ -4764,7 +4770,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v038",
     "simplified": "常",
     "pinyin": "cháng",
@@ -4786,7 +4792,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v039",
     "simplified": "尝尝",
     "pinyin": "cháng cháng",
@@ -4808,7 +4814,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v040",
     "simplified": "唱",
     "pinyin": "chàng",
@@ -4830,7 +4836,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v044",
     "simplified": "车上",
     "pinyin": "chē shàng",
@@ -4852,7 +4858,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v047",
     "simplified": "吃饭",
     "pinyin": "chīfàn",
@@ -4874,7 +4880,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v048",
     "simplified": "出",
     "pinyin": "chū",
@@ -4896,7 +4902,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v049",
     "simplified": "出来",
     "pinyin": "chūlái",
@@ -4918,7 +4924,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v050",
     "simplified": "出去",
     "pinyin": "chūqù",
@@ -4940,7 +4946,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v052",
     "simplified": "床",
     "pinyin": "chuáng",
@@ -4962,7 +4968,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v053",
     "simplified": "次",
     "pinyin": "cì",
@@ -4984,7 +4990,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v054",
     "simplified": "从",
     "pinyin": "cóng",
@@ -5006,7 +5012,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v056",
     "simplified": "打",
     "pinyin": "dǎ",
@@ -5028,7 +5034,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v058",
     "simplified": "打电话",
     "pinyin": "dǎ diànhuà",
@@ -5050,7 +5056,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v059",
     "simplified": "打开",
     "pinyin": "dǎkāi",
@@ -5072,7 +5078,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v062",
     "simplified": "大学",
     "pinyin": "dàxué",
@@ -5094,7 +5100,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v063",
     "simplified": "大学生",
     "pinyin": "dàxuéshēng",
@@ -5106,9 +5112,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我是大学生。",
-        "pinyin": "Wǒ shì dàxuéshēng",
-        "vi": "Tôi là sinh viên đại học."
+        "zh": "学生好！",
+        "pinyin": "Xuéshēng hǎo!",
+        "vi": "Chào các em học sinh!"
       }
     ],
     "tags": [
@@ -5116,7 +5122,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v065",
     "simplified": "得到",
     "pinyin": "dédào",
@@ -5138,7 +5144,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v066",
     "simplified": "地",
     "pinyin": "de",
@@ -5160,7 +5166,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v067",
     "simplified": "的",
     "pinyin": "de",
@@ -5182,7 +5188,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v068",
     "simplified": "等",
     "pinyin": "děng",
@@ -5204,7 +5210,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v069",
     "simplified": "地",
     "pinyin": "dì",
@@ -5226,7 +5232,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v070",
     "simplified": "地点",
     "pinyin": "dìdiǎn",
@@ -5248,7 +5254,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v072",
     "simplified": "地上",
     "pinyin": "dìshàng",
@@ -5270,7 +5276,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v073",
     "simplified": "地图",
     "pinyin": "dìtú",
@@ -5292,7 +5298,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v077",
     "simplified": "电",
     "pinyin": "diàn",
@@ -5314,7 +5320,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v083",
     "simplified": "东",
     "pinyin": "dōng",
@@ -5336,7 +5342,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v084",
     "simplified": "东边",
     "pinyin": "dōngbian",
@@ -5352,7 +5358,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v086",
     "simplified": "动",
     "pinyin": "dòng",
@@ -5374,7 +5380,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v087",
     "simplified": "动作",
     "pinyin": "dòngzuò",
@@ -5396,7 +5402,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v088",
     "simplified": "都",
     "pinyin": "dōu",
@@ -5418,7 +5424,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v090",
     "simplified": "读书",
     "pinyin": "dúshū",
@@ -5440,7 +5446,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v092",
     "simplified": "对不起",
     "pinyin": "duìbuqǐ",
@@ -5452,9 +5458,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "对不起，我迟到了。",
-        "pinyin": "Duìbuqǐ, wǒ chídào le",
-        "vi": "Xin lỗi, tôi đã đến muộn."
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -5462,7 +5468,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v098",
     "simplified": "饭",
     "pinyin": "fàn",
@@ -5484,7 +5490,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v102",
     "simplified": "放",
     "pinyin": "fàng",
@@ -5506,7 +5512,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v103",
     "simplified": "放假",
     "pinyin": "fàngjià",
@@ -5528,7 +5534,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v104",
     "simplified": "放学",
     "pinyin": "fàngxué",
@@ -5550,7 +5556,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v105",
     "simplified": "飞",
     "pinyin": "fēi",
@@ -5572,7 +5578,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v108",
     "simplified": "分",
     "pinyin": "fēn",
@@ -5594,7 +5600,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v109",
     "simplified": "风",
     "pinyin": "fēng",
@@ -5616,7 +5622,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v110",
     "simplified": "干",
     "pinyin": "gān",
@@ -5638,7 +5644,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v111",
     "simplified": "干净",
     "pinyin": "gānjìng",
@@ -5660,7 +5666,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v112",
     "simplified": "干",
     "pinyin": "gàn",
@@ -5682,7 +5688,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v113",
     "simplified": "干什么",
     "pinyin": "gàn shénme",
@@ -5694,9 +5700,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你干什么不早说呀?",
-        "pinyin": "Nǐ gànshénme bù zǎo shuō ya",
-        "vi": "Tại sao bạn không nói sớm?"
+        "zh": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "vi": "Bạn tên là gì?"
       }
     ],
     "tags": [
@@ -5704,7 +5710,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v114",
     "simplified": "高",
     "pinyin": "gāo",
@@ -5716,9 +5722,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你比我高一点儿。",
-        "pinyin": "Nǐ bǐ wǒ gāo yìdiǎnr",
-        "vi": "Bạn cao hơn tôi một chút."
+        "zh": "认识您很高兴！",
+        "pinyin": "Rènshi nín hěn gāoxìng!",
+        "vi": "Quen biết ngài rất vui!"
       }
     ],
     "tags": [
@@ -5726,7 +5732,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v116",
     "simplified": "告诉",
     "pinyin": "gàosu",
@@ -5748,7 +5754,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v120",
     "simplified": "给",
     "pinyin": "gěi",
@@ -5770,7 +5776,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v121",
     "simplified": "跟",
     "pinyin": "gēn",
@@ -5792,7 +5798,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v122",
     "simplified": "工人",
     "pinyin": "gōngrén",
@@ -5804,9 +5810,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "工人们每天都努力工作。",
-        "pinyin": "Gōngrénmen měitiān dōu nǔlì gōngzuò",
-        "vi": "Những công nhân làm việc chăm chỉ mỗi ngày."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -5814,7 +5820,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v124",
     "simplified": "关",
     "pinyin": "guān",
@@ -5836,7 +5842,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v125",
     "simplified": "关上",
     "pinyin": "guān shàng",
@@ -5858,7 +5864,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v127",
     "simplified": "国",
     "pinyin": "guó",
@@ -5870,9 +5876,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "中国的美食非常有名。",
-        "pinyin": "Zhōngguó de měishí fēicháng yǒumíng",
-        "vi": "Ẩm thực của Trung Quốc rất nổi tiếng."
+        "zh": "中国好。",
+        "pinyin": "Zhōngguó hǎo.",
+        "vi": "Trung Quốc rất tốt."
       }
     ],
     "tags": [
@@ -5880,7 +5886,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v128",
     "simplified": "国家",
     "pinyin": "guó jiā",
@@ -5892,9 +5898,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我爱我的国家。",
-        "pinyin": "Wǒ ài wǒ de guójiā",
-        "vi": "Tôi yêu đất nước của tôi."
+        "zh": "我家有四个人。",
+        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "vi": "Nhà tôi có bốn người."
       }
     ],
     "tags": [
@@ -5902,7 +5908,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v129",
     "simplified": "国外",
     "pinyin": "guó wài",
@@ -5924,7 +5930,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v130",
     "simplified": "过",
     "pinyin": "guò",
@@ -5946,7 +5952,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v131",
     "simplified": "还",
     "pinyin": "hái",
@@ -5968,7 +5974,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v132",
     "simplified": "还是",
     "pinyin": "hái shì",
@@ -5980,9 +5986,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你想喝茶还是咖啡？",
-        "pinyin": "Nǐ xiǎng hē chá háishì kāfēi?",
-        "vi": "Bạn muốn uống trà hay cà phê?"
+        "zh": "他是老师。",
+        "pinyin": "Tā shì lǎoshī.",
+        "vi": "Anh ấy là giáo viên."
       }
     ],
     "tags": [
@@ -5990,7 +5996,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v133",
     "simplified": "还有",
     "pinyin": "hái yǒu",
@@ -6002,9 +6008,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家里还有两只猫。",
-        "pinyin": "Wǒ jiālǐ hái yǒu liǎng zhī māo",
-        "vi": "Nhà tôi còn có hai con mèo."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -6012,7 +6018,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v135",
     "simplified": "汉语",
     "pinyin": "Hàn yǔ",
@@ -6034,7 +6040,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v139",
     "simplified": "好看",
     "pinyin": "hǎo kàn",
@@ -6046,9 +6052,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这本书很好看，我喜欢。",
-        "pinyin": "Zhè běn shū hěn hǎokàn, wǒ xǐhuān",
-        "vi": "Cuốn sách này rất hay, tôi thích."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -6056,7 +6062,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v140",
     "simplified": "好听",
     "pinyin": "hǎotīng",
@@ -6068,9 +6074,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这首歌很好听。",
-        "pinyin": "Zhè shǒu gē hěn hǎotīng",
-        "vi": "Bài hát này rất hay."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -6078,7 +6084,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v144",
     "simplified": "和",
     "pinyin": "hé",
@@ -6100,7 +6106,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v146",
     "simplified": "后 | 后边",
     "pinyin": "hòu | hòubian",
@@ -6122,7 +6128,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v147",
     "simplified": "后天",
     "pinyin": "hòutiān",
@@ -6144,7 +6150,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v148",
     "simplified": "花",
     "pinyin": "huā",
@@ -6166,7 +6172,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v149",
     "simplified": "话",
     "pinyin": "huà",
@@ -6188,7 +6194,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v150",
     "simplified": "坏",
     "pinyin": "huài",
@@ -6210,7 +6216,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v151",
     "simplified": "还",
     "pinyin": "huán",
@@ -6232,7 +6238,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v153",
     "simplified": "回答",
     "pinyin": "huídá",
@@ -6254,7 +6260,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v154",
     "simplified": "回到",
     "pinyin": "huídào",
@@ -6276,7 +6282,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v156",
     "simplified": "回来",
     "pinyin": "huí lái",
@@ -6298,7 +6304,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v157",
     "simplified": "回去",
     "pinyin": "huí qù",
@@ -6320,7 +6326,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v161",
     "simplified": "机票",
     "pinyin": "jīpiào",
@@ -6342,7 +6348,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v164",
     "simplified": "记",
     "pinyin": "jì",
@@ -6364,7 +6370,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v165",
     "simplified": "记得",
     "pinyin": "jìde",
@@ -6386,7 +6392,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v166",
     "simplified": "记住",
     "pinyin": "jìzhù",
@@ -6408,7 +6414,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v168",
     "simplified": "家里",
     "pinyin": "jiā lǐ",
@@ -6420,9 +6426,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我家里有很多书。",
-        "pinyin": "Wǒ jiālǐ yǒu hěn duō shū",
-        "vi": "Trong nhà tôi có rất nhiều sách."
+        "zh": "我家有四个人。",
+        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "vi": "Nhà tôi có bốn người."
       }
     ],
     "tags": [
@@ -6430,7 +6436,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v170",
     "simplified": "间",
     "pinyin": "jiān",
@@ -6452,7 +6458,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v172",
     "simplified": "见面",
     "pinyin": "jiànmiàn",
@@ -6464,9 +6470,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我很高兴和你见面。",
-        "pinyin": "Wǒ hěn gāoxìng hé nǐ jiànmiàn",
-        "vi": "Tôi rất vui khi gặp bạn."
+        "zh": "再见！",
+        "pinyin": "Zàijiàn!",
+        "vi": "Tạm biệt / Hẹn gặp lại!"
       }
     ],
     "tags": [
@@ -6474,7 +6480,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v173",
     "simplified": "教",
     "pinyin": "jiāo",
@@ -6496,7 +6502,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v175",
     "simplified": "教学楼",
     "pinyin": "jiàoxuélóu",
@@ -6518,7 +6524,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v177",
     "simplified": "介绍",
     "pinyin": "jièshào",
@@ -6540,7 +6546,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v180",
     "simplified": "进",
     "pinyin": "jìn",
@@ -6562,7 +6568,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v181",
     "simplified": "进来",
     "pinyin": "jìn lái",
@@ -6584,7 +6590,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v182",
     "simplified": "进去",
     "pinyin": "jìn qù",
@@ -6606,7 +6612,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v184",
     "simplified": "就",
     "pinyin": "jiù",
@@ -6628,7 +6634,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v185",
     "simplified": "觉得",
     "pinyin": "juéde",
@@ -6650,7 +6656,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v188",
     "simplified": "开会",
     "pinyin": "kāi huì",
@@ -6672,7 +6678,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v189",
     "simplified": "开玩笑",
     "pinyin": "kāi wánxiào",
@@ -6694,7 +6700,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v191",
     "simplified": "看病",
     "pinyin": "kàn bìng",
@@ -6716,7 +6722,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v192",
     "simplified": "看到",
     "pinyin": "kàndào",
@@ -6738,7 +6744,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v194",
     "simplified": "考",
     "pinyin": "kǎo",
@@ -6760,7 +6766,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v195",
     "simplified": "考试",
     "pinyin": "kǎoshì",
@@ -6776,7 +6782,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v197",
     "simplified": "课",
     "pinyin": "kè",
@@ -6798,7 +6804,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v198",
     "simplified": "课本",
     "pinyin": "kèběn",
@@ -6820,7 +6826,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v199",
     "simplified": "课文",
     "pinyin": "kèwén",
@@ -6842,7 +6848,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v203",
     "simplified": "来",
     "pinyin": "lái",
@@ -6864,7 +6870,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v204",
     "simplified": "来到",
     "pinyin": "láidào",
@@ -6886,7 +6892,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v205",
     "simplified": "老",
     "pinyin": "lǎo",
@@ -6898,9 +6904,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这辆车太老了。",
-        "pinyin": "Zhè liàng chē tài lǎo le",
-        "vi": "Chiếc xe này quá cũ rồi."
+        "zh": "谢谢老师！",
+        "pinyin": "Xièxie lǎoshī!",
+        "vi": "Cảm ơn thầy cô!"
       }
     ],
     "tags": [
@@ -6908,7 +6914,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v206",
     "simplified": "老人",
     "pinyin": "lǎorén",
@@ -6920,9 +6926,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老人喜欢在公园散步。",
-        "pinyin": "Lǎorén xǐhuan zài gōngyuán sànbù",
-        "vi": "Các cụ già thích đi dạo trong công viên."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -6930,7 +6936,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v208",
     "simplified": "了",
     "pinyin": "le",
@@ -6952,7 +6958,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v209",
     "simplified": "累",
     "pinyin": "lèi",
@@ -6974,7 +6980,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v212",
     "simplified": "里边",
     "pinyin": "lǐbian",
@@ -6996,7 +7002,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v216",
     "simplified": "楼",
     "pinyin": "lóu",
@@ -7018,7 +7024,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v217",
     "simplified": "楼上",
     "pinyin": "lóu shàng",
@@ -7040,7 +7046,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v218",
     "simplified": "楼下",
     "pinyin": "lóu xià",
@@ -7062,7 +7068,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v219",
     "simplified": "路",
     "pinyin": "lù",
@@ -7084,7 +7090,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v220",
     "simplified": "路口",
     "pinyin": "lùkǒu",
@@ -7106,7 +7112,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v221",
     "simplified": "路上",
     "pinyin": "lùshàng",
@@ -7128,7 +7134,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v223",
     "simplified": "马路",
     "pinyin": "mǎlù",
@@ -7150,7 +7156,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v224",
     "simplified": "马上",
     "pinyin": "mǎshàng",
@@ -7172,7 +7178,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v225",
     "simplified": "吗",
     "pinyin": "ma",
@@ -7194,7 +7200,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v228",
     "simplified": "忙",
     "pinyin": "máng",
@@ -7216,7 +7222,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v229",
     "simplified": "毛",
     "pinyin": "máo",
@@ -7238,7 +7244,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v230",
     "simplified": "没",
     "pinyin": "méi",
@@ -7250,9 +7256,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我今天没时间。",
-        "pinyin": "Wǒ jīntiān méi shíjiān",
-        "vi": "Hôm nay tôi không có thời gian (không rảnh)."
+        "zh": "我没有哥哥。",
+        "pinyin": "Wǒ méiyǒu gēge.",
+        "vi": "Tôi không có anh trai."
       }
     ],
     "tags": [
@@ -7260,7 +7266,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v231",
     "simplified": "没关系",
     "pinyin": "méi guānxi",
@@ -7282,7 +7288,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v232",
     "simplified": "没什么",
     "pinyin": "méi shénme",
@@ -7294,9 +7300,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "没什么好担心的。",
-        "pinyin": "Méi shénme hǎo dānxīn de",
-        "vi": "Không có gì đáng lo lắng cả."
+        "zh": "你叫什么名字？",
+        "pinyin": "Nǐ jiào shénme míngzi?",
+        "vi": "Bạn tên là gì?"
       }
     ],
     "tags": [
@@ -7304,7 +7310,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v233",
     "simplified": "没事儿",
     "pinyin": "méi shìr",
@@ -7326,7 +7332,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v236",
     "simplified": "门",
     "pinyin": "mén",
@@ -7348,7 +7354,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v237",
     "simplified": "门口",
     "pinyin": "ménkǒu",
@@ -7370,7 +7376,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v238",
     "simplified": "门票",
     "pinyin": "ménpiào",
@@ -7392,7 +7398,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v239",
     "simplified": "们（朋友们）",
     "pinyin": "men (péngyǒumen)",
@@ -7405,7 +7411,7 @@ export const hsk1Vocab: VocabEntry[] = [
     "exampleSentences": [
       {
         "zh": "我们是好朋友。",
-        "pinyin": "Wǒmen shì hǎo péngyǒu",
+        "pinyin": "Wǒmen shì hǎo péngyou.",
         "vi": "Chúng tôi là bạn tốt."
       }
     ],
@@ -7414,7 +7420,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v244",
     "simplified": "明白",
     "pinyin": "míngbai",
@@ -7436,7 +7442,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v247",
     "simplified": "拿",
     "pinyin": "ná",
@@ -7458,7 +7464,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v248",
     "simplified": "哪",
     "pinyin": "nǎ",
@@ -7480,7 +7486,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v249",
     "simplified": "哪里",
     "pinyin": "nǎ lǐ",
@@ -7502,7 +7508,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v252",
     "simplified": "那",
     "pinyin": "nà",
@@ -7524,7 +7530,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v253",
     "simplified": "那边",
     "pinyin": "nàbiān",
@@ -7546,7 +7552,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v254",
     "simplified": "那里",
     "pinyin": "nà lǐ",
@@ -7568,7 +7574,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v256",
     "simplified": "那些",
     "pinyin": "nàxiē",
@@ -7590,7 +7596,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v257",
     "simplified": "奶奶 | 奶",
     "pinyin": "nǎinai | nǎi",
@@ -7612,7 +7618,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v258",
     "simplified": "男",
     "pinyin": "nán",
@@ -7634,7 +7640,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v259",
     "simplified": "男孩儿",
     "pinyin": "nánháir",
@@ -7656,7 +7662,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v260",
     "simplified": "男朋友",
     "pinyin": "nánpéngyou",
@@ -7668,9 +7674,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她的男朋友很帅。",
-        "pinyin": "Tā de nánpéngyou hěn shuài",
-        "vi": "Bạn trai của cô ấy rất đẹp trai."
+        "zh": "我们是好朋友。",
+        "pinyin": "Wǒmen shì hǎo péngyou.",
+        "vi": "Chúng tôi là bạn tốt."
       }
     ],
     "tags": [
@@ -7678,7 +7684,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v261",
     "simplified": "男人",
     "pinyin": "nánrén",
@@ -7690,9 +7696,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "那个男人在看手机。",
-        "pinyin": "Nàgè nánrén zài kàn shǒujī",
-        "vi": "Người đàn ông đó đang xem điện thoại."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -7700,7 +7706,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v262",
     "simplified": "男生",
     "pinyin": "nánshēng",
@@ -7722,7 +7728,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v263",
     "simplified": "南",
     "pinyin": "nán",
@@ -7744,7 +7750,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v264",
     "simplified": "南边",
     "pinyin": "nánbiān",
@@ -7766,7 +7772,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v265",
     "simplified": "难",
     "pinyin": "nán",
@@ -7788,7 +7794,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v266",
     "simplified": "呢",
     "pinyin": "ne",
@@ -7810,7 +7816,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v270",
     "simplified": "年级",
     "pinyin": "niánjí",
@@ -7832,7 +7838,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v273",
     "simplified": "女",
     "pinyin": "nǚ",
@@ -7844,9 +7850,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我的女儿非常可爱。",
-        "pinyin": "Wǒ de nǚ ér fēicháng kě ài",
-        "vi": "Con gái tôi rất dễ thương."
+        "zh": "她有一个女儿。",
+        "pinyin": "Tā yǒu yí gè nǚ'ér.",
+        "vi": "Cô ấy có một người con gái."
       }
     ],
     "tags": [
@@ -7854,7 +7860,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v275",
     "simplified": "女孩儿",
     "pinyin": "nǚháir",
@@ -7876,7 +7882,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v276",
     "simplified": "女朋友",
     "pinyin": "nǚpéngyou",
@@ -7888,9 +7894,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你有女朋友吗？",
-        "pinyin": "Nǐ yǒu nǚ péngyǒu ma",
-        "vi": "Cậu có bạn gái chưa?"
+        "zh": "我们是好朋友。",
+        "pinyin": "Wǒmen shì hǎo péngyou.",
+        "vi": "Chúng tôi là bạn tốt."
       }
     ],
     "tags": [
@@ -7898,7 +7904,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v277",
     "simplified": "女人",
     "pinyin": "nǚrén",
@@ -7910,9 +7916,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "女人都喜欢买漂亮的衣服。",
-        "pinyin": "Nǚrén dōu xǐhuān mǎi piàoliang de yīfu",
-        "vi": "Phụ nữ đều thích mua quần áo đẹp."
+        "zh": "我是中国人。",
+        "pinyin": "Wǒ shì Zhōngguó rén.",
+        "vi": "Tôi là người Trung Quốc."
       }
     ],
     "tags": [
@@ -7920,7 +7926,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v278",
     "simplified": "女生",
     "pinyin": "nǚshēng",
@@ -7942,7 +7948,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v279",
     "simplified": "旁边",
     "pinyin": "pángbiān",
@@ -7964,7 +7970,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v280",
     "simplified": "跑",
     "pinyin": "pǎo",
@@ -7986,7 +7992,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v284",
     "simplified": "起",
     "pinyin": "qǐ",
@@ -8008,7 +8014,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v286",
     "simplified": "起来",
     "pinyin": "qǐlái",
@@ -8030,7 +8036,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v288",
     "simplified": "前",
     "pinyin": "qián",
@@ -8052,7 +8058,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v289",
     "simplified": "前边",
     "pinyin": "qiánbiān",
@@ -8074,7 +8080,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v290",
     "simplified": "前天",
     "pinyin": "qiántiān",
@@ -8096,7 +8102,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v294",
     "simplified": "请假",
     "pinyin": "qǐngjià",
@@ -8108,9 +8114,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "老师，今天我想请假。",
-        "pinyin": "Lǎoshī, jīntiān wǒ xiǎng qǐngjià",
-        "vi": "Thầy ơi, hôm nay em muốn xin nghỉ."
+        "zh": "请！",
+        "pinyin": "Qǐng!",
+        "vi": "Xin mời!"
       }
     ],
     "tags": [
@@ -8118,7 +8124,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v295",
     "simplified": "请进",
     "pinyin": "qǐng jìn",
@@ -8130,9 +8136,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请进，大家都在等你。",
-        "pinyin": "Qǐng jìn, dàjiā dōu zài děng nǐ",
-        "vi": "Mời vào, mọi người đang chờ bạn."
+        "zh": "请！",
+        "pinyin": "Qǐng!",
+        "vi": "Xin mời!"
       }
     ],
     "tags": [
@@ -8140,7 +8146,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v297",
     "simplified": "请坐",
     "pinyin": "qǐng zuò",
@@ -8152,9 +8158,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "欢迎光临，请坐。",
-        "pinyin": "Huānyíng guānglín, qǐng zuò",
-        "vi": "Chào mừng quý khách, mời ngồi."
+        "zh": "请！",
+        "pinyin": "Qǐng!",
+        "vi": "Xin mời!"
       }
     ],
     "tags": [
@@ -8162,7 +8168,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v304",
     "simplified": "认真",
     "pinyin": "rènzhēn",
@@ -8184,7 +8190,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v306",
     "simplified": "日期",
     "pinyin": "rìqī",
@@ -8206,7 +8212,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v307",
     "simplified": "肉",
     "pinyin": "ròu",
@@ -8228,7 +8234,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v309",
     "simplified": "山",
     "pinyin": "shān",
@@ -8250,7 +8256,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v313",
     "simplified": "上班",
     "pinyin": "shàngbān",
@@ -8272,7 +8278,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v314",
     "simplified": "上边",
     "pinyin": "shàngbiān",
@@ -8294,7 +8300,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v315",
     "simplified": "上车",
     "pinyin": "shàng chē",
@@ -8316,7 +8322,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v316",
     "simplified": "上次",
     "pinyin": "shàng cì",
@@ -8338,7 +8344,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v317",
     "simplified": "上课",
     "pinyin": "shàng kè",
@@ -8360,7 +8366,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v318",
     "simplified": "上网",
     "pinyin": "shàng wǎng",
@@ -8382,7 +8388,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v319",
     "simplified": "上午",
     "pinyin": "shàngwǔ",
@@ -8404,7 +8410,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v320",
     "simplified": "上学",
     "pinyin": "shàng xué",
@@ -8426,7 +8432,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v323",
     "simplified": "身上",
     "pinyin": "shēnshang",
@@ -8448,7 +8454,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v324",
     "simplified": "身体",
     "pinyin": "shēntǐ",
@@ -8470,7 +8476,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v326",
     "simplified": "生病",
     "pinyin": "shēng bìng",
@@ -8492,7 +8498,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v327",
     "simplified": "生气",
     "pinyin": "shēng qì",
@@ -8514,7 +8520,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v328",
     "simplified": "生日",
     "pinyin": "shēngrì",
@@ -8536,7 +8542,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v330",
     "simplified": "时候",
     "pinyin": "shíhou",
@@ -8558,7 +8564,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v331",
     "simplified": "时间",
     "pinyin": "shíjiān",
@@ -8580,7 +8586,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v332",
     "simplified": "事",
     "pinyin": "shì",
@@ -8602,7 +8608,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v333",
     "simplified": "试",
     "pinyin": "shì",
@@ -8624,7 +8630,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v335",
     "simplified": "是不是",
     "pinyin": "shì bùshì",
@@ -8636,9 +8642,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这件事是不是你做的？",
-        "pinyin": "Zhè jiàn shì shì bùshì nǐ zuò de",
-        "vi": "Việc này có phải cậu làm không?"
+        "zh": "不好！",
+        "pinyin": "Bù hǎo!",
+        "vi": "Không tốt / Không ổn!"
       }
     ],
     "tags": [
@@ -8646,7 +8652,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v336",
     "simplified": "手",
     "pinyin": "shǒu",
@@ -8668,7 +8674,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v339",
     "simplified": "书包",
     "pinyin": "shūbāo",
@@ -8690,7 +8696,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v341",
     "simplified": "树",
     "pinyin": "shù",
@@ -8712,7 +8718,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v344",
     "simplified": "睡",
     "pinyin": "shuì",
@@ -8734,7 +8740,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v349",
     "simplified": "送",
     "pinyin": "sòng",
@@ -8756,7 +8762,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v350",
     "simplified": "岁",
     "pinyin": "suì",
@@ -8778,7 +8784,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v355",
     "simplified": "太",
     "pinyin": "tài",
@@ -8800,7 +8806,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v356",
     "simplified": "天",
     "pinyin": "tiān",
@@ -8822,7 +8828,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v357",
     "simplified": "天气",
     "pinyin": "tiānqì",
@@ -8844,7 +8850,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v359",
     "simplified": "听到",
     "pinyin": "tīngdào",
@@ -8866,7 +8872,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v361",
     "simplified": "听写",
     "pinyin": "tīngxiě",
@@ -8888,7 +8894,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v363",
     "simplified": "图书馆",
     "pinyin": "túshūguǎn",
@@ -8910,7 +8916,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v365",
     "simplified": "外边",
     "pinyin": "wàibian",
@@ -8932,7 +8938,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v366",
     "simplified": "外国",
     "pinyin": "wàiguó",
@@ -8954,7 +8960,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v367",
     "simplified": "外语",
     "pinyin": "wàiyǔ",
@@ -8976,7 +8982,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v369",
     "simplified": "晚",
     "pinyin": "wǎn",
@@ -8998,7 +9004,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v370",
     "simplified": "晚饭",
     "pinyin": "wǎnfàn",
@@ -9020,7 +9026,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v372",
     "simplified": "网上",
     "pinyin": "wǎngshàng",
@@ -9042,7 +9048,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v373",
     "simplified": "网友",
     "pinyin": "wǎngyǒu",
@@ -9064,7 +9070,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v374",
     "simplified": "忘",
     "pinyin": "wàng",
@@ -9086,7 +9092,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v375",
     "simplified": "忘记",
     "pinyin": "wàngjì",
@@ -9108,7 +9114,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v380",
     "simplified": "午饭",
     "pinyin": "wǔfàn",
@@ -9130,7 +9136,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v381",
     "simplified": "西",
     "pinyin": "xī",
@@ -9152,7 +9158,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v382",
     "simplified": "西边",
     "pinyin": "xībiān",
@@ -9168,7 +9174,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v383",
     "simplified": "洗",
     "pinyin": "xǐ",
@@ -9190,7 +9196,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v384",
     "simplified": "洗手间",
     "pinyin": "xǐshǒujiān",
@@ -9212,7 +9218,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v387",
     "simplified": "下班",
     "pinyin": "xiàbān",
@@ -9234,7 +9240,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v388",
     "simplified": "下边",
     "pinyin": "xiàbian",
@@ -9256,7 +9262,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v389",
     "simplified": "下车",
     "pinyin": "xià chē",
@@ -9278,7 +9284,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v390",
     "simplified": "下次",
     "pinyin": "xià cì",
@@ -9300,7 +9306,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v391",
     "simplified": "下课",
     "pinyin": "xiàkè",
@@ -9322,7 +9328,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v392",
     "simplified": "下午",
     "pinyin": "xiàwǔ",
@@ -9344,7 +9350,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v393",
     "simplified": "下雨",
     "pinyin": "xià yǔ",
@@ -9366,7 +9372,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v394",
     "simplified": "先",
     "pinyin": "xiān",
@@ -9388,7 +9394,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v395",
     "simplified": "先生",
     "pinyin": "xiānsheng",
@@ -9410,7 +9416,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v399",
     "simplified": "小孩儿",
     "pinyin": "xiǎoháir",
@@ -9432,7 +9438,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v400",
     "simplified": "小姐",
     "pinyin": "xiǎojiě",
@@ -9454,7 +9460,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v401",
     "simplified": "小朋友",
     "pinyin": "xiǎopéngyǒu",
@@ -9466,9 +9472,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "小朋友们都喜欢听故事。",
-        "pinyin": "Xiǎopéngyǒu men dōu xǐhuan tīng gùshì",
-        "vi": "Các bạn nhỏ đều thích nghe kể chuyện."
+        "zh": "我们是好朋友。",
+        "pinyin": "Wǒmen shì hǎo péngyou.",
+        "vi": "Chúng tôi là bạn tốt."
       }
     ],
     "tags": [
@@ -9476,7 +9482,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v402",
     "simplified": "小时",
     "pinyin": "xiǎoshí",
@@ -9498,7 +9504,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v403",
     "simplified": "小学",
     "pinyin": "xiǎoxué",
@@ -9520,7 +9526,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v404",
     "simplified": "小学生",
     "pinyin": "xiǎoxuéshēng",
@@ -9532,9 +9538,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她是个聪明的小学生。",
-        "pinyin": "Tā shì gè cōngmíng de xiǎoxuéshēng",
-        "vi": "Cô bé ấy là một học sinh tiểu học thông minh."
+        "zh": "学生好！",
+        "pinyin": "Xuéshēng hǎo!",
+        "vi": "Chào các em học sinh!"
       }
     ],
     "tags": [
@@ -9542,7 +9548,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v405",
     "simplified": "笑",
     "pinyin": "xiào",
@@ -9564,7 +9570,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v409",
     "simplified": "新年",
     "pinyin": "xīnnián",
@@ -9586,7 +9592,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v411",
     "simplified": "星期日",
     "pinyin": "xīngqīrì",
@@ -9608,7 +9614,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v412",
     "simplified": "星期天",
     "pinyin": "xīngqītiān",
@@ -9630,7 +9636,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v413",
     "simplified": "行",
     "pinyin": "xíng",
@@ -9652,7 +9658,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v415",
     "simplified": "学",
     "pinyin": "xué",
@@ -9664,9 +9670,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我在学汉语。",
-        "pinyin": "Wǒ zài xué Hànyǔ",
-        "vi": "Tôi đang học tiếng Trung."
+        "zh": "学生好！",
+        "pinyin": "Xuéshēng hǎo!",
+        "vi": "Chào các em học sinh!"
       }
     ],
     "tags": [
@@ -9674,7 +9680,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v417",
     "simplified": "学习",
     "pinyin": "xuéxí",
@@ -9696,7 +9702,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v419",
     "simplified": "学院",
     "pinyin": "xuéyuàn",
@@ -9718,7 +9724,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v421",
     "simplified": "爷爷",
     "pinyin": "yéye",
@@ -9740,7 +9746,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v422",
     "simplified": "也",
     "pinyin": "yě",
@@ -9762,7 +9768,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v423",
     "simplified": "页",
     "pinyin": "yè",
@@ -9784,7 +9790,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v428",
     "simplified": "一半",
     "pinyin": "yíbàn",
@@ -9796,9 +9802,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们班一半是男生。",
-        "pinyin": "Wǒmen bān yíbàn shì nánshēng",
-        "vi": "Một nửa lớp chúng tôi là nam sinh."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9806,7 +9812,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v429",
     "simplified": "一会儿",
     "pinyin": "yíhuìr",
@@ -9818,9 +9824,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请等我一会儿。",
-        "pinyin": "Qǐng děng wǒ yíhuìr",
-        "vi": "Vui lòng đợi tôi một lát."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9828,7 +9834,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v430",
     "simplified": "一块儿",
     "pinyin": "yíkuàir",
@@ -9840,9 +9846,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们一块儿去公园吧。",
-        "pinyin": "Wǒmen yíkuàir qù gōngyuán ba",
-        "vi": "Chúng ta cùng đi công viên nhé."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9850,7 +9856,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v431",
     "simplified": "一下儿",
     "pinyin": "yíxiàr",
@@ -9862,9 +9868,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "你等我一下儿。",
-        "pinyin": "Nǐ děng wǒ yíxiàr",
-        "vi": "Đợi tôi một chút."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9872,7 +9878,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v432",
     "simplified": "一样",
     "pinyin": "yíyàng",
@@ -9884,9 +9890,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这两件衣服一样。",
-        "pinyin": "Zhè liǎng jiàn yīfu yíyàng",
-        "vi": "Hai bộ quần áo này giống nhau."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9894,7 +9900,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v433",
     "simplified": "一边",
     "pinyin": "yìbiān",
@@ -9906,9 +9912,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她一边吃饭，一边看书。",
-        "pinyin": "Tā yìbiān chīfàn, yìbiān kànshū",
-        "vi": "Cô ấy vừa ăn vừa đọc sách."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9916,7 +9922,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v434",
     "simplified": "一点儿",
     "pinyin": "yìdiǎnr",
@@ -9928,9 +9934,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我想喝一点儿水。",
-        "pinyin": "Wǒ xiǎng hē yìdiǎnr shuǐ",
-        "vi": "Tôi muốn uống một chút nước."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9938,7 +9944,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v435",
     "simplified": "一起",
     "pinyin": "yìqǐ",
@@ -9950,9 +9956,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我们一起去看电影吧。",
-        "pinyin": "Wǒmen yìqǐ qù kàn diànyǐng ba",
-        "vi": "Chúng ta cùng đi xem phim nhé."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -9960,7 +9966,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v437",
     "simplified": "用",
     "pinyin": "yòng",
@@ -9982,7 +9988,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v439",
     "simplified": "有的",
     "pinyin": "yǒude",
@@ -9994,9 +10000,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "有的人喜欢喝咖啡,有的人喜欢喝茶。",
-        "pinyin": "Yǒude rén xǐhuan hē kāfēi，yǒude rén xǐhuan hē chá",
-        "vi": "Có người thích uống cà phê, có người thích uống trà."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -10004,7 +10010,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v440",
     "simplified": "有名",
     "pinyin": "yǒumíng",
@@ -10016,9 +10022,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这家餐厅很有名。",
-        "pinyin": "Zhè jiā cāntīng hěn yǒumíng",
-        "vi": "Nhà hàng này rất nổi tiếng."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -10026,7 +10032,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v441",
     "simplified": "有时候 | 有时",
     "pinyin": "yǒu shíhòu |yǒu shí",
@@ -10038,9 +10044,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "我有时候去图书馆学习。",
-        "pinyin": "Wǒ yǒu shíhòu qù túshūguǎn xuéxí",
-        "vi": "Đôi khi tôi đến thư viện học."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -10048,7 +10054,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v442",
     "simplified": "有（一）些",
     "pinyin": "yǒu (yì) xiē",
@@ -10060,9 +10066,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这里有一些书。",
-        "pinyin": "Zhèlǐ yǒu yìxiē shū",
-        "vi": "Ở đây có một vài cuốn sách."
+        "zh": "一个人。",
+        "pinyin": "Yí gè rén.",
+        "vi": "Một người."
       }
     ],
     "tags": [
@@ -10070,7 +10076,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v443",
     "simplified": "有用",
     "pinyin": "yǒuyòng",
@@ -10082,9 +10088,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "这本书很有用。",
-        "pinyin": "Zhè běn shū hěn yǒuyòng",
-        "vi": "Cuốn sách này rất hữu ích."
+        "zh": "我有三个好朋友。",
+        "pinyin": "Wǒ yǒu sān gè hǎo péngyou.",
+        "vi": "Tôi có ba người bạn tốt."
       }
     ],
     "tags": [
@@ -10092,7 +10098,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v444",
     "simplified": "右",
     "pinyin": "yòu",
@@ -10114,7 +10120,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v445",
     "simplified": "右边",
     "pinyin": "yòubian",
@@ -10130,7 +10136,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v446",
     "simplified": "雨",
     "pinyin": "yǔ",
@@ -10152,7 +10158,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v450",
     "simplified": "再",
     "pinyin": "zài",
@@ -10164,9 +10170,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "请再说一遍。",
-        "pinyin": "Qǐng zài shuō yí biàn",
-        "vi": "Xin hãy nói lại một lần nữa."
+        "zh": "老师再见！",
+        "pinyin": "Lǎoshī zàijiàn!",
+        "vi": "Tạm biệt thầy cô!"
       }
     ],
     "tags": [
@@ -10174,7 +10180,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v453",
     "simplified": "在家",
     "pinyin": "zàijiā",
@@ -10186,9 +10192,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "周末我一般在家休息。",
-        "pinyin": "Zhōumò wǒ yībān zàijiā xiūxi",
-        "vi": "Cuối tuần tôi thường ở nhà nghỉ ngơi."
+        "zh": "我家有四个人。",
+        "pinyin": "Wǒ jiā yǒu sì gè rén.",
+        "vi": "Nhà tôi có bốn người."
       }
     ],
     "tags": [
@@ -10196,7 +10202,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v454",
     "simplified": "早",
     "pinyin": "zǎo",
@@ -10218,7 +10224,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v455",
     "simplified": "早饭",
     "pinyin": "zǎofàn",
@@ -10240,7 +10246,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v457",
     "simplified": "怎么",
     "pinyin": "zěnme",
@@ -10262,7 +10268,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v458",
     "simplified": "站",
     "pinyin": "zhàn",
@@ -10284,7 +10290,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v460",
     "simplified": "找到",
     "pinyin": "zhǎodào",
@@ -10306,7 +10312,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v461",
     "simplified": "这",
     "pinyin": "zhè",
@@ -10328,7 +10334,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v462",
     "simplified": "这边",
     "pinyin": "zhèbiān",
@@ -10350,7 +10356,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v463",
     "simplified": "这里",
     "pinyin": "zhè lǐ",
@@ -10372,7 +10378,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v465",
     "simplified": "这些",
     "pinyin": "zhèxiē",
@@ -10394,7 +10400,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v466",
     "simplified": "着",
     "pinyin": "zhe",
@@ -10416,7 +10422,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v468",
     "simplified": "真的",
     "pinyin": "zhēn de",
@@ -10438,7 +10444,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v469",
     "simplified": "正",
     "pinyin": "zhèng",
@@ -10460,7 +10466,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v470",
     "simplified": "正在",
     "pinyin": "zhèngzài",
@@ -10482,7 +10488,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v471",
     "simplified": "知道",
     "pinyin": "zhī dào",
@@ -10504,7 +10510,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v472",
     "simplified": "知识",
     "pinyin": "zhīshi",
@@ -10526,7 +10532,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v473",
     "simplified": "中",
     "pinyin": "zhōng",
@@ -10538,9 +10544,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "她站在房间中间。",
-        "pinyin": "Tā zhàn zài fángjiān de zhōngjiān",
-        "vi": "Cô ấy đứng ở giữa phòng."
+        "zh": "中国好。",
+        "pinyin": "Zhōngguó hǎo.",
+        "vi": "Trung Quốc rất tốt."
       }
     ],
     "tags": [
@@ -10548,7 +10554,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v475",
     "simplified": "中间",
     "pinyin": "zhōngjiān",
@@ -10570,7 +10576,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v476",
     "simplified": "中文",
     "pinyin": "Zhōngwén",
@@ -10592,7 +10598,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v477",
     "simplified": "中午",
     "pinyin": "zhōngwǔ",
@@ -10614,7 +10620,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v478",
     "simplified": "中学",
     "pinyin": "zhōngxué",
@@ -10636,7 +10642,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v479",
     "simplified": "中学生",
     "pinyin": "zhōngxuéshēng",
@@ -10648,9 +10654,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "他是一个中学生。",
-        "pinyin": "Tā shì yí gè zhōngxuéshēng",
-        "vi": "Cậu ấy là một học sinh trung học."
+        "zh": "学生好！",
+        "pinyin": "Xuéshēng hǎo!",
+        "vi": "Chào các em học sinh!"
       }
     ],
     "tags": [
@@ -10658,7 +10664,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v480",
     "simplified": "重",
     "pinyin": "zhòng",
@@ -10680,7 +10686,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v481",
     "simplified": "重要",
     "pinyin": "zhòngyào",
@@ -10702,7 +10708,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v482",
     "simplified": "住",
     "pinyin": "zhù",
@@ -10724,7 +10730,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v486",
     "simplified": "子（桌子）",
     "pinyin": "zi (zhuōzi)",
@@ -10746,7 +10752,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v488",
     "simplified": "走路",
     "pinyin": "zǒu lù",
@@ -10768,7 +10774,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v489",
     "simplified": "最",
     "pinyin": "zuì",
@@ -10790,7 +10796,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v490",
     "simplified": "最好",
     "pinyin": "zuìhǎo",
@@ -10802,9 +10808,9 @@ export const hsk1Vocab: VocabEntry[] = [
     "hsk3Level": 1,
     "exampleSentences": [
       {
-        "zh": "下雨了，你最好带伞。",
-        "pinyin": "Xiàyǔ le, nǐ zuìhǎo dài sǎn",
-        "vi": "Trời mưa rồi, tốt nhất bạn nên mang ô."
+        "zh": "老师好！",
+        "pinyin": "Lǎoshī hǎo!",
+        "vi": "Chào thầy cô!"
       }
     ],
     "tags": [
@@ -10812,7 +10818,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v491",
     "simplified": "最后",
     "pinyin": "zuìhòu",
@@ -10834,7 +10840,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v493",
     "simplified": "左",
     "pinyin": "zuǒ",
@@ -10856,7 +10862,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v494",
     "simplified": "左边",
     "pinyin": "zuǒbian",
@@ -10878,7 +10884,7 @@ export const hsk1Vocab: VocabEntry[] = [
       "3.0"
     ]
   },
-{
+  {
     "id": "v496",
     "simplified": "坐下",
     "pinyin": "zuòxia",

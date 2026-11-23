@@ -46,14 +46,15 @@ export function buildExercise(
   type: ExerciseType,
   vocab: VocabEntry,
   allVocab: VocabEntry[],
+  lessonVocab?: VocabEntry[],
 ): Exercise {
   switch (type) {
     case 'flashcard': return buildFlashcard(vocab);
-    case 'char_recognition': return buildCharRecognition(vocab, allVocab);
-    case 'cloze': return buildCloze(vocab, allVocab);
-    case 'cloze_typing': return buildClozeTyping(vocab, allVocab);
-    case 'translation': return buildTranslation(vocab, allVocab);
-    case 'word_scramble': return buildWordScramble(vocab);
+    case 'char_recognition': return buildCharRecognition(vocab, allVocab, lessonVocab);
+    case 'cloze': return buildCloze(vocab, allVocab, lessonVocab);
+    case 'cloze_typing': return buildClozeTyping(vocab, allVocab, lessonVocab);
+    case 'translation': return buildTranslation(vocab, allVocab, lessonVocab);
+    case 'word_scramble': return buildWordScramble(vocab, lessonVocab);
     case 'collocation_match': return buildCollocationMatch(vocab, allVocab);
     case 'error_spot': return buildErrorSpot(vocab, allVocab);
     case 'dictation': return buildDictation(vocab);
@@ -71,12 +72,14 @@ function buildFlashcard(vocab: VocabEntry): Exercise {
   };
 }
 
-function buildCharRecognition(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
+function buildCharRecognition(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
   const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
-  const levelFilteredVocab = allVocab.filter(v => (v.hsk2Level || v.hsk3Level || 1) <= userLevel);
+  const pool = (lessonVocab && lessonVocab.length > 1)
+    ? lessonVocab
+    : allVocab.filter(v => (v.hsk2Level || v.hsk3Level || 1) <= userLevel);
   const options = makeOptions(
     vocab.meaning, 
-    getDistractors(levelFilteredVocab.length >= 4 ? levelFilteredVocab : allVocab, vocab, 'meaning')
+    getDistractors(pool.length >= 4 ? pool : allVocab, vocab, 'meaning')
   );
   return {
     type: 'char_recognition',
@@ -183,19 +186,21 @@ export function segmentChineseSentence(s: string, targetVocab?: string): string[
   return tokens;
 }
 
-function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
+function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
   const ex = getRandomSentence(vocab);
-  if (!ex) return buildCharRecognition(vocab, allVocab);
+  if (!ex) return buildCharRecognition(vocab, allVocab, lessonVocab);
 
   const sentence = ex.zh.replace(vocab.simplified, '___');
   const escapedPinyin = vocab.pinyin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const maskedPinyin = ex.pinyin.replace(new RegExp(escapedPinyin, 'i'), '___');
   
   const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
-  const levelFilteredVocab = allVocab.filter(v => (v.hsk2Level || 1) <= userLevel);
+  const pool = (lessonVocab && lessonVocab.length > 1)
+    ? lessonVocab
+    : allVocab.filter(v => (v.hsk2Level || 1) <= userLevel);
   const options = makeOptions(
     vocab.simplified, 
-    getDistractors(levelFilteredVocab.length >= 4 ? levelFilteredVocab : allVocab, vocab, 'simplified')
+    getDistractors(pool.length >= 4 ? pool : allVocab, vocab, 'simplified')
   );
 
   return {
@@ -212,9 +217,9 @@ function buildCloze(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   };
 }
 
-function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
+function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
   const ex = getRandomSentence(vocab);
-  if (!ex) return buildCharRecognition(vocab, allVocab);
+  if (!ex) return buildCharRecognition(vocab, allVocab, lessonVocab);
 
   const sentence = ex.zh.replace(vocab.simplified, '___');
   const escapedPinyin = vocab.pinyin.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -222,8 +227,10 @@ function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   const targetChars = vocab.simplified.split('');
   
   const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
-  const levelFilteredVocab = allVocab.filter(v => (v.hsk2Level || 1) <= userLevel);
-  const distractorChars = getDistractors(levelFilteredVocab.length >= 4 ? levelFilteredVocab : allVocab, vocab, 'simplified')
+  const pool = (lessonVocab && lessonVocab.length > 1)
+    ? lessonVocab
+    : allVocab.filter(v => (v.hsk2Level || 1) <= userLevel);
+  const distractorChars = getDistractors(pool.length >= 4 ? pool : allVocab, vocab, 'simplified')
     .flatMap(s => s.split(''))
     .slice(0, 4);
   const options = shuffle([...new Set([...targetChars, ...distractorChars])]);
@@ -245,24 +252,36 @@ function buildClozeTyping(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   };
 }
 
-function buildTranslation(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
+function buildTranslation(vocab: VocabEntry, allVocab: VocabEntry[], lessonVocab?: VocabEntry[]): Exercise {
   const userLevel = vocab.hsk2Level || vocab.hsk3Level || 1;
-  // Ưu tiên câu dịch thực chiến từ tài liệu luyện dịch HSK đúng cấp độ
-  const matchingAuth = authenticTranslations.filter(t => t.hsk <= userLevel && t.zh.includes(vocab.simplified));
   let ex: ExampleSentence | null = null;
-  if (matchingAuth.length > 0) {
-    const picked = matchingAuth[Math.floor(Math.random() * matchingAuth.length)];
-    ex = { zh: picked.zh, pinyin: picked.pinyin, vi: picked.vi };
-  } else {
+
+  // 1. Nếu đang làm bài trong 1 bài học cụ thể (lessonVocab có dữ liệu)
+  // Tuyệt đối chỉ lấy câu ví dụ của từ đó trong bài, KHÔNG lấy từ kho bừa bãi
+  if (lessonVocab && lessonVocab.length > 0) {
     ex = getRandomSentence(vocab);
+  } else {
+    // 2. Chế độ ôn tập tổng hợp toàn bộ (SRS Mix): ưu tiên câu thực chiến chuẩn cấp độ
+    const matchingAuth = authenticTranslations.filter(t => t.hsk <= userLevel && t.zh.includes(vocab.simplified));
+    if (matchingAuth.length > 0) {
+      const picked = matchingAuth[Math.floor(Math.random() * matchingAuth.length)];
+      ex = { zh: picked.zh, pinyin: picked.pinyin, vi: picked.vi };
+    } else {
+      ex = getRandomSentence(vocab);
+    }
   }
 
-  if (!ex) return buildCharRecognition(vocab, allVocab);
+  if (!ex) return buildCharRecognition(vocab, allVocab, lessonVocab);
 
   const clean = ex.zh.replace(/[。！？，、]/g, '');
   const tokens = segmentChineseSentence(clean, vocab.simplified);
-  const sameLevelVocab = allVocab.filter(v => v.id !== vocab.id && (v.hsk2Level || 1) <= userLevel);
-  const distractors = pickRandom(sameLevelVocab.length >= 2 ? sameLevelVocab : allVocab.filter(v => v.id !== vocab.id), 2).map(v => v.simplified);
+  
+  // Distractors: Nếu trong bài học, chỉ lấy từ các từ cùng bài học! Tuyệt đối không lấy từ ngoài bài
+  const candidatePool = (lessonVocab && lessonVocab.length > 1)
+    ? lessonVocab.filter(v => v.id !== vocab.id)
+    : allVocab.filter(v => v.id !== vocab.id && (v.hsk2Level || 1) <= userLevel);
+  
+  const distractors = pickRandom(candidatePool, Math.min(2, candidatePool.length)).map(v => v.simplified);
   const chips = shuffle([...tokens, ...distractors]);
 
   return {
@@ -281,7 +300,7 @@ function buildTranslation(vocab: VocabEntry, allVocab: VocabEntry[]): Exercise {
   };
 }
 
-function buildWordScramble(vocab: VocabEntry): Exercise {
+function buildWordScramble(vocab: VocabEntry, _lessonVocab?: VocabEntry[]): Exercise {
   const ex = getRandomSentence(vocab);
   if (!ex) return buildFlashcard(vocab);
 
@@ -403,7 +422,7 @@ export function buildLessonByMode(mode: LessonPracticeMode, vocabList: VocabEntr
   if (mode === 'all') {
     return buildLessonSequence(vocabList, allVocab);
   }
-  return vocabList.map(v => buildExercise(mode as ExerciseType, v, allVocab));
+  return vocabList.map(v => buildExercise(mode as ExerciseType, v, allVocab, vocabList));
 }
 
 export type MistakeDrillMode = 'deep' | 'context' | 'quick' | 'cloze_only' | 'scramble_only';
@@ -493,7 +512,7 @@ export function buildLessonSequence(vocabList: VocabEntry[], allVocab: VocabEntr
 
   vocabList.forEach((vocab, i) => {
     const type = types[i % types.length];
-    exercises.push(buildExercise(type, vocab, allVocab));
+    exercises.push(buildExercise(type, vocab, allVocab, vocabList));
   });
 
   return exercises;
