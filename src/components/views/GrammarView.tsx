@@ -10,7 +10,9 @@ import {
   CheckCircle, 
   Sparkles,
   ExternalLink,
-  ChevronRight
+  ChevronRight,
+  X,
+  Volume2
 } from 'lucide-react';
 
 export function GrammarView() {
@@ -18,6 +20,7 @@ export function GrammarView() {
   const [selectedLevel, setSelectedLevel] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedTopic, setSelectedTopic] = useState<GrammarTopicEntry | null>(null);
 
   const filteredTopics = useMemo(() => {
     return grammarTopics.filter((topic) => {
@@ -150,10 +153,11 @@ export function GrammarView() {
           {filteredTopics.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl border border-[#e5e1d8] p-4 hover:border-[#4a7c59] transition-all shadow-xs flex items-center justify-between gap-3 group"
+              onClick={() => setSelectedTopic(item)}
+              className="bg-white rounded-2xl border border-[#e5e1d8] p-4 hover:border-[#4a7c59] transition-all shadow-xs flex items-center justify-between gap-3 group cursor-pointer"
             >
-              <div className="space-y-1 flex-1">
-                <div className="flex items-center gap-2">
+              <div className="space-y-1.5 flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
                   <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
                     item.level === 'HSK1' ? 'bg-emerald-100 text-emerald-800' :
                     item.level === 'HSK2' ? 'bg-blue-100 text-blue-800' :
@@ -169,28 +173,44 @@ export function GrammarView() {
                       {item.category}
                     </span>
                   )}
+                  {item.structure && (
+                    <span className="text-[11px] font-mono text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-md truncate max-w-[200px]">
+                      {item.structure}
+                    </span>
+                  )}
                   <span className="text-[11px] text-[#9ca3af]">#{idx + 1}</span>
                 </div>
 
                 <p className="text-sm font-semibold text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
                   {item.title}
                 </p>
+
+                {item.meaning && (
+                  <p className="text-xs text-[#6b7280] line-clamp-1">
+                    {item.meaning}
+                  </p>
+                )}
               </div>
 
-              <div className="flex items-center gap-1.5 shrink-0">
+              <div className="flex items-center gap-2 shrink-0">
                 <button
-                  onClick={() => {
-                    // Speak Chinese formula / example if present in title
+                  onClick={(e) => {
+                    e.stopPropagation();
                     const zhMatch = item.title.match(/[\u4e00-\u9fff]+/g);
                     if (zhMatch) {
                       speak(zhMatch.join(' '));
+                    } else if (item.examples?.[0]?.zh) {
+                      speak(item.examples[0].zh);
                     }
                   }}
                   className="p-2 rounded-xl text-[#6b7280] hover:text-[#4a7c59] hover:bg-[#e8f0eb] border border-[#e5e1d8] transition-colors text-xs flex items-center gap-1"
-                  title="Nghe phát âm ví dụ"
+                  title="Nghe phát âm"
                 >
                   <Sparkles size={14} />
                 </button>
+                <div className="p-1 text-[#9ca3af] group-hover:text-[#4a7c59] group-hover:translate-x-0.5 transition-all">
+                  <ChevronRight size={18} />
+                </div>
               </div>
             </div>
           ))}
@@ -203,6 +223,137 @@ export function GrammarView() {
           )}
         </div>
       </div>
+
+      {/* Detail Modal / Drawer khi bấm vào chuyên đề */}
+      {selectedTopic && (
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+          <div 
+            className="bg-white rounded-3xl border border-[#e5e1d8] shadow-2xl max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-5 border-b border-[#e5e1d8] flex items-start justify-between gap-3 bg-[#FAF9F6]">
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${
+                    selectedTopic.level === 'HSK1' ? 'bg-emerald-100 text-emerald-800' :
+                    selectedTopic.level === 'HSK2' ? 'bg-blue-100 text-blue-800' :
+                    selectedTopic.level === 'HSK3' ? 'bg-indigo-100 text-indigo-800' :
+                    'bg-purple-100 text-purple-800'
+                  }`}>
+                    {selectedTopic.level}
+                  </span>
+                  {selectedTopic.category && (
+                    <span className="text-[10px] bg-white text-[#6b7280] border border-[#e5e1d8] px-1.5 py-0.5 rounded">
+                      {selectedTopic.category}
+                    </span>
+                  )}
+                </div>
+                <h2 className="text-base sm:text-lg font-bold text-[#1a1a1a]">
+                  {selectedTopic.title}
+                </h2>
+              </div>
+
+              <button
+                onClick={() => setSelectedTopic(null)}
+                className="p-1.5 rounded-xl text-[#6b7280] hover:text-[#1a1a1a] hover:bg-white transition-colors border border-transparent hover:border-[#e5e1d8]"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-5 overflow-y-auto space-y-4 text-xs text-[#374151]">
+              {/* Công thức / Cấu trúc */}
+              {selectedTopic.structure && (
+                <div className="bg-amber-50 border border-amber-200/80 rounded-2xl p-3.5 space-y-1">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-amber-800">
+                    Cấu Trúc / Công Thức Ngữ Pháp:
+                  </p>
+                  <p className="text-sm font-bold text-amber-950 font-mono">
+                    {selectedTopic.structure}
+                  </p>
+                </div>
+              )}
+
+              {/* Ý nghĩa */}
+              {selectedTopic.meaning && (
+                <div className="space-y-1">
+                  <h4 className="font-bold text-[#1a1a1a] text-xs">1. Ý nghĩa:</h4>
+                  <p className="text-[#4b5563] leading-relaxed bg-[#FAF9F6] p-3 rounded-xl border border-[#e5e1d8]/60">
+                    {selectedTopic.meaning}
+                  </p>
+                </div>
+              )}
+
+              {/* Cách dùng */}
+              {selectedTopic.usage && (
+                <div className="space-y-1">
+                  <h4 className="font-bold text-[#1a1a1a] text-xs">2. Cách dùng chi tiết:</h4>
+                  <p className="text-[#4b5563] leading-relaxed whitespace-pre-line bg-[#FAF9F6] p-3 rounded-xl border border-[#e5e1d8]/60">
+                    {selectedTopic.usage}
+                  </p>
+                </div>
+              )}
+
+              {/* Lưu ý quan trọng */}
+              {selectedTopic.notes && selectedTopic.notes.length > 0 && (
+                <div className="bg-red-50/60 border border-red-200/60 rounded-2xl p-3.5 space-y-1.5">
+                  <h4 className="font-bold text-red-900 text-xs flex items-center gap-1.5">
+                    <span>⚠️</span> Các lưu ý tránh lỗi sai phổ biến:
+                  </h4>
+                  <ul className="list-disc list-inside space-y-1 text-[11px] text-red-800 leading-relaxed">
+                    {selectedTopic.notes.map((note, nIdx) => (
+                      <li key={nIdx}>{note}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Danh sách câu ví dụ thực tế */}
+              {selectedTopic.examples && selectedTopic.examples.length > 0 && (
+                <div className="space-y-2 pt-2 border-t border-[#f0eee9]">
+                  <h4 className="font-bold text-[#1a1a1a] text-xs">3. Câu ví dụ thực tế chuẩn HSK:</h4>
+                  <div className="space-y-2">
+                    {selectedTopic.examples.map((ex, exIdx) => (
+                      <div
+                        key={exIdx}
+                        className="bg-[#FAF9F6] border border-[#e5e1d8] rounded-2xl p-3.5 space-y-1 hover:border-[#4a7c59] transition-colors"
+                      >
+                        <div className="flex items-center justify-between">
+                          <span className="chinese-char text-base font-semibold text-[#1a1a1a]">
+                            {ex.zh}
+                          </span>
+                          <button
+                            onClick={() => speak(ex.zh)}
+                            className="p-1.5 rounded-xl bg-white border border-[#e5e1d8] text-[#4a7c59] hover:bg-[#e8f0eb] transition-colors flex items-center gap-1 text-[11px] font-semibold"
+                            title="Nghe câu"
+                          >
+                            <Volume2 size={14} />
+                            <span>Nghe</span>
+                          </button>
+                        </div>
+                        <p className="text-[#4a7c59] font-medium text-xs">{ex.pinyin}</p>
+                        <p className="text-[#6b7280] text-xs">{ex.vi}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-4 border-t border-[#e5e1d8] bg-[#FAF9F6] flex justify-end">
+              <button
+                onClick={() => setSelectedTopic(null)}
+                className="px-5 py-2.5 rounded-xl bg-[#4a7c59] text-white font-semibold text-xs hover:bg-[#3d6b4a] transition-colors shadow-xs"
+              >
+                Đóng lại
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

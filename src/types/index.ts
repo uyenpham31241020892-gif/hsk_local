@@ -141,6 +141,20 @@ export interface ExerciseAnswer {
 }
 
 // Vocab Pack
+export interface GrammarPoint {
+  id: string;
+  title: string;
+  structure: string;
+  meaning: string;
+  usage?: string;
+  notes?: string[];
+  examples: {
+    zh: string;
+    pinyin: string;
+    vi: string;
+  }[];
+}
+
 export interface VocabPack {
   id: string;
   title: string;
@@ -150,6 +164,7 @@ export interface VocabPack {
   hsk3Levels: number[];
   vocabIds: string[];
   orderIndex: number;
+  grammarPoints?: GrammarPoint[];
 }
 
 // Culture & Media Types

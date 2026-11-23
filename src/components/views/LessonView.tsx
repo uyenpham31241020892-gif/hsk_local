@@ -25,7 +25,7 @@ export function LessonView() {
   const packId = state.currentPackId;
   const pack = allPacks.find(p => p.id === packId);
 
-  const [activeTab, setActiveTab] = useState<'preview' | 'practice'>('preview');
+  const [activeTab, setActiveTab] = useState<'preview' | 'grammar' | 'practice'>('preview');
   const [selectedMode, setSelectedMode] = useState<LessonPracticeMode | null>(null);
   const [started, setStarted] = useState(false);
   const [finished, setFinished] = useState(false);
@@ -161,29 +161,42 @@ export function LessonView() {
       </div>
 
       <div className="px-4 py-6 max-w-2xl mx-auto space-y-6">
-        {/* Step Tabs: Học trước -> Luyện sau */}
-        <div className="grid grid-cols-2 p-1 bg-[#e5e1d8]/50 rounded-2xl">
+        {/* Step Tabs: Học từ -> Học ngữ pháp & ghép câu -> Luyện tập */}
+        <div className="grid grid-cols-3 p-1 bg-[#e5e1d8]/50 rounded-2xl gap-1">
           <button
             onClick={() => setActiveTab('preview')}
-            className={`py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+            className={`py-2.5 px-1 rounded-xl text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
               activeTab === 'preview' 
-                ? 'bg-white text-[#1a1a1a] shadow-sm' 
+                ? 'bg-white text-[#1a1a1a] shadow-sm font-bold' 
                 : 'text-[#6b7280] hover:text-[#1a1a1a]'
             }`}
           >
-            <BookOpen size={16} className={activeTab === 'preview' ? 'text-[#4a7c59]' : ''} />
-            1. Học & Đọc phát âm ({vocabList.length})
+            <BookOpen size={15} className={activeTab === 'preview' ? 'text-[#4a7c59]' : ''} />
+            <span>1. Từ vựng ({vocabList.length})</span>
           </button>
+
+          <button
+            onClick={() => setActiveTab('grammar')}
+            className={`py-2.5 px-1 rounded-xl text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
+              activeTab === 'grammar' 
+                ? 'bg-white text-[#1a1a1a] shadow-sm font-bold' 
+                : 'text-[#6b7280] hover:text-[#1a1a1a]'
+            }`}
+          >
+            <Languages size={15} className={activeTab === 'grammar' ? 'text-[#4a7c59]' : ''} />
+            <span>2. Ngữ pháp ({pack.grammarPoints?.length || 1})</span>
+          </button>
+
           <button
             onClick={() => setActiveTab('practice')}
-            className={`py-3 rounded-xl text-sm font-medium transition-all flex items-center justify-center gap-2 ${
+            className={`py-2.5 px-1 rounded-xl text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-1.5 ${
               activeTab === 'practice' 
-                ? 'bg-white text-[#1a1a1a] shadow-sm' 
+                ? 'bg-white text-[#1a1a1a] shadow-sm font-bold' 
                 : 'text-[#6b7280] hover:text-[#1a1a1a]'
             }`}
           >
-            <Zap size={16} className={activeTab === 'practice' ? 'text-[#4a7c59]' : ''} />
-            2. Chọn dạng bài luyện
+            <Zap size={15} className={activeTab === 'practice' ? 'text-[#4a7c59]' : ''} />
+            <span>3. Luyện bài tập</span>
           </button>
         </div>
 
@@ -294,17 +307,206 @@ export function LessonView() {
               ))}
             </div>
 
-            {/* Bottom button to go to practice */}
+            {/* Bottom button navigation */}
+            <div className="flex flex-col sm:flex-row gap-2 pt-2">
+              <button
+                onClick={() => setActiveTab('grammar')}
+                className="flex-1 py-3.5 px-4 rounded-2xl bg-[#4a7c59] text-white font-semibold text-sm hover:bg-[#3d6b4a] transition-all shadow-sm flex items-center justify-center gap-2"
+              >
+                <Languages size={18} />
+                <span>Thuộc từ rồi → Học ngữ pháp & cách ghép câu</span>
+              </button>
+              <button
+                onClick={() => setActiveTab('practice')}
+                className="py-3.5 px-5 rounded-2xl border border-[#4a7c59] text-[#4a7c59] font-semibold text-sm hover:bg-[#e8f0eb] transition-all flex items-center justify-center gap-1.5"
+              >
+                <Zap size={16} />
+                <span>Luyện tập ngay</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 2: Học Ngữ Pháp & Cấu Trúc Câu */}
+        {activeTab === 'grammar' && (
+          <div className="space-y-6 fade-in">
+            {/* Banner Bản Đồ Trật Tự Câu Chuẩn Tiếng Trung */}
+            <div className="bg-white rounded-3xl border border-[#e5e1d8] p-5 shadow-xs space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="p-2.5 rounded-2xl bg-[#e8f0eb] text-[#4a7c59] shrink-0">
+                  <Languages size={22} />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-[#1a1a1a]">
+                    Bản Đồ Cấu Trúc Câu Tiếng Trung (Quy Tắc Vàng)
+                  </h3>
+                  <p className="text-xs text-[#6b7280] mt-0.5">
+                    Khác với tiếng Việt, tiếng Trung luôn tuân theo trật tự logic: <em>Việc gì xảy ra trước hoặc điều kiện có trước thì đặt trước</em>!
+                  </p>
+                </div>
+              </div>
+
+              {/* Formula visualization */}
+              <div className="bg-[#FAF9F6] border border-[#e5e1d8] rounded-2xl p-4 space-y-3">
+                <p className="text-[11px] font-bold text-[#6b7280] uppercase tracking-wider">
+                  Trật tự các thành phần trong câu đơn chuẩn mực:
+                </p>
+                <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+                  <span className="px-3 py-1.5 rounded-xl bg-emerald-100 text-emerald-900 border border-emerald-200">
+                    [1] Chủ ngữ (Ai?)
+                  </span>
+                  <span className="text-[#6b7280] font-bold">+</span>
+                  <span className="px-3 py-1.5 rounded-xl bg-blue-100 text-blue-900 border border-blue-200">
+                    [2] Thời gian (Khi nào?)
+                  </span>
+                  <span className="text-[#6b7280] font-bold">+</span>
+                  <span className="px-3 py-1.5 rounded-xl bg-indigo-100 text-indigo-900 border border-indigo-200">
+                    [3] Địa điểm (Ở đâu? 在...)
+                  </span>
+                  <span className="text-[#6b7280] font-bold">+</span>
+                  <span className="px-3 py-1.5 rounded-xl bg-amber-100 text-amber-900 border border-amber-200">
+                    [4] Động từ (Làm gì?)
+                  </span>
+                  <span className="text-[#6b7280] font-bold">+</span>
+                  <span className="px-3 py-1.5 rounded-xl bg-purple-100 text-purple-900 border border-purple-200">
+                    [5] Tân ngữ (Cái gì?)
+                  </span>
+                </div>
+
+                <div className="bg-white rounded-xl p-3 border border-[#e5e1d8] text-xs space-y-1.5">
+                  <p className="text-[#6b7280]">
+                    💡 <strong>Ví dụ so sánh:</strong>
+                  </p>
+                  <p className="text-[#991b1b]">
+                    ❌ <em>Tiếng Việt hay nói:</em> "Tôi đi ăn cơm ở căng tin lúc 12 giờ trưa."
+                  </p>
+                  <p className="text-[#166534] font-medium">
+                    ✅ <em>Tiếng Trung bắt buộc xếp:</em> "Tôi [Chủ ngữ] + 12 giờ trưa [Thời gian] + ở căng tin [Địa điểm] + ăn [Động từ] + cơm [Tân ngữ]."
+                  </p>
+                  <div className="flex items-center justify-between pt-1">
+                    <p className="chinese-char text-sm font-bold text-[#1a1a1a]">
+                      我中午十二点在食堂吃饭。
+                    </p>
+                    <button
+                      onClick={() => speak('我中午十二点在食堂吃饭。', state.progress.settings.speechRate)}
+                      className="text-xs text-[#4a7c59] hover:underline flex items-center gap-1 font-semibold"
+                    >
+                      <Volume2 size={13} /> Nghe phát âm
+                    </button>
+                  </div>
+                  <p className="text-[11px] text-[#4a7c59]">Wǒ zhōngwǔ shí'èr diǎn zài shítáng chīfàn.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Danh sách các chuyên đề ngữ pháp trong bài học */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-bold text-[#1a1a1a] flex items-center gap-2">
+                <span>📚</span> Chuyên đề ngữ pháp trọng tâm bài này ({pack.grammarPoints?.length || 0})
+              </h4>
+
+              {(!pack.grammarPoints || pack.grammarPoints.length === 0) ? (
+                <div className="bg-white rounded-2xl border border-[#e5e1d8] p-6 text-center text-[#6b7280] text-xs">
+                  Chuyên đề ngữ pháp đang được cập nhật thêm. Bạn có thể sang thẻ Luyện tập để ôn từ vựng ngay!
+                </div>
+              ) : (
+                pack.grammarPoints.map((gp, idx) => (
+                  <div
+                    key={gp.id || idx}
+                    className="bg-white rounded-3xl border border-[#e5e1d8] p-5 shadow-xs space-y-4"
+                  >
+                    {/* Header */}
+                    <div className="border-b border-[#f0eee9] pb-3">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-[#e8f0eb] text-[#4a7c59]">
+                          Chuyên đề #{idx + 1}
+                        </span>
+                        {gp.structure && (
+                          <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 font-mono">
+                            {gp.structure}
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="text-base font-bold text-[#1a1a1a]">{gp.title}</h3>
+                    </div>
+
+                    {/* Ý nghĩa & Cách dùng */}
+                    <div className="space-y-2 text-xs text-[#374151]">
+                      {gp.meaning && (
+                        <div>
+                          <strong className="text-[#1a1a1a]">1. Ý nghĩa:</strong>
+                          <p className="mt-0.5 text-[#4b5563] leading-relaxed">{gp.meaning}</p>
+                        </div>
+                      )}
+
+                      {gp.usage && (
+                        <div>
+                          <strong className="text-[#1a1a1a]">2. Cách dùng:</strong>
+                          <p className="mt-0.5 text-[#4b5563] leading-relaxed whitespace-pre-line">{gp.usage}</p>
+                        </div>
+                      )}
+
+                      {/* Lưu ý */}
+                      {gp.notes && gp.notes.length > 0 && (
+                        <div className="bg-amber-50/70 border border-amber-200/60 rounded-2xl p-3.5 space-y-1.5 mt-2">
+                          <p className="font-bold text-amber-900 text-xs flex items-center gap-1.5">
+                            <span>⚠️</span> Lưu ý quan trọng khi ghép câu:
+                          </p>
+                          <ul className="list-disc list-inside space-y-1 text-[11px] text-amber-800">
+                            {gp.notes.map((note, nIdx) => (
+                              <li key={nIdx} className="leading-relaxed">{note}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Câu ví dụ mẫu */}
+                    {gp.examples && gp.examples.length > 0 && (
+                      <div className="space-y-2 pt-2 border-t border-[#f0eee9]">
+                        <p className="text-xs font-bold text-[#1a1a1a]">3. Câu ví dụ thực tế chuẩn HSK:</p>
+                        <div className="space-y-2">
+                          {gp.examples.map((ex, exIdx) => (
+                            <div
+                              key={exIdx}
+                              className="bg-[#FAF9F6] border border-[#e5e1d8] rounded-2xl p-3 text-xs space-y-1"
+                            >
+                              <div className="flex items-center justify-between">
+                                <span className="chinese-char text-sm font-semibold text-[#1a1a1a]">
+                                  {ex.zh}
+                                </span>
+                                <button
+                                  onClick={() => speak(ex.zh, state.progress.settings.speechRate)}
+                                  className="text-[#4a7c59] hover:text-[#3d6b4a] p-1 rounded-lg hover:bg-[#e8f0eb] transition-colors"
+                                  title="Nghe câu ví dụ"
+                                >
+                                  <Volume2 size={14} />
+                                </button>
+                              </div>
+                              <p className="text-[#4a7c59] font-medium text-[11px]">{ex.pinyin}</p>
+                              <p className="text-[#6b7280] text-[11px]">{ex.vi}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
+            </div>
+
+            {/* CTA chuyển sang luyện tập */}
             <button
               onClick={() => setActiveTab('practice')}
-              className="w-full py-4 rounded-2xl bg-[#4a7c59] text-white font-semibold text-base hover:bg-[#3d6b4a] transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-2xl bg-[#4a7c59] text-white font-semibold text-base hover:bg-[#3d6b4a] transition-all shadow-sm flex items-center justify-center gap-2"
             >
-              Đã thuộc sơ bộ → Sang chọn dạng bài luyện
+              <Zap size={18} />
+              <span>Đã nắm chắc ngữ pháp → Vào luyện bài tập ngay!</span>
             </button>
           </div>
         )}
 
-        {/* TAB 2: Chọn dạng bài luyện tập */}
+        {/* TAB 3: Chọn dạng bài luyện tập */}
         {activeTab === 'practice' && (
           <div className="space-y-4 fade-in">
             <div className="bg-[#e8f0eb] rounded-2xl p-4 text-sm text-[#1a1a1a]">
