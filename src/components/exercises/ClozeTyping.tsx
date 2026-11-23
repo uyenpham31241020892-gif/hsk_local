@@ -7,11 +7,12 @@ import { vocabById } from '../../data';
 interface ClozeTypingProps {
   exercise: Exercise;
   speechRate: number;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function ClozeTyping({ exercise, speechRate, onAnswer, onNext }: ClozeTypingProps) {
+export function ClozeTyping({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: ClozeTypingProps) {
   const [input, setInput] = useState('');
   const [revealed, setRevealed] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -22,14 +23,16 @@ export function ClozeTyping({ exercise, speechRate, onAnswer, onNext }: ClozeTyp
   const vocab = vocabById[exercise.vocabId];
 
   // Option to toggle pinyin on/off
-  const [showPinyin, setShowPinyin] = useState<boolean>(() => {
+  const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
     const saved = localStorage.getItem('hsk_exercise_show_pinyin');
     return saved !== null ? saved === 'true' : true;
   });
 
+  const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
+
   const togglePinyin = () => {
     const next = !showPinyin;
-    setShowPinyin(next);
+    setLocalShowPinyin(next);
     localStorage.setItem('hsk_exercise_show_pinyin', String(next));
   };
 

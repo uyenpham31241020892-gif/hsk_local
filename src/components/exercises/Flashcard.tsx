@@ -1,20 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import type { VocabEntry } from '../../types';
 import { speak } from '../../utils/exercises';
-import { Volume2, RotateCcw, Lightbulb, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Volume2, RotateCcw, Lightbulb, ChevronRight, CheckCircle2, Eye, EyeOff } from 'lucide-react';
 
 interface FlashcardProps {
   vocab: VocabEntry;
   speechRate: number;
   showPinyinFirst: boolean;
+  showPinyin?: boolean;
+  onTogglePinyin?: () => void;
   onGrade: (quality: 0|1|2|3|4|5) => void;
   onNext?: () => void;
 }
 
-export function Flashcard({ vocab, speechRate, showPinyinFirst, onGrade, onNext }: FlashcardProps) {
+export function Flashcard({ vocab, speechRate, showPinyinFirst, showPinyin: showPinyinProp, onTogglePinyin, onGrade, onNext }: FlashcardProps) {
   const [flipped, setFlipped] = useState(false);
   const [showTip, setShowTip] = useState(false);
   const [graded, setGraded] = useState(false);
+
+  const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hsk_exercise_show_pinyin');
+    return saved !== null ? saved === 'true' : true;
+  });
+
+  const isPinyinVisible = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
+
+  const handleTogglePinyin = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (onTogglePinyin) {
+      onTogglePinyin();
+    } else {
+      const next = !localShowPinyin;
+      setLocalShowPinyin(next);
+      localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    }
+  };
 
   useEffect(() => {
     setFlipped(false);
@@ -44,16 +64,41 @@ export function Flashcard({ vocab, speechRate, showPinyinFirst, onGrade, onNext 
       >
         <div className={`card-inner ${flipped ? 'flipped' : ''}`} style={{ height: '100%' }}>
           {/* Front */}
-          <div className="card-face bg-white rounded-2xl border border-[#e5e1d8] shadow-sm flex flex-col items-center justify-center p-8 gap-3">
-            {showPinyinFirst && (
+          <div className="card-face bg-white rounded-2xl border border-[#e5e1d8] shadow-sm flex flex-col items-center justify-center p-8 gap-3 relative">
+            {/* Quick toggle pill on the card */}
+            <button
+              type="button"
+              onClick={handleTogglePinyin}
+              className={`absolute top-3.5 right-3.5 px-2.5 py-1 rounded-xl text-xs font-semibold border flex items-center gap-1.5 transition-all shadow-2xs z-10 ${
+                isPinyinVisible
+                  ? 'bg-emerald-50 border-emerald-200 text-[#4a7c59] hover:bg-emerald-100'
+                  : 'bg-[#FAF9F6] border-[#e5e1d8] text-[#6b7280] hover:text-[#1a1a1a]'
+              }`}
+              title={isPinyinVisible ? 'Đang hiện Pinyin. Bấm để ẩn Pinyin' : 'Đang ẩn Pinyin. Bấm để hiện Pinyin'}
+            >
+              {isPinyinVisible ? <Eye size={13} /> : <EyeOff size={13} />}
+              <span>{isPinyinVisible ? 'Pinyin: Hiện' : 'Pinyin: Ẩn'}</span>
+            </button>
+
+            {isPinyinVisible && showPinyinFirst && (
               <p className="text-[#4a7c59] text-lg tracking-widest font-medium">{vocab.pinyin}</p>
             )}
             <span className="chinese-char text-7xl font-light text-[#1a1a1a] leading-none select-none">
               {vocab.simplified}
             </span>
-            {/* Pinyin always visible below */}
-            {!showPinyinFirst && (
+            {/* Pinyin always visible below when enabled */}
+            {isPinyinVisible && !showPinyinFirst && (
               <p className="text-[#4a7c59] text-base tracking-widest mt-1">{vocab.pinyin}</p>
+            )}
+            {!isPinyinVisible && (
+              <div
+                onClick={handleTogglePinyin}
+                className="text-[#9ca3af] hover:text-[#4a7c59] text-xs mt-1 flex items-center gap-1 py-0.5 px-2 rounded-lg hover:bg-[#e8f0eb] transition-all cursor-pointer"
+                title="Bấm để hiện Pinyin"
+              >
+                <EyeOff size={12} />
+                <span>Pinyin đang ẩn (bấm để xem)</span>
+              </div>
             )}
             <p className="text-[#b5b2ab] text-xs mt-1">Nhấn để xem nghĩa ↓</p>
           </div>
@@ -98,6 +143,19 @@ export function Flashcard({ vocab, speechRate, showPinyinFirst, onGrade, onNext 
           title="Lật lại"
         >
           <RotateCcw size={18} className="text-[#6b7280]" />
+        </button>
+        <button
+          type="button"
+          onClick={handleTogglePinyin}
+          className={`px-3 py-2 rounded-xl border flex items-center gap-1.5 text-xs font-bold transition-all shadow-2xs ${
+            isPinyinVisible 
+              ? 'border-emerald-300 bg-emerald-50 text-[#4a7c59] hover:bg-emerald-100' 
+              : 'border-[#e5e1d8] bg-[#FAF9F6] hover:bg-[#e8f0eb] text-[#6b7280]'
+          }`}
+          title={isPinyinVisible ? 'Đang hiện Pinyin. Bấm để ẩn Pinyin' : 'Đang ẩn Pinyin. Bấm để hiện Pinyin'}
+        >
+          {isPinyinVisible ? <Eye size={15} /> : <EyeOff size={15} />}
+          <span>Pinyin: {isPinyinVisible ? 'Hiện' : 'Ẩn'}</span>
         </button>
         {vocab.memoryTip && (
           <button

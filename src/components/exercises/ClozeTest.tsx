@@ -7,25 +7,28 @@ import { vocabById } from '../../data';
 interface ClozeTestProps {
   exercise: Exercise;
   speechRate: number;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function ClozeTest({ exercise, speechRate, onAnswer, onNext }: ClozeTestProps) {
+export function ClozeTest({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: ClozeTestProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const correct = Array.isArray(exercise.answer.correct) ? exercise.answer.correct[0] : exercise.answer.correct;
   const vocab = vocabById[exercise.vocabId];
 
   // Option to toggle pinyin on/off
-  const [showPinyin, setShowPinyin] = useState<boolean>(() => {
+  const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
     const saved = localStorage.getItem('hsk_exercise_show_pinyin');
     return saved !== null ? saved === 'true' : true;
   });
 
+  const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
+
   const togglePinyin = () => {
     const next = !showPinyin;
-    setShowPinyin(next);
+    setLocalShowPinyin(next);
     localStorage.setItem('hsk_exercise_show_pinyin', String(next));
   };
 

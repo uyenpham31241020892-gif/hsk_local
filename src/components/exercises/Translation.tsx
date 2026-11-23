@@ -6,11 +6,12 @@ import { Volume2, CheckCircle2, XCircle, RotateCcw, Eye, EyeOff, Keyboard, Layer
 interface TranslationProps {
   exercise: Exercise;
   speechRate?: number;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function Translation({ exercise, speechRate = 1.0, onAnswer, onNext }: TranslationProps) {
+export function Translation({ exercise, speechRate = 1.0, showPinyin: showPinyinProp, onAnswer, onNext }: TranslationProps) {
   // Input mode: 'chips' (click word tiles) or 'type' (free input keyboard)
   const [inputMode, setInputMode] = useState<'chips' | 'type'>('chips');
   const [typedInput, setTypedInput] = useState('');
@@ -18,9 +19,20 @@ export function Translation({ exercise, speechRate = 1.0, onAnswer, onNext }: Tr
   const [availableTokens, setAvailableTokens] = useState<{ id: string; text: string }[]>([]);
   const [answered, setAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
-  const [showPinyin, setShowPinyin] = useState<boolean>(() => {
+  const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hsk_exercise_show_pinyin');
+    if (saved !== null) return saved === 'true';
     return localStorage.getItem('hsk_show_translation_pinyin') !== 'false';
   });
+
+  const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
+
+  const togglePinyin = () => {
+    const next = !showPinyin;
+    setLocalShowPinyin(next);
+    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+    localStorage.setItem('hsk_show_translation_pinyin', String(next));
+  };
 
   const targetSentence: string = Array.isArray(exercise.answer.correct)
     ? exercise.answer.correct.join('')
@@ -46,12 +58,6 @@ export function Translation({ exercise, speechRate = 1.0, onAnswer, onNext }: Tr
     setAnswered(false);
     setIsCorrect(false);
   }, [exercise, targetSentence]);
-
-  const togglePinyin = () => {
-    const next = !showPinyin;
-    setShowPinyin(next);
-    localStorage.setItem('hsk_show_translation_pinyin', String(next));
-  };
 
   const handleSelectChip = (token: { id: string; text: string }) => {
     if (answered) return;

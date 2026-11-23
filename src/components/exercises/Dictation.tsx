@@ -7,15 +7,26 @@ import { vocabById } from '../../data';
 interface DictationProps {
   exercise: Exercise;
   speechRate: number;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function Dictation({ exercise, speechRate, onAnswer, onNext }: DictationProps) {
+export function Dictation({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: DictationProps) {
   const [input, setInput] = useState('');
   const [revealed, setRevealed] = useState(false);
   const [playCount, setPlayCount] = useState(0);
-  const [showPinyinHint, setShowPinyinHint] = useState(true);
+  const [localShowPinyinHint, setLocalShowPinyinHint] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hsk_exercise_show_pinyin');
+    return saved !== null ? saved === 'true' : true;
+  });
+  const showPinyinHint = showPinyinProp !== undefined ? showPinyinProp : localShowPinyinHint;
+
+  const togglePinyinHint = () => {
+    const next = !showPinyinHint;
+    setLocalShowPinyinHint(next);
+    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+  };
   const inputRef = useRef<HTMLInputElement>(null);
   
   const correct = Array.isArray(exercise.answer.correct) ? exercise.answer.correct[0] : exercise.answer.correct;
@@ -60,7 +71,7 @@ export function Dictation({ exercise, speechRate, onAnswer, onNext }: DictationP
             </p>
           </div>
           <button
-            onClick={() => setShowPinyinHint(!showPinyinHint)}
+            onClick={togglePinyinHint}
             className="p-2 text-xs text-[#6b7280] hover:text-[#1a1a1a] border border-[#e5e1d8] rounded-xl flex items-center gap-1"
           >
             {showPinyinHint ? <EyeOff size={14} /> : <Eye size={14} />}

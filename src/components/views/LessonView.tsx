@@ -17,7 +17,9 @@ import {
   RotateCcw,
   Sparkles,
   PenLine,
-  Languages
+  Languages,
+  Eye,
+  EyeOff
 } from 'lucide-react';
 import type { VocabEntry, GrammarPoint, Exercise } from '../../types';
 
@@ -50,6 +52,18 @@ export function LessonView() {
   const [finished, setFinished] = useState(false);
   const [results, setResults] = useState<{ correct: number; total: number } | null>(null);
   const [isPlayingAll, setIsPlayingAll] = useState(false);
+
+  // Toggle Pinyin in Vocab Preview
+  const [showVocabPinyin, setShowVocabPinyin] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hsk_exercise_show_pinyin');
+    return saved !== null ? saved === 'true' : true;
+  });
+
+  const toggleVocabPinyin = () => {
+    const next = !showVocabPinyin;
+    setShowVocabPinyin(next);
+    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+  };
 
   const vocabList = useMemo(() => {
     if (!pack) return [];
@@ -292,6 +306,19 @@ export function LessonView() {
 
               <div className="flex items-center gap-2 shrink-0">
                 <button
+                  type="button"
+                  onClick={toggleVocabPinyin}
+                  className={`px-3 py-2 rounded-xl text-xs font-bold border flex items-center gap-1.5 transition-all shadow-2xs ${
+                    showVocabPinyin
+                      ? 'bg-emerald-50 border-emerald-300 text-[#4a7c59] hover:bg-emerald-100'
+                      : 'bg-zinc-100 border-zinc-300 text-zinc-600 hover:text-zinc-900'
+                  }`}
+                  title={showVocabPinyin ? 'Đang hiện Pinyin. Bấm để ẩn Pinyin' : 'Đang ẩn Pinyin. Bấm để hiện Pinyin'}
+                >
+                  {showVocabPinyin ? <Eye size={14} className="text-[#4a7c59]" /> : <EyeOff size={14} />}
+                  <span>Pinyin: {showVocabPinyin ? 'Hiện' : 'Ẩn'}</span>
+                </button>
+                <button
                   onClick={() => dispatch({ type: 'MARK_PACK_COMPLETED', packId: pack.id })}
                   className="px-3 py-2 rounded-xl text-xs font-bold bg-[#e8f0eb] text-[#4a7c59] hover:bg-[#d5e7dc] transition-colors flex items-center gap-1 shadow-2xs"
                   title="Đánh dấu đã thuộc toàn bộ từ của bài này"
@@ -326,9 +353,19 @@ export function LessonView() {
                         {vocab.simplified}
                       </span>
                       {/* Pinyin clearly displayed under/beside Chinese */}
-                      <span className="text-base text-[#4a7c59] font-semibold tracking-wider">
-                        {vocab.pinyin}
-                      </span>
+                      {showVocabPinyin ? (
+                        <span className="text-base text-[#4a7c59] font-semibold tracking-wider">
+                          {vocab.pinyin}
+                        </span>
+                      ) : (
+                        <span 
+                          onClick={toggleVocabPinyin}
+                          className="text-xs text-[#9ca3af] hover:text-[#4a7c59] cursor-pointer bg-zinc-50 border border-dashed border-zinc-200 px-2 py-0.5 rounded-lg select-none"
+                          title="Bấm để hiện Pinyin"
+                        >
+                          [Pinyin ẩn]
+                        </span>
+                      )}
                       {vocab.pos && (
                         <span className="text-[11px] bg-[#FAF9F6] text-[#6b7280] border border-[#e5e1d8] px-1.5 py-0.5 rounded">
                           {vocab.pos.join(', ')}

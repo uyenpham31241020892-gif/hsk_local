@@ -5,11 +5,12 @@ import { vocabById } from '../../data';
 
 interface WordScrambleProps {
   exercise: Exercise;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function WordScramble({ exercise, onAnswer, onNext }: WordScrambleProps) {
+export function WordScramble({ exercise, showPinyin = true, onAnswer, onNext }: WordScrambleProps) {
   const correctWords = Array.isArray(exercise.answer.correct)
     ? exercise.answer.correct
     : [exercise.answer.correct];
@@ -60,7 +61,7 @@ export function WordScramble({ exercise, onAnswer, onNext }: WordScrambleProps) 
         <div className="flex items-center gap-3 bg-[#e8f0eb] rounded-xl px-4 py-2">
           <span className="chinese-char text-2xl text-[#1a1a1a]">{vocab.simplified}</span>
           <div>
-            <p className="text-[#4a7c59] text-sm font-medium">{vocab.pinyin}</p>
+            {showPinyin && <p className="text-[#4a7c59] text-sm font-medium">{vocab.pinyin}</p>}
             <p className="text-[#6b7280] text-xs">{vocab.meaning}</p>
           </div>
         </div>

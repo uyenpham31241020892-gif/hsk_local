@@ -7,11 +7,12 @@ import { vocabById } from '../../data';
 interface StrokeOrderProps {
   exercise: Exercise;
   blindMode: boolean;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function StrokeOrder({ exercise, blindMode, onAnswer, onNext }: StrokeOrderProps) {
+export function StrokeOrder({ exercise, blindMode, showPinyin = true, onAnswer, onNext }: StrokeOrderProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const writerRef = useRef<any>(null);
   const [loaded, setLoaded] = useState(false);
@@ -141,9 +142,11 @@ export function StrokeOrder({ exercise, blindMode, onAnswer, onNext }: StrokeOrd
           </div>
           <div className="flex items-center gap-2.5">
             <span className="chinese-char text-3xl font-bold text-[#1a1a1a]">{fullWord}</span>
-            <span className="text-base font-semibold text-[#4a7c59] tracking-wider">
-              {vocab?.pinyin ?? exercise.question.promptPinyin}
-            </span>
+            {showPinyin && (
+              <span className="text-base font-semibold text-[#4a7c59] tracking-wider">
+                {vocab?.pinyin ?? exercise.question.promptPinyin}
+              </span>
+            )}
           </div>
           <p className="text-xs text-[#6b7280]">{vocab?.meaning ?? exercise.question.sentence}</p>
         </div>

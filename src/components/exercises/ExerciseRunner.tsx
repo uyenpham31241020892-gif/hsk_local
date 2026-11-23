@@ -12,7 +12,7 @@ import { ErrorSpot } from './ErrorSpot';
 import { CollocationMatch } from './CollocationMatch';
 import { vocabById } from '../../data';
 import { useApp } from '../../store/AppContext';
-import { X, ChevronRight } from 'lucide-react';
+import { X, ChevronRight, Eye, EyeOff } from 'lucide-react';
 
 interface ExerciseRunnerProps {
   exercises: Exercise[];
@@ -45,6 +45,18 @@ export function ExerciseRunner({
   // answered: null = chưa trả lời, true/false = đúng/sai – chờ user bấm Next
   const [answered, setAnswered] = useState<boolean | null>(null);
   const correctRef = useRef(0);
+
+  // Global Pinyin toggle for all exercise types in runner
+  const [showPinyin, setShowPinyin] = useState<boolean>(() => {
+    const saved = localStorage.getItem('hsk_exercise_show_pinyin');
+    return saved !== null ? saved === 'true' : true;
+  });
+
+  const togglePinyin = () => {
+    const next = !showPinyin;
+    setShowPinyin(next);
+    localStorage.setItem('hsk_exercise_show_pinyin', String(next));
+  };
 
   // Mark exercising active to hide BottomNav
   React.useEffect(() => {
@@ -118,7 +130,23 @@ export function ExerciseRunner({
           <span className="text-xs text-[#6b7280]">{EXERCISE_LABELS[current.type]}</span>
           <span className="text-sm font-medium text-[#1a1a1a]">{index + 1} / {exercises.length}</span>
         </div>
-        <div className="text-sm text-[#4a7c59] font-medium">✅ {correct}</div>
+        <div className="flex items-center gap-2">
+          {/* Global Pinyin Toggle Button */}
+          <button
+            type="button"
+            onClick={togglePinyin}
+            className={`px-2.5 py-1 rounded-xl text-xs font-bold border flex items-center gap-1.5 transition-all shadow-2xs ${
+              showPinyin
+                ? 'bg-emerald-50 border-emerald-300 text-[#4a7c59] hover:bg-emerald-100'
+                : 'bg-zinc-100 border-zinc-300 text-zinc-600 hover:text-zinc-900'
+            }`}
+            title={showPinyin ? 'Đang hiện Pinyin. Bấm để ẩn Pinyin' : 'Đang ẩn Pinyin. Bấm để hiện Pinyin'}
+          >
+            {showPinyin ? <Eye size={14} className="text-[#4a7c59]" /> : <EyeOff size={14} />}
+            <span>Pinyin: {showPinyin ? 'Bật' : 'Tắt'}</span>
+          </button>
+          <div className="text-sm text-[#4a7c59] font-medium hidden sm:block">✅ {correct}</div>
+        </div>
       </div>
 
       {/* Progress bar */}
@@ -134,30 +162,32 @@ export function ExerciseRunner({
               vocab={vocab} 
               speechRate={speechRate} 
               showPinyinFirst={showPinyinFirst} 
+              showPinyin={showPinyin}
+              onTogglePinyin={togglePinyin}
               onGrade={handleGrade}
               onNext={advance} 
             />
           )}
           {current.type === 'char_recognition' && (
-            <CharRecognition exercise={current} speechRate={speechRate} onAnswer={handleAnswer} onNext={advance} />
+            <CharRecognition exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'cloze' && (
-            <ClozeTest exercise={current} speechRate={speechRate} onAnswer={handleAnswer} onNext={advance} />
+            <ClozeTest exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'cloze_typing' && (
-            <ClozeTyping exercise={current} speechRate={speechRate} onAnswer={handleAnswer} onNext={advance} />
+            <ClozeTyping exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'translation' && (
-            <Translation exercise={current} speechRate={speechRate} onAnswer={handleAnswer} onNext={advance} />
+            <Translation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'word_scramble' && (
-            <WordScramble exercise={current} onAnswer={handleAnswer} onNext={advance} />
+            <WordScramble exercise={current} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'dictation' && (
-            <Dictation exercise={current} speechRate={speechRate} onAnswer={handleAnswer} onNext={advance} />
+            <Dictation exercise={current} speechRate={speechRate} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'stroke_order' && (
-            <StrokeOrder exercise={current} blindMode={blindMode} onAnswer={handleAnswer} onNext={advance} />
+            <StrokeOrder exercise={current} blindMode={blindMode} showPinyin={showPinyin} onAnswer={handleAnswer} onNext={advance} />
           )}
           {current.type === 'error_spot' && (
             <ErrorSpot exercise={current} onAnswer={handleAnswer} onNext={advance} />

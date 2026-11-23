@@ -6,24 +6,27 @@ import { speak } from '../../utils/exercises';
 interface CharRecognitionProps {
   exercise: Exercise;
   speechRate: number;
+  showPinyin?: boolean;
   onAnswer: (correct: boolean) => void;
   onNext?: () => void;
 }
 
-export function CharRecognition({ exercise, speechRate, onAnswer, onNext }: CharRecognitionProps) {
+export function CharRecognition({ exercise, speechRate, showPinyin: showPinyinProp, onAnswer, onNext }: CharRecognitionProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const correct = Array.isArray(exercise.answer.correct) ? exercise.answer.correct[0] : exercise.answer.correct;
 
   // Option to toggle pinyin on/off
-  const [showPinyin, setShowPinyin] = useState<boolean>(() => {
+  const [localShowPinyin, setLocalShowPinyin] = useState<boolean>(() => {
     const saved = localStorage.getItem('hsk_exercise_show_pinyin');
     return saved !== null ? saved === 'true' : true;
   });
 
+  const showPinyin = showPinyinProp !== undefined ? showPinyinProp : localShowPinyin;
+
   const togglePinyin = () => {
     const next = !showPinyin;
-    setShowPinyin(next);
+    setLocalShowPinyin(next);
     localStorage.setItem('hsk_exercise_show_pinyin', String(next));
   };
 
