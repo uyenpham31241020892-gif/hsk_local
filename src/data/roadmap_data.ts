@@ -29,7 +29,7 @@ export const sixMonthRoadmap: RoadmapLesson[] = [
     "month": 1,
     "week": 1,
     "title": "Bài 1: Chào hỏi & Đại từ nhân xưng",
-    "titleVi": "Chào hỏi & Đại từ nhân xưng (我, 你, 他, 好...)",
+    "titleVi": "Chào hỏi & Đại từ nhân xưng (你好, 您, 你们, 谢谢, 再见...)",
     "type": "vocab",
     "description": "Làm quen với các đại từ cơ bản và câu chào hỏi thường nhật trong tiếng Hán.",
     "targetCountText": "15 từ mới",

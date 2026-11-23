@@ -6,7 +6,7 @@ import { getStats } from '../../utils/srs';
 import { 
   BookOpen, Zap, TrendingUp, Settings, Award, 
   CheckCircle, ChevronRight, Sliders, Check, CheckSquare, Cloud,
-  Compass, Calendar, Target, Flag, Play, Sparkles, Languages
+  Compass, Calendar, Target, Flag, Play, Sparkles, Languages, Filter
 } from 'lucide-react';
 import { CloudSyncModal } from '../auth/CloudSyncModal';
 import { getSavedCloudAccount } from '../../utils/cloudSync';
@@ -15,84 +15,101 @@ export function HomeView() {
   const { state, navigate } = useApp();
   const { settings } = state.progress;
   const stats = getStats(state.progress);
-  const [viewMode, setViewMode] = useState<'roadmap' | 'packs'>('roadmap');
-  const [roadmapMonthFilter, setRoadmapMonthFilter] = useState<number | 'all'>('all');
-  const [packStatusFilter, setPackStatusFilter] = useState<'all' | 'learning' | 'completed' | 'unlearned'>('all');
-  const [displayCount, setDisplayCount] = useState(25);
+  
+  // Bộ lọc cho lộ trình bài học duy nhất
+  const [stageFilter, setStageFilter] = useState<number | 'all'>('all');
+  const [typeFilter, setTypeFilter] = useState<'all' | 'vocab' | 'grammar_review' | 'checkpoint'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'learning' | 'completed' | 'unlearned'>('all');
   const [showCloudSync, setShowCloudSync] = useState(false);
   const cloudAccount = getSavedCloudAccount();
 
   const passedMilestones = new Set(state.progress.passedMilestones || []);
-  const hskLabel = settings.hskVersion === 'hsk2' ? 'HSK 2.0' : settings.hskVersion === 'hsk3' ? 'HSK 3.0' : 'HSK 2.0 & 3.0';
 
-  // Filter packs by selected levels
-  const filteredPacks = useMemo(() => {
-    return allPacks.filter(p => {
-      if (settings.hskVersion === 'hsk2') return p.hsk2Levels.some(l => settings.selectedLevels.includes(l));
-      if (settings.hskVersion === 'hsk3') return p.hsk3Levels.some(l => settings.selectedLevels.includes(l));
-      return p.hsk2Levels.some(l => settings.selectedLevels.includes(l)) || p.hsk3Levels.some(l => settings.selectedLevels.includes(l));
-    });
-  }, [settings.hskVersion, settings.selectedLevels]);
+  // Tính toán trạng thái hoàn thành và tiến độ từng bài trong lộ trình
+  const lessonsWithProgress = useMemo(() => {
+    return sixMonthRoadmap.map(lesson => {
+      let isCompleted = false;
+      let isLearning = false;
+      let pct = 0;
+      let doneWords = 0;
+      let totalWords = 15;
 
-  // Compute status & mastery for each pack
-  const packStatsList = useMemo(() => {
-    return filteredPacks.map(pack => {
-      const doneCount = pack.vocabIds.filter(id => {
-        const c = state.progress.cards[id];
-        return c && c.repetitions > 0;
-      }).length;
-      const isCompleted = (state.progress.completedPacks && state.progress.completedPacks.includes(pack.id)) || (pack.vocabIds.length > 0 && doneCount >= pack.vocabIds.length);
-      const isLearning = !isCompleted && doneCount > 0;
-      const isUnlearned = !isCompleted && doneCount === 0;
-      const pct = pack.vocabIds.length > 0 ? Math.round((doneCount / pack.vocabIds.length) * 100) : 0;
+      if (lesson.type === 'checkpoint' || lesson.type === 'graduation_mock') {
+        if (lesson.checkpointExamId && passedMilestones.has(lesson.checkpointExamId)) {
+          isCompleted = true;
+          pct = 100;
+        }
+      } else if (lesson.packId) {
+        const pack = allPacks.find(p => p.id === lesson.packId);
+        if (pack) {
+          totalWords = pack.vocabIds.length;
+          doneWords = pack.vocabIds.filter(id => {
+            const card = state.progress.cards[id];
+            return card && card.repetitions > 0;
+          }).length;
+          
+          if (state.progress.completedPacks?.includes(lesson.packId) || (totalWords > 0 && doneWords >= totalWords)) {
+            isCompleted = true;
+            pct = 100;
+          } else if (doneWords > 0) {
+            isLearning = true;
+            pct = Math.round((doneWords / totalWords) * 100);
+          }
+        }
+      }
+
+      const status: 'completed' | 'learning' | 'unlearned' = isCompleted ? 'completed' : isLearning ? 'learning' : 'unlearned';
+
       return {
-        pack,
-        doneCount,
-        totalCount: pack.vocabIds.length,
+        lesson,
+        isCompleted,
+        isLearning,
+        status,
         pct,
-        status: (isCompleted ? 'completed' : isLearning ? 'learning' : 'unlearned') as 'completed' | 'learning' | 'unlearned'
+        doneWords,
+        totalWords,
       };
     });
-  }, [filteredPacks, state.progress.cards, state.progress.completedPacks]);
+  }, [state.progress.cards, state.progress.completedPacks, passedMilestones]);
 
-  const completedPacksCount = packStatsList.filter(p => p.status === 'completed').length;
-  const learningPacksCount = packStatsList.filter(p => p.status === 'learning').length;
-  const unlearnedPacksCount = packStatsList.filter(p => p.status === 'unlearned').length;
-  const totalWordsLearnedInFilter = packStatsList.reduce((acc, p) => acc + p.doneCount, 0);
-  const totalWordsInFilter = packStatsList.reduce((acc, p) => acc + p.totalCount, 0);
-  const overallPercent = totalWordsInFilter > 0 ? Math.round((totalWordsLearnedInFilter / totalWordsInFilter) * 100) : 0;
+  // Bộ lọc bài học
+  const filteredLessons = useMemo(() => {
+    return lessonsWithProgress.filter(item => {
+      const { lesson } = item;
+      
+      // Lọc theo Chặng / Tháng
+      if (stageFilter !== 'all') {
+        if (stageFilter === 45) {
+          if (lesson.month !== 4 && lesson.month !== 5) return false;
+        } else if (lesson.month !== stageFilter) {
+          return false;
+        }
+      }
 
-  const visiblePacks = useMemo(() => {
-    return packStatsList.filter(item => {
-      if (packStatusFilter === 'learning') return item.status === 'learning';
-      if (packStatusFilter === 'completed') return item.status === 'completed';
-      if (packStatusFilter === 'unlearned') return item.status === 'unlearned';
+      // Lọc theo Loại bài
+      if (typeFilter !== 'all') {
+        if (typeFilter === 'checkpoint') {
+          if (lesson.type !== 'checkpoint' && lesson.type !== 'graduation_mock') return false;
+        } else if (lesson.type !== typeFilter) {
+          return false;
+        }
+      }
+
+      // Lọc theo Trạng thái học
+      if (statusFilter !== 'all') {
+        if (item.status !== statusFilter) return false;
+      }
+
       return true;
     });
-  }, [packStatsList, packStatusFilter]);
+  }, [lessonsWithProgress, stageFilter, typeFilter, statusFilter]);
 
-  // Bộ lọc theo tháng cho Lộ trình 6 tháng
-  const filteredRoadmap = useMemo(() => {
-    return sixMonthRoadmap.filter(item => {
-      if (roadmapMonthFilter === 'all') return true;
-      if (roadmapMonthFilter === 45) return item.month === 4 || item.month === 5;
-      return item.month === roadmapMonthFilter;
-    });
-  }, [roadmapMonthFilter]);
+  const completedLessonsCount = lessonsWithProgress.filter(item => item.isCompleted).length;
+  const overallRoadmapPercent = Math.round((completedLessonsCount / sixMonthRoadmap.length) * 100);
 
-  const completedRoadmapCount = useMemo(() => {
-    return sixMonthRoadmap.filter(item => {
-      if (item.packId && state.progress.completedPacks?.includes(item.packId)) return true;
-      if (item.checkpointExamId && passedMilestones.has(item.checkpointExamId)) return true;
-      return false;
-    }).length;
-  }, [state.progress.completedPacks, passedMilestones]);
-
-  const roadmapPercent = Math.round((completedRoadmapCount / sixMonthRoadmap.length) * 100);
-
-  const handleRoadmapLessonClick = (lesson: RoadmapLesson) => {
+  const handleLessonClick = (lesson: RoadmapLesson) => {
     if (lesson.type === 'checkpoint' || lesson.type === 'graduation_mock') {
-      navigate('checkpoint');
+      navigate('checkpoint', lesson.checkpointExamId || undefined);
     } else if (lesson.type === 'grammar_review') {
       (window as any).__initialLessonTab = 'grammar';
       navigate('lesson', lesson.packId || 'hsk1_pack1');
@@ -112,7 +129,7 @@ export function HomeView() {
           </div>
           <div>
             <h1 className="text-base font-bold text-[#1a1a1a] tracking-tight">学中文 · HSK Master</h1>
-            <p className="text-[11px] text-[#6b7280]">Hệ thống luyện thi HSK 2.0 & HSK 3.0 Không Quảng Cáo</p>
+            <p className="text-[11px] text-[#6b7280]">Lộ trình sư phạm toàn diện HSK 1 - HSK 4</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -200,7 +217,7 @@ export function HomeView() {
           <ChevronRight size={20} className="text-white/70 group-hover:translate-x-1 transition-transform" />
         </button>
 
-        {/* COMPACT HUB SHORTCUT PILL: Clean 1-line link to HubView, keeps HomeView tidy */}
+        {/* COMPACT HUB SHORTCUT PILL */}
         <div
           onClick={() => navigate('hub')}
           className="bg-white border border-[#e5e1d8] rounded-2xl p-3.5 px-4 flex items-center justify-between cursor-pointer hover:border-[#4a7c59] hover:bg-[#FAF9F6] transition-all shadow-2xs group"
@@ -214,7 +231,7 @@ export function HomeView() {
                 12 Chuyên đề bổ trợ: 229 Ngữ pháp, 214 Bộ thủ, Lượng từ, Thành ngữ, Trò chơi...
               </p>
               <p className="text-[11px] text-[#6b7280]">
-                Đã gom gọn tại tab "Chuyên mục" để trang lộ trình học HSK luôn thông thoáng
+                Kho tài liệu tra cứu và công cụ bổ trợ học ngữ pháp & chữ Hán chuyên sâu
               </p>
             </div>
           </div>
@@ -223,93 +240,109 @@ export function HomeView() {
           </span>
         </div>
 
-        {/* VIEW MODE SWITCHER TABS: LỘ TRÌNH 6 THÁNG VS TOÀN BỘ BÀI HỌC */}
-        <div className="grid grid-cols-2 p-1.5 bg-[#e5e1d8]/60 rounded-2xl gap-1">
-          <button
-            onClick={() => setViewMode('roadmap')}
-            className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
-              viewMode === 'roadmap'
-                ? 'bg-white text-[#1a1a1a] shadow-xs'
-                : 'text-[#6b7280] hover:text-[#1a1a1a]'
-            }`}
-          >
-            <Compass size={17} className={viewMode === 'roadmap' ? 'text-[#4a7c59]' : ''} />
-            <span>🗺️ Lộ Trình 6 Tháng HSK 1-4</span>
-          </button>
-
-          <button
-            onClick={() => setViewMode('packs')}
-            className={`py-3 px-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
-              viewMode === 'packs'
-                ? 'bg-white text-[#1a1a1a] shadow-xs'
-                : 'text-[#6b7280] hover:text-[#1a1a1a]'
-            }`}
-          >
-            <BookOpen size={17} className={viewMode === 'packs' ? 'text-[#4a7c59]' : ''} />
-            <span>📚 Toàn Bộ Bài Học ({allPacks.length})</span>
-          </button>
-        </div>
-
-        {viewMode === 'roadmap' ? (
-          <div className="space-y-4 pt-1">
-            {/* Roadmap Progress Banner */}
-            <div className="bg-white border border-[#e5e1d8] rounded-3xl p-5 shadow-xs space-y-3">
-              <div className="flex items-center justify-between">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-bold text-sm text-[#1a1a1a]">Tiến độ lộ trình 6 tháng (HSK 1 - HSK 4)</h3>
-                    <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
-                      {completedRoadmapCount} / {sixMonthRoadmap.length} bài xong
-                    </span>
-                  </div>
-                  <p className="text-xs text-[#6b7280] mt-0.5">
-                    Chu kỳ khoa học: <strong>2 Bài Từ Vựng ➔ 1 Bài Ngữ Pháp & Ôn Tập ➔ 1 Bài Kiểm Tra Định Kỳ ➔ Thi Tốt Nghiệp</strong>
-                  </p>
+        {/* ROADMAP SECTION: UNIFIED PEDAGOGICAL CURRICULUM */}
+        <div className="space-y-4 pt-1">
+          {/* Roadmap Progress Banner */}
+          <div className="bg-white border border-[#e5e1d8] rounded-3xl p-5 shadow-xs space-y-3">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="font-bold text-sm text-[#1a1a1a]">Tiến độ lộ trình học bài bản (HSK 1 - HSK 4)</h3>
+                  <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
+                    {completedLessonsCount} / {sixMonthRoadmap.length} bài xong
+                  </span>
                 </div>
-                <span className="text-lg font-black text-[#4a7c59] bg-[#e8f0eb] px-3.5 py-1 rounded-2xl shadow-2xs">
-                  {roadmapPercent}%
-                </span>
+                <p className="text-xs text-[#6b7280] mt-0.5">
+                  Chu kỳ khoa học: <strong>2 Bài Từ Vựng ➔ 1 Bài Ngữ Pháp & Ôn Tập ➔ 1 Bài Kiểm Tra Định Kỳ ➔ Thi Tốt Nghiệp</strong>
+                </p>
               </div>
-
-              <div className="h-2.5 bg-[#FAF9F6] border border-[#e5e1d8] rounded-full overflow-hidden">
-                <div 
-                  className="h-full bg-[#4a7c59] rounded-full transition-all duration-700" 
-                  style={{ width: `${roadmapPercent}%` }} 
-                />
-              </div>
+              <span className="text-lg font-black text-[#4a7c59] bg-[#e8f0eb] px-3.5 py-1 rounded-2xl shadow-2xs">
+                {overallRoadmapPercent}%
+              </span>
             </div>
 
-            {/* Month Filter Tabs */}
-            <div className="flex gap-1.5 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+            <div className="h-2.5 bg-[#FAF9F6] border border-[#e5e1d8] rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-[#4a7c59] rounded-full transition-all duration-700" 
+                style={{ width: `${overallRoadmapPercent}%` }} 
+              />
+            </div>
+          </div>
+
+          {/* Stage / Month Filter Tabs */}
+          <div className="flex gap-1.5 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+            {[
+              { id: 'all', label: `Tất cả (${sixMonthRoadmap.length} bài)` },
+              { id: 1, label: 'Tháng 1: HSK 1 Cơ bản (Bài 1-16)' },
+              { id: 2, label: 'Tháng 2: HSK 1 Tốt nghiệp (Bài 17-29)' },
+              { id: 3, label: 'Tháng 3: HSK 2 Cấp tốc (Bài 30-40)' },
+              { id: 45, label: 'Tháng 4-5: HSK 3 Bứt phá (Bài 41-47)' },
+              { id: 6, label: 'Tháng 6: HSK 4 Chinh phục (Bài 48-51)' },
+            ].map(tab => (
+              <button
+                key={tab.id}
+                onClick={() => setStageFilter(tab.id as any)}
+                className={`px-3 py-1.5 rounded-xl whitespace-nowrap transition-all ${
+                  stageFilter === tab.id
+                    ? 'bg-[#4a7c59] text-white shadow-2xs font-bold'
+                    : 'bg-white border border-[#e5e1d8] text-[#6b7280] hover:bg-[#FAF9F6]'
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Quick Sub-filters: Type & Status */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+            {/* Filter by lesson type */}
+            <div className="flex gap-1 bg-[#e5e1d8]/50 p-1 rounded-xl text-xs font-medium">
               {[
-                { id: 'all', label: `Tất cả (${sixMonthRoadmap.length} bài)` },
-                { id: 1, label: 'Tháng 1: HSK 1 Cơ bản (Bài 1-16)' },
-                { id: 2, label: 'Tháng 2: HSK 1 Tốt nghiệp (Bài 17-32)' },
-                { id: 3, label: 'Tháng 3: HSK 2 Đời sống (Bài 33-42)' },
-                { id: 45, label: 'Tháng 4-5: HSK 3 Bứt phá (Bài 43-47)' },
-                { id: 6, label: 'Tháng 6: HSK 4 Đề thi (Bài 48-51)' },
-              ].map(tab => (
+                { id: 'all', label: 'Tất cả loại bài' },
+                { id: 'vocab', label: '📖 Từ mới' },
+                { id: 'grammar_review', label: '📐 Ngữ pháp + Ôn từ' },
+                { id: 'checkpoint', label: '🎯 Kiểm tra & Thi thử' },
+              ].map(t => (
                 <button
-                  key={tab.id}
-                  onClick={() => setRoadmapMonthFilter(tab.id as any)}
-                  className={`px-3 py-1.5 rounded-xl whitespace-nowrap transition-all ${
-                    roadmapMonthFilter === tab.id
-                      ? 'bg-[#4a7c59] text-white shadow-2xs font-bold'
-                      : 'bg-white border border-[#e5e1d8] text-[#6b7280] hover:bg-[#FAF9F6]'
+                  key={t.id}
+                  onClick={() => setTypeFilter(t.id as any)}
+                  className={`px-2 py-1 rounded-lg transition-all ${
+                    typeFilter === t.id ? 'bg-white text-[#1a1a1a] shadow-xs font-bold' : 'text-[#6b7280]'
                   }`}
                 >
-                  {tab.label}
+                  {t.label}
                 </button>
               ))}
             </div>
 
-            {/* Roadmap Lessons List */}
-            <div className="space-y-3">
-              {filteredRoadmap.map((lesson) => {
-                const isPackDone = lesson.packId && state.progress.completedPacks?.includes(lesson.packId);
-                const isExamDone = lesson.checkpointExamId && passedMilestones.has(lesson.checkpointExamId);
-                const isCompleted = isPackDone || isExamDone;
+            {/* Filter by completion status */}
+            <div className="flex gap-1 bg-[#e5e1d8]/50 p-1 rounded-xl text-xs font-medium">
+              {[
+                { id: 'all', label: 'Tất cả trạng thái' },
+                { id: 'learning', label: 'Đang học' },
+                { id: 'completed', label: 'Đã xong' },
+              ].map(s => (
+                <button
+                  key={s.id}
+                  onClick={() => setStatusFilter(s.id as any)}
+                  className={`px-2 py-1 rounded-lg transition-all ${
+                    statusFilter === s.id ? 'bg-white text-[#1a1a1a] shadow-xs font-bold' : 'text-[#6b7280]'
+                  }`}
+                >
+                  {s.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
+          {/* Roadmap Lessons List */}
+          <div className="space-y-3 pt-1">
+            {filteredLessons.length === 0 ? (
+              <div className="bg-white border border-[#e5e1d8] rounded-3xl p-8 text-center text-[#6b7280] text-sm">
+                Không tìm thấy bài học nào phù hợp với bộ lọc hiện tại.
+              </div>
+            ) : (
+              filteredLessons.map(({ lesson, isCompleted, isLearning, pct, doneWords, totalWords }) => {
                 const typeCls = 
                   lesson.type === 'vocab' ? 'bg-emerald-100 text-emerald-800' :
                   lesson.type === 'grammar_review' ? 'bg-indigo-100 text-indigo-800' :
@@ -319,16 +352,18 @@ export function HomeView() {
                 const typeLabel = 
                   lesson.type === 'vocab' ? '📖 Học từ mới' :
                   lesson.type === 'grammar_review' ? '📐 Ngữ pháp + Ôn từ' :
-                  lesson.type === 'checkpoint' ? '📝 Kiểm tra định kỳ' :
+                  lesson.type === 'checkpoint' ? '🎯 Kiểm tra định kỳ' :
                   '🏆 Đại thi tốt nghiệp';
 
                 return (
                   <div
                     key={lesson.id}
-                    onClick={() => handleRoadmapLessonClick(lesson)}
+                    onClick={() => handleLessonClick(lesson)}
                     className={`rounded-3xl border p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 cursor-pointer transition-all shadow-xs group ${
                       isCompleted 
                         ? 'border-emerald-300 bg-emerald-50/20 hover:border-emerald-500' 
+                        : isLearning
+                        ? 'border-amber-300 bg-amber-50/20 hover:border-amber-500'
                         : 'border-[#e5e1d8] bg-white hover:border-[#4a7c59]'
                     }`}
                   >
@@ -337,8 +372,10 @@ export function HomeView() {
                       <div className={`w-12 h-12 rounded-2xl flex flex-col items-center justify-center shrink-0 font-bold transition-all ${
                         isCompleted
                           ? 'bg-emerald-600 text-white shadow-xs'
-                          : lesson.type === 'graduation_mock'
+                          : isLearning
                           ? 'bg-amber-500 text-white shadow-xs'
+                          : lesson.type === 'graduation_mock'
+                          ? 'bg-rose-500 text-white shadow-xs'
                           : 'bg-[#e8f0eb] text-[#4a7c59]'
                       }`}>
                         {isCompleted ? (
@@ -351,316 +388,72 @@ export function HomeView() {
                         )}
                       </div>
 
-                      <div className="flex-1 min-w-0 space-y-1">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md ${typeCls}`}>
+                      {/* Content Info */}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap mb-1">
+                          <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${typeCls}`}>
                             {typeLabel}
                           </span>
-                          <span className="text-[10px] font-bold text-[#6b7280] bg-[#FAF9F6] border border-[#e5e1d8] px-2 py-0.5 rounded-md">
+                          <span className="text-[10px] text-[#6b7280] bg-[#FAF9F6] border border-[#e5e1d8] px-2 py-0.5 rounded-full font-medium">
                             Tuần {lesson.week} · Tháng {lesson.month} · {lesson.stage.toUpperCase()}
                           </span>
                           <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
                             🎯 {lesson.targetCountText}
                           </span>
+                          {isCompleted && (
+                            <span className="text-[10px] font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
+                              <Check size={10} /> Đã hoàn thành
+                            </span>
+                          )}
+                          {isLearning && (
+                            <span className="text-[10px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full">
+                              Đang học ({doneWords}/{totalWords} từ · {pct}%)
+                            </span>
+                          )}
                         </div>
 
-                        <h4 className="font-bold text-sm sm:text-base text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
+                        <h4 className="font-bold text-sm sm:text-base text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors leading-snug">
                           {lesson.titleVi}
                         </h4>
-
-                        <p className="text-xs text-[#6b7280] line-clamp-2 leading-relaxed">
+                        <p className="text-xs text-[#6b7280] mt-1 line-clamp-2">
                           {lesson.description}
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex sm:flex-col items-center sm:items-end justify-between shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-[#f0eee9]">
-                      <span className={`text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5 transition-colors ${
+                    {/* Right Action */}
+                    <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e5e1d8]/50">
+                      <span className={`text-xs font-bold px-3 py-1.5 rounded-xl transition-all flex items-center gap-1 ${
                         isCompleted
-                          ? 'bg-emerald-100 text-emerald-800'
+                          ? 'bg-emerald-100 text-emerald-800 group-hover:bg-emerald-200'
+                          : isLearning
+                          ? 'bg-amber-100 text-amber-800 group-hover:bg-amber-200'
+                          : lesson.type === 'graduation_mock'
+                          ? 'bg-rose-500 text-white shadow-xs group-hover:bg-rose-600'
                           : 'bg-[#4a7c59] text-white shadow-xs group-hover:bg-[#3d6b4a]'
                       }`}>
                         {isCompleted ? (
-                          <>
-                            <CheckCircle size={14} />
-                            <span>Đã hoàn thành</span>
-                          </>
+                          'Ôn lại bài'
+                        ) : isLearning ? (
+                          'Học tiếp'
+                        ) : lesson.type === 'checkpoint' ? (
+                          'Làm bài thi'
+                        ) : lesson.type === 'graduation_mock' ? (
+                          'Thi tốt nghiệp'
+                        ) : lesson.type === 'grammar_review' ? (
+                          'Học ngữ pháp'
                         ) : (
-                          <>
-                            <span>Vào học bài</span>
-                            <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                          </>
+                          'Vào học bài'
                         )}
+                        <ChevronRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
                       </span>
                     </div>
                   </div>
                 );
-              })}
-            </div>
-          </div>
-        ) : (
-          /* PACKS SECTION */
-          <div id="packs-section" className="space-y-4 pt-1">
-          {/* Active Settings Filter Badge */}
-          <div className="flex items-center justify-between text-xs bg-[#e8f0eb]/70 border border-[#4a7c59]/20 p-2.5 px-3.5 rounded-2xl">
-            <span className="text-[#4a7c59] font-medium flex items-center gap-1.5">
-              <Sliders size={13} />
-              Đang lọc theo Cài đặt: <strong>{hskLabel}</strong> · Cấp <strong>{settings.selectedLevels.sort().join(', ')}</strong> ({filteredPacks.length} bài)
-            </span>
-            <button
-              onClick={() => navigate('settings')}
-              className="text-[#4a7c59] font-bold hover:underline text-[11px]"
-            >
-              Chỉnh cài đặt ➔
-            </button>
-          </div>
-
-          {/* Overall Curriculum Progress Banner */}
-          <div className="bg-white border border-[#e5e1d8] rounded-3xl p-5 shadow-xs space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-sm text-[#1a1a1a]">Tiến độ học giáo trình hiện tại</h3>
-                  <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
-                    {completedPacksCount} / {filteredPacks.length} bài xong
-                  </span>
-                </div>
-                <p className="text-xs text-[#6b7280] mt-0.5">
-                  Đã thuộc <strong>{totalWordsLearnedInFilter}</strong> / {totalWordsInFilter} từ vựng ({overallPercent}%)
-                </p>
-              </div>
-              <span className="text-lg font-black text-[#4a7c59] bg-[#e8f0eb] px-3.5 py-1 rounded-2xl shadow-2xs">
-                {overallPercent}%
-              </span>
-            </div>
-
-            <div className="h-2.5 bg-[#FAF9F6] border border-[#e5e1d8] rounded-full overflow-hidden">
-              <div 
-                className="h-full bg-[#4a7c59] rounded-full transition-all duration-700" 
-                style={{ width: `${overallPercent}%` }} 
-              />
-            </div>
-          </div>
-
-          {/* Section Header & Status Filter Pills */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
-            <div>
-              <h2 className="font-bold text-base text-[#1a1a1a] flex items-center gap-2">
-                <span>📚</span> Danh sách bài học ({filteredPacks.length} bài)
-              </h2>
-              <p className="text-xs text-[#6b7280]">
-                Quy trình: Xem mặt chữ & phát âm ➔ Chọn dạng bài luyện ➔ Đạt chuẩn
-              </p>
-            </div>
-
-            {/* Status Filter Tabs */}
-            <div className="flex gap-1 bg-[#e5e1d8]/50 p-1 rounded-xl self-start sm:self-auto text-xs font-semibold overflow-x-auto max-w-full">
-              <button
-                onClick={() => setPackStatusFilter('all')}
-                className={`px-2.5 py-1 rounded-lg transition-all whitespace-nowrap ${
-                  packStatusFilter === 'all' ? 'bg-white text-[#1a1a1a] shadow-xs' : 'text-[#6b7280]'
-                }`}
-              >
-                Tất cả ({packStatsList.length})
-              </button>
-              <button
-                onClick={() => setPackStatusFilter('learning')}
-                className={`px-2.5 py-1 rounded-lg transition-all whitespace-nowrap ${
-                  packStatusFilter === 'learning' ? 'bg-amber-500 text-white shadow-xs font-bold' : 'text-amber-800'
-                }`}
-              >
-                ⚡ Đang học ({learningPacksCount})
-              </button>
-              <button
-                onClick={() => setPackStatusFilter('completed')}
-                className={`px-2.5 py-1 rounded-lg transition-all whitespace-nowrap ${
-                  packStatusFilter === 'completed' ? 'bg-[#4a7c59] text-white shadow-xs font-bold' : 'text-[#4a7c59]'
-                }`}
-              >
-                ✅ Đã xong ({completedPacksCount})
-              </button>
-              <button
-                onClick={() => setPackStatusFilter('unlearned')}
-                className={`px-2.5 py-1 rounded-lg transition-all whitespace-nowrap ${
-                  packStatusFilter === 'unlearned' ? 'bg-white text-[#1a1a1a] shadow-xs' : 'text-[#6b7280]'
-                }`}
-              >
-                ⚪ Chưa học ({unlearnedPacksCount})
-              </button>
-            </div>
-          </div>
-
-          {/* Pack Cards List with Clean Periodic Milestone Cards Every 3 Lessons */}
-          <div className="space-y-3">
-            {visiblePacks.length === 0 ? (
-              <div className="bg-white border border-[#e5e1d8] rounded-3xl p-8 text-center text-xs text-[#6b7280]">
-                Không có bài học nào trong mục này.
-              </div>
-            ) : (
-              visiblePacks.slice(0, displayCount).map(({ pack, doneCount, totalCount, pct, status }, index) => {
-                const isCompleted = status === 'completed';
-                const isLearning = status === 'learning';
-
-                const borderCls = isCompleted
-                  ? 'border-emerald-300 bg-emerald-50/20 hover:border-emerald-500'
-                  : isLearning
-                  ? 'border-amber-300 bg-amber-50/20 hover:border-amber-500'
-                  : 'border-[#e5e1d8] bg-white hover:border-[#4a7c59]';
-
-                // Periodic milestone exam occurs every 3 lessons (after pack 3, 6, 9, 12, etc.)
-                const isPeriodicMilestone = (index + 1) % 3 === 0;
-                const milestoneNum = Math.floor((index + 1) / 3);
-                const milestoneId = `milestone_periodic_${milestoneNum}`;
-                const isMilestonePassed = passedMilestones.has(milestoneId);
-
-                return (
-                  <React.Fragment key={pack.id}>
-                    <div
-                      onClick={() => navigate('lesson', pack.id)}
-                      className={`rounded-2xl border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 cursor-pointer transition-all ${borderCls} shadow-xs group`}
-                    >
-                      <div className="flex items-start sm:items-center gap-3.5 flex-1 min-w-0">
-                        <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                          isCompleted
-                            ? 'bg-emerald-100 text-emerald-700'
-                            : isLearning
-                            ? 'bg-amber-100 text-amber-700'
-                            : 'bg-[#e8f0eb] text-[#4a7c59]'
-                        }`}>
-                          {isCompleted ? <CheckCircle size={20} /> : <BookOpen size={20} />}
-                        </div>
-
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <h4 className="font-bold text-sm text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
-                              {pack.titleVi}
-                            </h4>
-                            <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
-                              HSK {pack.hsk2Levels.join(',')}
-                            </span>
-
-                            {/* Status Badge */}
-                            {isCompleted && (
-                              <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <Check size={11} /> Đã hoàn thành ({doneCount}/{totalCount} từ)
-                              </span>
-                            )}
-                            {isLearning && (
-                              <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">
-                                ⚡ Đang học ({doneCount}/{totalCount} từ · {pct}%)
-                              </span>
-                            )}
-                            {!isCompleted && !isLearning && (
-                              <span className="text-[10px] font-medium text-[#6b7280] bg-[#FAF9F6] border border-[#e5e1d8] px-2 py-0.5 rounded-full">
-                                ⚪ Chưa học (0/{totalCount} từ)
-                              </span>
-                            )}
-                          </div>
-
-                          <p className="text-xs text-[#6b7280] mt-1">
-                            {totalCount} từ vựng · Chủ đề: {pack.topic}
-                          </p>
-
-                          {(isLearning || isCompleted) && (
-                            <div className="mt-2 h-1.5 bg-[#e5e1d8] rounded-full overflow-hidden max-w-xs">
-                              <div
-                                className={`h-full rounded-full transition-all ${isCompleted ? 'bg-emerald-600' : 'bg-amber-500'}`}
-                                style={{ width: `${isCompleted ? 100 : pct}%` }}
-                              />
-                            </div>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e5e1d8]/50">
-                        <div className="text-right sm:block hidden">
-                          <span className={`text-xs font-bold ${isCompleted ? 'text-emerald-700' : isLearning ? 'text-amber-700' : 'text-[#6b7280]'}`}>
-                            {doneCount}/{totalCount}
-                          </span>
-                          <p className="text-[10px] text-[#6b7280]">từ đã nhớ</p>
-                        </div>
-
-                        <span className="text-xs font-bold text-[#4a7c59] group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                          {isCompleted ? 'Ôn lại' : isLearning ? 'Học tiếp' : 'Bắt đầu học'} ➔
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* PERIODIC MILESTONE EXAM: Formatted cleanly as a normal lesson card, without bold dark-green banners */}
-                    {isPeriodicMilestone && (
-                      <div
-                        onClick={() => navigate('checkpoint', milestoneId)}
-                        className={`rounded-2xl border p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 cursor-pointer transition-all ${
-                          isMilestonePassed
-                            ? 'border-emerald-300 bg-emerald-50/20 hover:border-emerald-500'
-                            : 'border-[#e5e1d8] bg-white hover:border-[#4a7c59]'
-                        } shadow-xs group`}
-                      >
-                        <div className="flex items-start sm:items-center gap-3.5 flex-1 min-w-0">
-                          <div className={`w-11 h-11 rounded-2xl flex items-center justify-center shrink-0 transition-colors ${
-                            isMilestonePassed
-                              ? 'bg-emerald-100 text-emerald-700'
-                              : 'bg-[#e8f0eb] text-[#4a7c59]'
-                          }`}>
-                            {isMilestonePassed ? <CheckCircle size={20} /> : <CheckSquare size={20} />}
-                          </div>
-
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <h4 className="font-bold text-sm text-[#1a1a1a] group-hover:text-[#4a7c59] transition-colors">
-                                Bài kiểm tra định kỳ {milestoneNum} (Sau bài {index - 1}, {index}, {index + 1})
-                              </h4>
-                              <span className="text-[10px] font-bold text-[#4a7c59] bg-[#e8f0eb] px-2 py-0.5 rounded-full">
-                                Kiểm tra định kỳ
-                              </span>
-
-                              {isMilestonePassed ? (
-                                <span className="text-[10px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full flex items-center gap-1">
-                                  <Check size={11} /> Đã đạt (≥ 60/100)
-                                </span>
-                              ) : (
-                                <span className="text-[10px] font-medium text-[#6b7280] bg-[#FAF9F6] border border-[#e5e1d8] px-2 py-0.5 rounded-full">
-                                  ⚪ Chưa làm
-                                </span>
-                              )}
-                            </div>
-
-                            <p className="text-xs text-[#6b7280] mt-1">
-                              20 câu hỏi chuẩn đề thi HSK (10 Nghe + 10 Đọc) · 20 phút · Xào lại toàn bộ từ vựng 3 bài trước
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#e5e1d8]/50">
-                          <div className="text-right sm:block hidden">
-                            <span className="text-xs font-bold text-[#4a7c59]">
-                              20 câu
-                            </span>
-                            <p className="text-[10px] text-[#6b7280]">20 phút</p>
-                          </div>
-
-                          <span className="text-xs font-bold text-[#4a7c59] group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                            {isMilestonePassed ? 'Thi lại' : 'Làm bài thi'} ➔
-                          </span>
-                        </div>
-                      </div>
-                    )}
-                  </React.Fragment>
-                );
               })
-            )}
-
-            {visiblePacks.length > displayCount && (
-              <button
-                onClick={() => setDisplayCount(prev => prev + 25)}
-                className="w-full py-3 rounded-2xl border border-[#e5e1d8] bg-white text-xs font-bold text-[#4a7c59] hover:bg-[#e8f0eb] transition-colors"
-              >
-                Xem thêm bài học khác (+{visiblePacks.length - displayCount} bài)
-              </button>
             )}
           </div>
         </div>
-      )}
       </div>
 
       <CloudSyncModal isOpen={showCloudSync} onClose={() => setShowCloudSync(false)} />

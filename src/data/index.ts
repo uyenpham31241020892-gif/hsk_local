@@ -58,6 +58,23 @@ function getGrammarPointsByIds(ids: string[]): GrammarPoint[] {
   return list;
 }
 
+// Mapping tiêu đề bài học sư phạm chuẩn cho HSK 1
+const hsk1PackTitles: Record<number, { title: string; titleVi: string }> = {
+  1: { title: "Bài 1: Chào hỏi & Làm quen", titleVi: "Chào hỏi & Đại từ nhân xưng (你好, 您, 你们, 谢谢...)" },
+  2: { title: "Bài 2: Số đếm & Thứ tự", titleVi: "Số đếm & Thứ tự (一, 二, 三, 四, 五...)" },
+  3: { title: "Bài 5: Gia đình & Xưng hô", titleVi: "Gia đình & Xưng hô (爸爸, 妈妈, 哥哥, 朋友...)" },
+  4: { title: "Bài 6: Thời gian & Ngày tháng", titleVi: "Thời gian & Ngày tháng (今天, 明天, 几点...)" },
+  5: { title: "Bài 9: Địa điểm & Trường lớp", titleVi: "Địa điểm & Trường lớp (学校, 医院, 商店, 饭店...)" },
+  6: { title: "Bài 10: Ẩm thực & Thức uống", titleVi: "Ẩm thực & Thức uống (米饭, 水, 茶, 吃, 喝...)" },
+  7: { title: "Bài 13: Phương tiện giao thông", titleVi: "Phương tiện giao thông (飞机, 火车, 汽车, 出租车...)" },
+  8: { title: "Bài 14: Mua sắm & Tiền bạc", titleVi: "Mua sắm & Tiền bạc (钱, 块, 买, 贵, 衣服...)" },
+  9: { title: "Bài 17: Nghề nghiệp & Giới thiệu", titleVi: "Nghề nghiệp & Giới thiệu (我, 我们, 他, 工作, 医生...)" },
+  10: { title: "Bài 18: Cảm xúc & Tính chất", titleVi: "Cảm xúc & Tính chất (大, 小, 多, 少, 冷, 热, 漂亮...)" },
+  11: { title: "Bài 21: Đồ vật & Thiết bị", titleVi: "Đồ vật & Thiết bị (桌子, 电视, 电脑, 手机, 电话...)" },
+  12: { title: "Bài 22: Hoạt động thường nhật", titleVi: "Hoạt động thường nhật & Giúp đỡ (睡觉, 说话, 帮, 帮忙...)" },
+  13: { title: "Bài 25: Sở thích & Vui chơi", titleVi: "Sở thích & Vui chơi (爱, 爱好, 喜欢, 唱歌, 玩儿...)" },
+};
+
 // Auto-generate packs: group by topic ~15 words each
 function groupByTopic(vocab: VocabEntry[], packSize = 15): VocabPack[] {
   const topicMap: Record<string, VocabEntry[]> = {};
@@ -97,10 +114,11 @@ function groupByTopic(vocab: VocabEntry[], packSize = 15): VocabPack[] {
         }
       }
 
+      const customTitle = level === 1 ? hsk1PackTitles[packNum] : undefined;
       packs.push({
         id: `hsk${level}_pack${packNum}`,
-        title: `HSK ${level} - Bài ${packNum}`,
-        titleVi: `HSK cấp ${level} - Phần ${packNum}`,
+        title: customTitle ? customTitle.title : `HSK ${level} - Bài ${packNum}`,
+        titleVi: customTitle ? customTitle.titleVi : `HSK cấp ${level} - Phần ${packNum}`,
         topic: `hsk${level}`,
         hsk2Levels: [level],
         hsk3Levels: [level],
